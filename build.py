@@ -22,7 +22,13 @@ CLIENTS = ["BI GROUP", "Yeko", "Jintropine"]
 
 TRUST = ["BI GROUP", "Alfa Bank", "Home Credit Bank", "Halyk Insurance", "Samsung Kazakhstan", "re:Kassa",
          "Astana Hub", "AlmaU", "Yeko", "Jintropine"]
-FEATURED = [0, 1, 5]  # индексы в CASES для блока «Избранные кейсы»
+FEATURED = [0, 1, 5]
+STATS = {
+ "ru": [("5", "IT-хабов Казахстана, где я трекер стартапов"), ("3", "учебных заведения, где я преподаю"),
+        ("6", "компаний в карьере: банки, страхование, девелопмент, электроника, финтех"), ("234%", "ROAS в кейсе бизнес-форума")],
+ "en": [("5", "Kazakhstan tech hubs where I track startups"), ("3", "institutions where I teach"),
+        ("6", "companies in my career: banking, insurance, real estate, electronics, fintech"), ("234%", "ROAS in the business forum case")],
+}  # индексы в CASES для блока «Избранные кейсы»
 
 def socials(lang):
     ru = lang == "ru"
@@ -45,7 +51,11 @@ def path(lang, slug):
 T = {
  "ru": {
   "name": "Руслан Хасанов",
-  "role": "Growth-стратег · Трекер · Преподаватель digital-маркетинга",
+  "role": "Growth-стратег · трекер стартапов · преподаватель digital-маркетинга",
+  "intro": ("Я пришёл в growth-маркетинг из корпоративного: руководил маркетингом малого бизнеса в Alfa Bank, "
+            "digital-направлением в Home Credit Bank и продуктом в Halyk Insurance, участвовал в запуске онлайн-магазина Samsung Kazakhstan. "
+            "Сейчас руковожу digital-маркетингом re:Kassa, веду студию Revanite, работаю трекером стартапов в IT-хабах Казахстана "
+            "и преподаю в AlmaU. Правило у меня одно: каждый тенге в маркетинге должен окупаться и быть измеримым — от клика до оплаты в CRM."),
   "nav": {"": "Главная", "about": "Обо мне", "services": "Услуги", "cases": "Кейсы", "teaching": "Преподавание", "contact": "Контакты"},
   "home": "Главная",
   "switch": ("EN", "English version"),
@@ -61,7 +71,11 @@ T = {
  },
  "en": {
   "name": "Ruslan Khasanov",
-  "role": "Growth strategist · Startup tracker · Digital marketing lecturer",
+  "role": "Growth strategist · startup tracker · digital marketing lecturer",
+  "intro": ("I came to growth marketing from the corporate side: I led small business marketing at Alfa Bank, "
+            "digital at Home Credit Bank and product at Halyk Insurance, and was part of the team that launched Samsung Kazakhstan's online store. "
+            "Today I head digital marketing at re:Kassa, run my studio Revanite, track startups at Kazakhstan tech hubs "
+            "and lecture at AlmaU. I have one rule: every tenge spent on marketing has to pay back and be measurable — from click to paid deal in the CRM."),
   "nav": {"": "Home", "about": "About", "services": "Services", "cases": "Case studies", "teaching": "Teaching", "contact": "Contact"},
   "home": "Home",
   "switch": ("RU", "Русская версия"),
@@ -148,7 +162,7 @@ FORMULA = {
 SERVICES = {
  "ru": [
   ("tracking", "Revanite Tracking", "Трекинг и стратегия",
-   "Для стартапов на ранних стадиях, команд в акселераторах и собственников бизнеса, у которых рост упёрся в потолок.",
+   "Для стартапов и собственников, у которых рост упёрся в потолок. Нахожу главное ограничение, вместе проверяем гипотезы и держим фокус на метриках.",
    ["Диагностика точек роста и главного ограничения",
     "Проверка продуктовых и маркетинговых гипотез",
     "Построение воронки продаж и go-to-market",
@@ -156,7 +170,7 @@ SERVICES = {
     "Работа с фаундером: фокус, приоритеты, решения"],
    "Регулярные трекшн-встречи, трекшн-карта, разбор метрик между встречами."),
   ("studio", "Revanite Studio", "Маркетинг под ключ",
-   "Для малого и среднего бизнеса в Казахстане и СНГ, которому нужен результат в заявках и продажах, а не в охватах.",
+   "Для малого и среднего бизнеса, которому нужны заявки и продажи, а не охваты. Беру на себя стратегию, рекламу и аналитику — до продажи в CRM.",
    ["Стратегия и медиаплан с расчётом окупаемости",
     "Google Ads: поиск, UAC; Meta Ads; TikTok Ads",
     "Настройка аналитики: GA4, Google Tag Manager, Яндекс Метрика, Meta Pixel и Conversions API",
@@ -165,7 +179,7 @@ SERVICES = {
     "Отчётность план-факт и дашборды в Looker Studio"],
    "Проектно или ежемесячно, с еженедельной отчётностью."),
   ("mentoring", "Обучение и менторство", "Для маркетологов и команд",
-   "Для маркетологов, которые хотят перейти от запуска рекламы к управлению ростом, и для команд, которым нужна общая методология.",
+   "Для маркетологов, которые хотят управлять ростом, а не только запускать рекламу, и для команд, которым нужна общая методология.",
    ["Индивидуальный трек: digital-маркетинг, аналитика, AI-инструменты",
     "Корпоративные воркшопы: go-to-market, growth hacking, лидогенерация и воронки",
     "Выступления и гостевые лекции"],
@@ -173,7 +187,7 @@ SERVICES = {
  ],
  "en": [
   ("tracking", "Revanite Tracking", "Tracking & strategy",
-   "For early-stage startups, accelerator teams and business owners whose growth has hit a ceiling.",
+   "For startups and business owners whose growth has hit a ceiling. I find the main constraint, we test hypotheses together and stay focused on the metrics.",
    ["Diagnosing growth points and the main constraint",
     "Testing product and marketing hypotheses",
     "Building the sales funnel and go-to-market",
@@ -181,7 +195,7 @@ SERVICES = {
     "Founder work: focus, priorities, decisions"],
    "Regular traction meetings, a traction map, metric reviews between sessions."),
   ("studio", "Revanite Studio", "Done-for-you marketing",
-   "For small and mid-sized businesses in Kazakhstan and the CIS that need leads and sales, not just reach.",
+   "For small and mid-sized businesses that need leads and sales, not reach. I take on strategy, advertising and analytics — all the way to the sale in the CRM.",
    ["Strategy and media plan with payback modelling",
     "Google Ads (Search, App campaigns), Meta Ads, TikTok Ads",
     "Analytics setup: GA4, Google Tag Manager, Yandex Metrica, Meta Pixel and Conversions API",
@@ -190,7 +204,7 @@ SERVICES = {
     "Plan-vs-actual reporting and Looker Studio dashboards"],
    "Project-based or monthly retainer, with weekly reporting."),
   ("mentoring", "Teaching & mentoring", "For marketers and teams",
-   "For marketers who want to move from running ads to managing growth, and for teams that need a shared method.",
+   "For marketers who want to manage growth rather than just run ads, and for teams that need a shared method.",
    ["One-to-one track: digital marketing, analytics, AI tools",
     "Corporate workshops: go-to-market, growth hacking, lead generation and funnels",
     "Talks and guest lectures"],
@@ -369,8 +383,8 @@ META = {
 }
 
 H1 = {
- "ru": {"about": "Руслан Хасанов: биография", "services": "Услуги", "cases": "Кейсы", "teaching": "Преподавание и выступления", "contact": "Контакты"},
- "en": {"about": "Ruslan Khasanov: biography", "services": "Services", "cases": "Case studies", "teaching": "Teaching and talks", "contact": "Contact"},
+ "ru": {"about": "Руслан Хасанов — обо мне", "services": "Услуги", "cases": "Кейсы", "teaching": "Преподавание и выступления", "contact": "Контакты"},
+ "en": {"about": "Ruslan Khasanov — about me", "services": "Services", "cases": "Case studies", "teaching": "Teaching and talks", "contact": "Contact"},
 }
 
 # ---------------------------------------------------------------- SCHEMA
@@ -454,111 +468,129 @@ LOGO = ('<svg class="logo" viewBox="0 0 32 32" aria-hidden="true" fill="none" st
         '<path d="M4 29 28 3" stroke="#5B82C9" stroke-width="1.2"/></svg>')
 
 CSS = """
-:root{--bg:#0E1014;--surface:#151920;--line:#252B34;--text:#ECEEF1;--muted:#9BA3AF;--accent:#5B82C9;--max:1040px}
+:root{--bg:#0A0C10;--surface:#11141B;--surface2:#171B25;--line:#232937;--text:#F1F3F7;--muted:#9AA3B2;--accent:#7EA6FF;--accent2:#B48CFF;--grad:linear-gradient(135deg,var(--accent),var(--accent2));--max:1120px}
 *{box-sizing:border-box;margin:0;padding:0}
-html{-webkit-text-size-adjust:100%}
-body{background:var(--bg);color:var(--text);font:400 17px/1.65 Manrope,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--bg) radial-gradient(1100px 600px at 85% -10%,rgba(126,166,255,.13),transparent 60%) no-repeat;color:var(--text);font:400 17px/1.65 Manrope,system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
 a{color:inherit}
 .wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
-header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(14,16,20,.92);backdrop-filter:blur(8px);z-index:5}
+header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(10,12,16,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);z-index:5}
 .bar{display:flex;align-items:center;gap:20px;height:64px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:600;white-space:nowrap}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;letter-spacing:.01em;white-space:nowrap}
 .logo{width:28px;height:28px}
-nav{display:flex;gap:18px;margin-left:auto;min-width:0;align-items:center;overflow-x:auto;scrollbar-width:none}
+nav{display:flex;gap:22px;margin-left:auto;min-width:0;align-items:center;overflow-x:auto;scrollbar-width:none}
 nav::-webkit-scrollbar{display:none}
-nav a{text-decoration:none;color:var(--muted);font-size:15px;white-space:nowrap}
+nav a{text-decoration:none;color:var(--muted);font-size:15px;white-space:nowrap;transition:color .2s}
 nav a:hover,nav a[aria-current]{color:var(--text)}
-.lang{flex:none;text-decoration:none;border:1px solid var(--line);border-radius:6px;padding:2px 8px;font-size:13px;color:var(--text)}
-main section{padding:64px 0;border-bottom:1px solid var(--line)}
-main section:last-child{border-bottom:0}
-.eyebrow{color:var(--accent);font-size:13px;letter-spacing:.12em;text-transform:uppercase;margin-bottom:18px}
-h1{font-size:clamp(40px,7vw,72px);line-height:1.05;font-weight:600;letter-spacing:-.02em}
-.page h1{font-size:clamp(32px,5vw,48px)}
-h2{font-size:clamp(24px,3.5vw,32px);font-weight:600;letter-spacing:-.01em;margin-bottom:24px}
-h3{font-size:19px;font-weight:600;margin-bottom:8px}
+.lang{flex:none;text-decoration:none;border:1px solid var(--line);border-radius:8px;padding:3px 9px;font-size:13px;color:var(--text)}
+main section{padding:84px 0}
+.eyebrow{color:var(--accent);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin-bottom:18px}
+h1{font-size:clamp(34px,5vw,52px);line-height:1.08;font-weight:700;letter-spacing:-.025em}
+h2{font-size:clamp(28px,4vw,40px);line-height:1.15;font-weight:700;letter-spacing:-.02em;margin-bottom:28px}
+h3{font-size:19px;line-height:1.35;font-weight:600;margin-bottom:8px}
 p+p{margin-top:14px}
-.lead{font-size:clamp(19px,2.4vw,23px);color:var(--muted);max-width:720px;margin-top:22px}
-.hero{padding:88px 0 72px}
-.hero-grid{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
-.portrait{width:220px;height:260px;border-radius:14px;border:1px solid var(--line);background:var(--surface);object-fit:cover;display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:56px;font-weight:600;letter-spacing:.04em}
-.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
-.btn{display:inline-block;padding:12px 22px;border-radius:8px;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:15px}
-.btn.ghost{background:transparent;border:1px solid var(--line);color:var(--text)}
-.answer{font-size:19px;max-width:820px}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:24px}
-.card .tag{color:var(--accent);font-size:13px;margin-bottom:10px;display:block}
+.grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead{font-size:clamp(19px,2.3vw,23px);color:var(--muted);max-width:700px;margin-top:22px}
+.hero{padding:104px 0 56px}
+.hero h1{font-size:clamp(46px,8.4vw,92px);line-height:1;letter-spacing:-.035em;background:linear-gradient(180deg,#fff 30%,#AEB9CF);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.06em}
+.hero-grid{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
+.portrait{width:240px;height:290px;border-radius:20px;border:1px solid transparent;background:linear-gradient(var(--surface2),var(--surface)) padding-box,var(--grad) border-box;object-fit:cover;display:flex;align-items:center;justify-content:center;font-size:60px;font-weight:700;letter-spacing:.04em;color:var(--accent);box-shadow:0 30px 80px -30px rgba(126,166,255,.45)}
+.role{font-size:clamp(16px,2vw,19px);font-weight:600;margin-top:18px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:36px}
+.btn{display:inline-block;padding:14px 24px;border-radius:12px;background:var(--grad);color:#0A0C10;text-decoration:none;font-weight:700;font-size:15px;box-shadow:0 10px 30px -10px rgba(126,166,255,.6);transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 16px 40px -12px rgba(126,166,255,.75)}
+.btn.ghost{background:rgba(255,255,255,.03);border:1px solid var(--line);color:var(--text);box-shadow:none}
+.btn.ghost:hover{border-color:var(--accent)}
+.stats{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.stats li{background:var(--surface);padding:26px 24px}
+.stats b{display:block;font-size:clamp(34px,4.6vw,50px);line-height:1;font-weight:700;letter-spacing:-.03em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:10px}
+.stats span{color:var(--muted);font-size:14px;line-height:1.5;display:block}
+.answer{font-size:clamp(18px,2vw,21px);max-width:860px;line-height:1.7}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.card,.project,.case{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:18px;transition:border-color .25s,transform .25s}
+.card{padding:28px}
+.card:hover,.project:hover{border-color:rgba(126,166,255,.45);transform:translateY(-3px)}
+.card .tag,.project .tag,.case .tag{color:var(--accent);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-bottom:12px;display:block}
+.card h3{font-size:21px}
 .card p{color:var(--muted);font-size:15px}
 .card ul{margin-top:14px;padding-left:18px;color:var(--muted);font-size:15px}
 .card li+li{margin-top:6px}
 .exp{list-style:none}
-.exp li{display:grid;grid-template-columns:220px 1fr;gap:20px;padding:16px 0;border-top:1px solid var(--line)}
+.exp li{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:18px 0;border-top:1px solid var(--line)}
 .exp li:first-child{border-top:0}
-.exp b{font-weight:600}
+.exp b{font-weight:700}
 .exp span{color:var(--muted)}
-.case{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:28px;margin-bottom:16px}
-.case h2{font-size:22px;margin-bottom:6px}
-.case .tag{color:var(--accent);font-size:13px;display:block;margin-bottom:16px}
-.case h3{font-size:14px;color:var(--muted);text-transform:uppercase;letter-spacing:.08em;margin:18px 0 6px}
+.case{padding:32px;margin-bottom:18px}
+.case h2{font-size:clamp(22px,2.6vw,26px);margin-bottom:8px}
+.case h3{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.12em;margin:22px 0 8px}
 .case ul{padding-left:18px}
 .case li+li{margin-top:6px}
-.result{border-left:2px solid var(--accent);padding-left:14px}
+.result{border-left:2px solid var(--accent);padding-left:16px}
 .note{color:var(--muted);font-size:15px;margin-top:18px}
-footer{border-top:1px solid var(--line);padding:64px 0 32px;background:var(--surface)}
-.footer-title{font-size:clamp(26px,4vw,40px);margin-bottom:10px}
-.footer-sub{color:var(--muted);margin-bottom:28px}
-.copy{color:var(--muted);font-size:14px;margin-top:32px}
+footer{border-top:1px solid var(--line);padding:84px 0 36px;background:radial-gradient(900px 400px at 10% 0,rgba(180,140,255,.10),transparent 60%),var(--surface)}
+.footer-title{font-size:clamp(30px,5vw,54px);line-height:1.08;margin-bottom:14px;max-width:820px}
+.footer-sub{color:var(--muted);margin-bottom:32px}
+.copy{color:var(--muted);font-size:14px;margin-top:40px}
 .socials{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
-.socials a{display:block;text-decoration:none;border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--bg)}
+.socials a{display:block;text-decoration:none;border:1px solid var(--line);border-radius:14px;padding:16px 18px;background:rgba(10,12,16,.6);transition:border-color .2s}
 .socials a:hover{border-color:var(--accent)}
-.socials b{display:block;font-weight:600}
+.socials b{display:block;font-weight:700}
 .socials span{color:var(--muted);font-size:14px;overflow-wrap:anywhere}
-.role{color:var(--accent);font-size:clamp(16px,2vw,19px);margin-top:14px}
-.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:24px}
+.section-head{display:flex;align-items:baseline;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:28px}
 .section-head h2{margin-bottom:0}
-.more{color:var(--accent);text-decoration:none;font-size:15px;white-space:nowrap}
-.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}
-.project{border:1px solid var(--line);border-radius:12px;padding:24px;display:flex;flex-direction:column;gap:10px}
-.project .tag{color:var(--accent);font-size:13px}
-.project h3{margin:0}
+.more{color:var(--accent);text-decoration:none;font-size:15px;font-weight:600;white-space:nowrap}
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.project{padding:28px;display:flex;flex-direction:column;gap:10px}
+.project .tag{margin-bottom:2px}
+.project h3{margin:0;font-size:20px}
 .project p{color:var(--muted);font-size:15px;flex:1}
-.project a{color:var(--accent);text-decoration:none;font-size:15px}
-.trust h2{font-size:15px;color:var(--muted);font-weight:400;letter-spacing:.08em;text-transform:uppercase}
-.trust ul{list-style:none;display:flex;flex-wrap:wrap;gap:10px 28px}
-.trust li{font-size:clamp(17px,2.2vw,21px);font-weight:600;letter-spacing:.01em}
-.card-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:16px;font-size:15px}
-.card-links a{color:var(--accent);text-decoration:none}
-.knowledge{display:grid;grid-template-columns:1fr 1fr;gap:48px}
+.project a{color:var(--accent);text-decoration:none;font-size:15px;font-weight:600}
+.trust{padding-top:24px !important}
+.trust h2{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px}
+.trust ul{list-style:none;display:flex;flex-wrap:wrap;gap:14px 36px}
+.trust li{font-size:clamp(18px,2.4vw,24px);font-weight:700;letter-spacing:-.01em;color:#C9D0DC}
+.card-links{display:flex;flex-wrap:wrap;gap:8px 20px;margin-top:18px;font-size:15px}
+.card-links a{color:var(--accent);text-decoration:none;font-weight:600}
+.knowledge{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.knowledge h2{font-size:clamp(24px,3vw,30px)}
 .chips{list-style:none;display:flex;flex-wrap:wrap;gap:8px}
-.chips li{border:1px solid var(--line);border-radius:999px;padding:5px 12px;font-size:14px}
-.steps{padding-left:22px;color:var(--muted);font-size:15px}
-.steps li+li{margin-top:8px}.steps b{color:var(--text);font-weight:600}
+.chips li{border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:6px 14px;font-size:14px}
+.steps{list-style:none;counter-reset:s}
+.steps li{counter-increment:s;display:grid;grid-template-columns:38px 1fr;gap:10px;padding:10px 0;border-top:1px solid var(--line);color:var(--muted);font-size:15px}
+.steps li:first-child{border-top:0}
+.steps li::before{content:"0" counter(s);color:var(--accent);font-weight:700;font-size:14px;padding-top:1px}
+.steps b{color:var(--text);font-weight:700}
 .rows{list-style:none}
-.rows li{display:grid;grid-template-columns:220px 1fr;gap:20px;padding:18px 0;border-top:1px solid var(--line)}
+.rows li{display:grid;grid-template-columns:240px 1fr;gap:24px;padding:20px 0;border-top:1px solid var(--line)}
 .rows li:first-child{border-top:0}
-.rows .when{color:var(--accent);font-size:14px;padding-top:3px}
+.rows .when{color:var(--accent);font-size:14px;font-weight:600;padding-top:3px}
 .rows h3{margin-bottom:4px}.rows p{color:var(--muted);font-size:15px}
 details summary{cursor:pointer;list-style:none}
 details summary::-webkit-details-marker{display:none}
-.more-box summary{color:var(--accent);font-size:15px;margin-top:12px}
+.more-box summary{color:var(--accent);font-size:15px;font-weight:600;margin-top:14px}
 .more-box[open] summary{margin-bottom:4px}
-.qa{border-top:1px solid var(--line);padding:18px 0}
+.qa{border-top:1px solid var(--line);padding:20px 0}
+.qa:last-child{border-bottom:1px solid var(--line)}
 .qa summary{font-weight:600;font-size:18px;display:flex;justify-content:space-between;gap:16px}
-.qa summary::after{content:"+";color:var(--accent)}
+.qa summary::after{content:"+";color:var(--accent);font-size:22px;line-height:1}
 .qa[open] summary::after{content:"−"}
-.qa p{color:var(--muted);margin-top:10px;max-width:820px}
+.qa p{color:var(--muted);margin-top:12px;max-width:820px}
+.page{padding-bottom:24px !important}
 .crumbs{font-size:14px;color:var(--muted);margin-bottom:18px}
 .crumbs a{text-decoration:none}
 @media (max-width:760px){
  body{font-size:16px}
  .bar{gap:8px}.brand span{display:none}
  nav{gap:10px}nav a{font-size:13px}nav .nav-home{display:none}
- .hero{padding:56px 0 48px}
- .hero-grid{grid-template-columns:1fr}
- .portrait{width:120px;height:140px;font-size:32px;order:-1}
- main section{padding:48px 0}
+ .hero{padding:52px 0 40px}
+ .hero-grid{grid-template-columns:1fr;gap:28px}
+ .portrait{width:112px;height:132px;font-size:30px;border-radius:16px;order:-1}
+ main section{padding:56px 0}
+ .stats{grid-template-columns:1fr 1fr}
+ .stats li{padding:20px 18px}
  .exp li,.rows li{grid-template-columns:1fr;gap:2px}
- .knowledge{grid-template-columns:1fr;gap:40px}
+ .knowledge{grid-template-columns:1fr;gap:44px}
+ .card,.project,.case{padding:22px}
 }
 """
 
@@ -582,9 +614,10 @@ def social_list(lang):
 def body_home(lang):
     t = T[lang]
     ru = lang == "ru"
-    lead = ("Нахожу точки роста в бизнесе. Дальше — делаю сам, учу команду или помогаю принять решение."
-            if ru else "I find where a business can grow. Then I either do the work, teach the team, or help make the call.")
+    lead = ("Нахожу, где бизнес теряет рост, и выстраиваю маркетинг, который окупается: стратегия, реклама и аналитика от клика до оплаты."
+            if ru else "I find where a business is losing growth and build marketing that pays back: strategy, advertising and analytics from click to payment.")
     cta = "Обсудить задачу" if ru else "Discuss your project"
+    stats = "".join(f"<li><b>{n}</b><span>{d}</span></li>" for n, d in STATS[lang])
     projects = "".join(
         f'<article class="project"><span class="tag">{CASES[lang][i][1]}</span><h3>{CASES[lang][i][0]}</h3>'
         f'<p>{CASES[lang][i][4]}</p><a href="{path(lang,"cases")}#case-{i+1}">{"Открыть кейс" if ru else "Open case"} →</a></article>'
@@ -596,10 +629,10 @@ def body_home(lang):
         f'<a href="{path(lang,"services")}#{key}">{"Подробнее" if ru else "Details"} →</a></p></article>'
         for key, name, sub, who, items, fmt in SERVICES[lang])
     chips = "".join(f"<li>{k}</li>" for k in KNOWS[lang])
-    formula = "".join(f"<li><b>{a}</b> — {b}</li>" for a, b in FORMULA[lang])
+    formula = "".join(f"<li><span><b>{a}</b> — {b}</span></li>" for a, b in FORMULA[lang])
     teach = "".join(
         f'<li><span class="when">{role}</span><div><h3>{place}</h3>'
-        + (f'<p>{"; ".join(items)}.</p>' if items else "") + "</div></li>"
+        + (f'<p>{" · ".join(items)}</p>' if items else "") + "</div></li>"
         for place, role, items in TEACH[lang])
     rows = [f"<li><b>{a}</b><span>{b}</span></li>" for a, b in EXPERIENCE[lang]]
     exp = ('<ul class="exp">' + "".join(rows[:4]) + "</ul>"
@@ -613,17 +646,18 @@ def body_home(lang):
 <p class="lead">{lead}</p>
 <div class="cta"><a class="btn" href="{WA}" rel="noopener" target="_blank">{cta}</a><a class="btn ghost" href="{TG}" rel="me noopener" target="_blank">Telegram</a></div>
 </div>{portrait(lang)}</div></section>
-<section>{head("Избранные кейсы" if ru else "Selected case studies", path(lang,"cases"), "Все кейсы" if ru else "All case studies")}<div class="projects">{projects}</div></section>
-<section class="trust"><h2>{"Мне доверяют" if ru else "Trusted by"}</h2><ul>{trust}</ul></section>
-<section>{head("Чем могу помочь" if ru else "How I can help")}<div class="cards">{services}</div></section>
-<section><h2>{"Обо мне" if ru else "About me"}</h2><p class="answer">{t["summary"]}</p>
+<section style="padding:0 0 8px"><ul class="stats">{stats}</ul></section>
+<section>{head("Кейсы" if ru else "Case studies", path(lang,"cases"), "Все кейсы" if ru else "All case studies")}<div class="projects">{projects}</div></section>
+<section class="trust"><h2>{"Со мной работали" if ru else "Worked with"}</h2><ul>{trust}</ul></section>
+<section>{head("Чем я помогу" if ru else "How I can help")}<div class="cards">{services}</div></section>
+<section><h2>{"Обо мне" if ru else "About me"}</h2><p class="answer">{t["intro"]}</p>
 <p class="card-links"><a href="{path(lang,"about")}">{"Подробная биография" if ru else "Full biography"} →</a><a href="{IG}" rel="me noopener" target="_blank">Instagram</a><a href="{LI}" rel="me noopener" target="_blank">LinkedIn</a></p></section>
 <section><div class="knowledge">
-<div><h2>{"Навыки" if ru else "Skills"}</h2><ul class="chips">{chips}</ul></div>
-<div><h2>{"Метод: Revanite Growth Formula" if ru else "Method: Revanite Growth Formula"}</h2><ol class="steps">{formula}</ol></div>
+<div><h2>{"Инструменты и компетенции" if ru else "Skills and tools"}</h2><ul class="chips">{chips}</ul></div>
+<div><h2>{"Как я работаю: Revanite Growth Formula" if ru else "How I work: Revanite Growth Formula"}</h2><ol class="steps">{formula}</ol></div>
 </div></section>
-<section>{head("Преподавание и выступления" if ru else "Teaching and talks", path(lang,"teaching"), "Подробнее" if ru else "Details")}<ul class="rows">{teach}</ul></section>
-<section>{head("Опыт работы" if ru else "Work experience", path(lang,"about"), "Биография" if ru else "Biography")}{exp}</section>
+<section>{head("Где я преподаю" if ru else "Where I teach", path(lang,"teaching"), "Подробнее" if ru else "Details")}<ul class="rows">{teach}</ul></section>
+<section>{head("Карьера" if ru else "Career", path(lang,"about"), "Обо мне" if ru else "About me")}{exp}</section>
 <section id="faq">{head("Частые вопросы" if ru else "FAQ")}{faq}</section>"""
 
 def body_contact(lang):
@@ -644,15 +678,15 @@ def body_about(lang):
     t = T[lang]
     exp = "".join(f"<li><b>{a}</b><span>{b}</span></li>" for a, b in EXPERIENCE[lang])
     if ru:
-        bio = """<p>Руслан Хасанов — маркетолог и growth-стратег из Алматы. Вырос из корпоративного маркетинга в финансовом секторе: руководил маркетингом сегмента малого бизнеса в Alfa Bank, digital-маркетингом в Home Credit Bank, отвечал за продукт в Halyk Insurance. Участвовал в запуске онлайн-магазина Samsung Kazakhstan.</p>
-<p>Сейчас работает по четырём связанным направлениям. Трекинг: помогает стартапам в Astana Hub, Almaty Hub, Terricon Valley, NURIS и IT Park найти точки роста, проверить гипотезы и получить первых клиентов. Исполнение: через студию Revanite ведёт рекламу, аналитику и стратегию для малого и среднего бизнеса в Казахстане и СНГ. Преподавание: учит digital-маркетингу в AlmaU, Qamalladin University и колледже ICB. Работа в продукте: руководит digital-маркетингом фискальной платформы re:Kassa.</p>
-<p>Общее у всех направлений — подход трекера: сначала найти, где на самом деле теряется рост, и только потом решать, что делать. Отсюда принцип Revanite: маркетинг как вложение, а не расход. Каждый канал должен окупаться и быть измеримым — от клика до оплаты в CRM.</p>"""
+        bio = """<p>Я маркетолог и growth-стратег из Алматы. Вырос в корпоративном маркетинге финансового сектора: руководил маркетингом сегмента малого бизнеса в Alfa Bank, digital-маркетингом в Home Credit Bank, отвечал за продукт в Halyk Insurance. Работал менеджером по маркетинговым проектам в BI GROUP и участвовал в запуске онлайн-магазина Samsung Kazakhstan.</p>
+<p>Сейчас у меня четыре связанных направления. Трекинг — помогаю стартапам в Astana Hub, Almaty Hub, Terricon Valley, NURIS и IT Park найти точки роста, проверить гипотезы и получить первых клиентов. Исполнение — через студию Revanite веду рекламу, аналитику и стратегию для малого и среднего бизнеса в Казахстане и СНГ. Преподавание — учу digital-маркетингу в AlmaU, Qamalladin University и колледже ICB. Продукт — руковожу digital-маркетингом фискальной платформы re:Kassa.</p>
+<p>Во всех направлениях я работаю как трекер: сначала нахожу, где на самом деле теряется рост, и только потом решаю, что делать. Отсюда принцип Revanite — маркетинг как вложение, а не расход. Каждый канал должен окупаться и быть измеримым, от клика до оплаты в CRM.</p>"""
         names = "Как пишется имя"
         names_p = "Руслан Хасанов (полное имя — Хасанов Руслан Фархадович). Латиницей — Ruslan Khasanov; в LinkedIn используется написание Ruslan Khassanov."
     else:
-        bio = """<p>Ruslan Khasanov is a marketing specialist and growth strategist based in Almaty, Kazakhstan. He came up through corporate marketing in financial services: he led small business marketing at Alfa Bank, digital marketing at Home Credit Bank and product at Halyk Insurance, and was part of the team that launched Samsung Kazakhstan's online store.</p>
-<p>Today his work spans four connected lines. Tracking: he helps startups at Astana Hub, Almaty Hub, Terricon Valley, NURIS and IT Park find growth points, test hypotheses and land first customers. Execution: through his studio Revanite he runs advertising, analytics and strategy for small and mid-sized businesses across Kazakhstan and the CIS. Teaching: he lectures in digital marketing at AlmaU, Qamalladin University and ICB college. In-house: he heads digital marketing at the fiscal technology platform re:Kassa.</p>
-<p>What ties it together is a tracker's approach: first find where growth is actually being lost, then decide what to do. Hence Revanite's principle — marketing as an investment, not an expense. Every channel has to pay back and be measurable, from click to paid deal in the CRM.</p>"""
+        bio = """<p>I'm a marketer and growth strategist based in Almaty, Kazakhstan. I came up through corporate marketing in financial services: I led small business marketing at Alfa Bank, digital marketing at Home Credit Bank and product at Halyk Insurance. I worked as a marketing project manager at BI GROUP and was part of the team that launched Samsung Kazakhstan's online store.</p>
+<p>Today my work spans four connected lines. Tracking — I help startups at Astana Hub, Almaty Hub, Terricon Valley, NURIS and IT Park find growth points, test hypotheses and land first customers. Execution — through my studio Revanite I run advertising, analytics and strategy for small and mid-sized businesses across Kazakhstan and the CIS. Teaching — I lecture in digital marketing at AlmaU, Qamalladin University and ICB college. In-house — I head digital marketing at the fiscal technology platform re:Kassa.</p>
+<p>Across all of it I work like a tracker: first find where growth is actually being lost, then decide what to do. Hence Revanite's principle — marketing as an investment, not an expense. Every channel has to pay back and be measurable, from click to paid deal in the CRM.</p>"""
         names = "Name spelling"
         names_p = "Ruslan Khasanov (Russian: Руслан Хасанов; full name Хасанов Руслан Фархадович). LinkedIn uses the spelling Ruslan Khassanov."
     kn = ", ".join(KNOWS[lang])
@@ -666,7 +700,7 @@ def body_about(lang):
 def body_services(lang):
     ru = lang == "ru"
     out = [f'<section class="page">{crumbs(lang,"services")}<h1>{H1[lang]["services"]}</h1>'
-           f'<p class="lead">{"Три формата работы — от диагностики до исполнения и обучения." if ru else "Three formats — from diagnosis to execution and training."}</p></section>']
+           f'<p class="lead">{"Три формата: найти точку роста, вырастить её силами моей студии или научить вашу команду." if ru else "Three formats: find the growth point, grow it with my studio, or train your team."}</p></section>']
     for key, name, sub, who, items, fmt in SERVICES[lang]:
         li = "".join(f"<li>{i}</li>" for i in items)
         out.append(f'<section id="{key}"><p class="eyebrow">{name}</p><h2>{sub}</h2><p>{who}</p>'
@@ -676,14 +710,14 @@ def body_services(lang):
 
 def body_cases(lang):
     ru = lang == "ru"
-    intro = ("Среди клиентов — BI GROUP, Yeko, Jintropine. В кейсах ниже названия не раскрываются без согласия клиента: описаны задача, решение и результат."
-             if ru else "Clients include BI GROUP, Yeko and Jintropine. The cases below do not name clients without consent; each covers the task, the solution and the outcome.")
+    intro = ("Работал с BI GROUP, Yeko, Jintropine и другими. Названия клиентов в кейсах не раскрываю без их согласия — только задача, что я сделал и результат."
+             if ru else "I've worked with BI GROUP, Yeko, Jintropine and others. I don't name clients in case studies without their consent — just the task, what I did and the outcome.")
     out = [f'<section class="page">{crumbs(lang,"cases")}<h1>{H1[lang]["cases"]}</h1><p class="lead">{intro}</p></section><section>']
     for n, (title, tag, task, done, result) in enumerate(CASES[lang], 1):
         li = "".join(f"<li>{d}</li>" for d in done)
         out.append(f'<article class="case" id="case-{n}"><h2>{title}</h2><span class="tag">{tag}</span>'
                    f'<h3>{"Задача" if ru else "Task"}</h3><p>{task}</p>'
-                   f'<h3>{"Что сделано" if ru else "What was done"}</h3><ul>{li}</ul>'
+                   f'<h3>{"Что я сделал" if ru else "What I did"}</h3><ul>{li}</ul>'
                    f'<h3>{"Результат" if ru else "Outcome"}</h3><p class="result">{result}</p></article>')
     out.append("</section>")
     return "".join(out)
@@ -696,12 +730,12 @@ def body_teaching(lang):
         cards += f'<article class="card"><span class="tag">{role}</span><h3>{place}</h3>{li}</article>'
     ctitle, citems = AI_COURSE[lang]
     cli = "".join(f"<li>{i}</li>" for i in citems)
-    lead = ("Преподаёт digital-маркетинг в университетах Алматы и проводит воркшопы для стартапов."
-            if ru else "Teaches digital marketing at Almaty universities and runs workshops for startups.")
+    lead = ("Преподаю digital-маркетинг в университетах Алматы и провожу воркшопы для стартапов."
+            if ru else "I teach digital marketing at Almaty universities and run workshops for startups.")
     return f"""
 <section class="page">{crumbs(lang,"teaching")}<h1>{H1[lang]["teaching"]}</h1><p class="lead">{lead}</p></section>
 <section><div class="cards">{cards}</div></section>
-<section><h2>{ctitle}</h2><p>{"Авторская программа для AlmaU: от основ LLM до сквозной аналитики и создания сайта с AI. Практические задания построены так, чтобы студент сначала делал работу руками, а потом проверял её с помощью AI." if ru else "An original programme for AlmaU, from LLM basics to end-to-end analytics and building a website with AI. Assignments require students to do the work by hand first and then check it with AI."}</p>
+<section><h2>{ctitle}</h2><p>{"Я написал эту программу для AlmaU: от основ LLM до сквозной аналитики и создания сайта с AI. Задания устроены так, что студент сначала делает работу сам, а потом проверяет её с помощью AI." if ru else "I wrote this programme for AlmaU, from LLM basics to end-to-end analytics and building a website with AI. Students do each assignment by hand first, then check it with AI."}</p>
 <div class="card" style="margin-top:20px"><ol style="padding-left:20px">{cli}</ol></div></section>"""
 
 BODIES = {"": body_home, "about": body_about, "services": body_services, "cases": body_cases, "teaching": body_teaching, "contact": body_contact}
@@ -737,11 +771,11 @@ def render(lang, slug):
 <meta property="og:site_name" content="{t["name"]}">
 {og_img}
 <meta name="twitter:card" content="summary">
-<meta name="theme-color" content="#0E1014">
+<meta name="theme-color" content="#0A0C10">
 <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600&display=swap&subset=cyrillic" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap&subset=cyrillic" rel="stylesheet">
 <style>{CSS}</style>
 <script type="application/ld+json">
 {schema(lang,slug)}
