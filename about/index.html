@@ -103,6 +103,14 @@ footer{border-top:1px solid var(--line);padding:84px 0 36px;background:radial-gr
 .project h3{margin:0;font-size:20px}
 .project p{color:var(--muted);font-size:15px;flex:1}
 .project a{color:var(--accent);text-decoration:none;font-size:15px;font-weight:600}
+.projects.two{grid-template-columns:repeat(2,1fr)}
+.metric{display:block;font-size:clamp(40px,5.4vw,60px);line-height:1;font-weight:700;letter-spacing:-.035em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.metric-label{display:block;color:var(--muted);font-size:14px;margin-bottom:10px}
+.project ul{padding-left:18px;color:var(--muted);font-size:15px;flex:1}
+.project li+li{margin-top:6px}
+.metric-row{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px;margin-bottom:14px}
+.metric-row .metric-label{margin:0}
+main section > h2 + .case{margin-top:4px}
 .trust{padding-top:24px !important}
 .trust h2{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px}
 .trust ul{list-style:none;display:flex;flex-wrap:wrap;gap:14px 36px}
@@ -148,6 +156,7 @@ details summary::-webkit-details-marker{display:none}
  .stats li{padding:20px 18px}
  .exp li,.rows li{grid-template-columns:1fr;gap:2px}
  .knowledge{grid-template-columns:1fr;gap:44px}
+ .projects.two{grid-template-columns:1fr}
  .card,.project,.case{padding:22px}
 }
 </style>
@@ -288,7 +297,7 @@ details summary::-webkit-details-marker{display:none}
    "about": {
     "@id": "https://revanite.kz/#person"
    },
-   "dateModified": "2026-11-03",
+   "dateModified": "2026-11-05",
    "mainEntity": {
     "@id": "https://revanite.kz/#person"
    }
