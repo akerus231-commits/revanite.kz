@@ -18,17 +18,98 @@ WA = "https://wa.me/77014584242"
 PHONE = "+77014584242"
 PHONE_H = "+7 701 458 42 42"
 SAME_AS = [IG, LI, TG]
-CLIENTS = ["BI GROUP", "Yeko", "Jintropine"]
+CLIENTS = {
+ "ru": ["BI GROUP", "Бакай Банк", "Глоббинг", "SAGI", "Youtrade", "InnMedia", "Yeko", "Jintropine"],
+ "en": ["BI GROUP", "Bakai Bank", "Globbing", "SAGI", "Youtrade", "InnMedia", "Yeko", "Jintropine"],
+}
 
-TRUST = ["BI GROUP", "Alfa Bank", "Home Credit Bank", "Halyk Insurance", "Samsung Kazakhstan", "re:Kassa",
-         "Astana Hub", "AlmaU", "Yeko", "Jintropine"]
-FEATURED = [0, 1, 5]
+TRUST = {
+ "ru": ["BI GROUP", "Бакай Банк", "Alfa Bank", "Home Credit Bank", "Halyk Insurance", "Samsung Kazakhstan", "Глоббинг",
+        "SAGI", "re:Kassa", "Youtrade", "InnMedia", "Astana Hub", "AlmaU", "Yeko", "Jintropine"],
+ "en": ["BI GROUP", "Bakai Bank", "Alfa Bank", "Home Credit Bank", "Halyk Insurance", "Samsung Kazakhstan", "Globbing",
+        "SAGI", "re:Kassa", "Youtrade", "InnMedia", "Astana Hub", "AlmaU", "Yeko", "Jintropine"],
+}
+
 STATS = {
- "ru": [("5", "IT-хабов Казахстана, где я трекер стартапов"), ("3", "учебных заведения, где я преподаю"),
-        ("6", "компаний в карьере: банки, страхование, девелопмент, электроника, финтех"), ("234%", "ROAS в кейсе бизнес-форума")],
- "en": [("5", "Kazakhstan tech hubs where I track startups"), ("3", "institutions where I teach"),
-        ("6", "companies in my career: banking, insurance, real estate, electronics, fintech"), ("234%", "ROAS in the business forum case")],
-}  # индексы в CASES для блока «Избранные кейсы»
+ "ru": [("15 000+", "новых клиентов банка за год — карта Tumar"), ("×3", "ниже стоимость привлечения — Глоббинг и SAGI"),
+        ("5", "IT-хабов Казахстана, где я трекер стартапов"), ("3", "учебных заведения, где я преподаю")],
+ "en": [("15,000+", "new bank customers in a year — Tumar card"), ("×3", "lower acquisition cost — Globbing and SAGI"),
+        ("5", "Kazakhstan tech hubs where I track startups"), ("3", "institutions where I teach")],
+}
+
+# Крупные проекты: (цифра, подпись к цифре, название, теги, задача, что сделано, результат)
+MAJOR = {
+ "ru": [
+  ("15 000+", "новых клиентов за год", "Карта рассрочки Tumar, Бакай Банк", "Финтех · Кыргызстан · Google Ads · Meta Ads",
+   "Выстроить для карты рассрочки Tumar цифровой канал, который приводит новых клиентов каждый месяц, а не разовыми всплесками.",
+   ["Собрал структуру кампаний Google Ads через Google Ads Editor",
+    "Запустил лид-кампании Meta Ads с ежемесячной отчётностью по стоимости результата",
+    "Интегрировал Facebook SDK в приложение банка и связал AppsFlyer с Google Ads"],
+   "Более 15 000 новых клиентов за год. Цифровое привлечение стало для карты постоянным источником роста: реклама, приложение и отчётность работают как одна система."),
+  ("×3", "ниже стоимость привлечения", "Глоббинг Казахстан", "Цифровой маркетинг · Воронка привлечения",
+   "Выстроить цифровой маркетинг и воронку, которая приводит клиентов по понятной и снижающейся цене.",
+   ["Выстроил воронку привлечения от рекламы до клиента",
+    "Оптимизировал каналы по стоимости привлечения"],
+   "Стоимость привлечения клиента снижена в 3 раза."),
+  ("CAC", "сформирован с нуля и оптимизирован", "BI GROUP и Geometry", "Девелопмент · Meta · Юнит-экономика",
+   "Выстроить цифровое привлечение и воронку с нуля, когда стоимость клиента ещё никто не считал.",
+   ["Выстроил цифровую воронку привлечения",
+    "Сформировал расчёт CAC с нуля и сделал его рабочей метрикой",
+    "Оптимизировал привлечение по CAC"],
+   "У проекта появилась измеримая стоимость клиента, и реклама оптимизируется по ней, а не по кликам и охватам."),
+  ("316%", "ROMI", "SAGI", "Performance-маркетинг · Окупаемость",
+   "Снизить стоимость привлечения и сделать маркетинг окупаемым вложением.",
+   ["Пересобрал привлечение под окупаемость: оптимизация по стоимости клиента и возврату вложений"],
+   "Стоимость привлечения снижена в 3 раза, ROMI — 316%."),
+ ],
+ "en": [
+  ("15,000+", "new customers in a year", "Tumar instalment card, Bakai Bank", "Fintech · Kyrgyzstan · Google Ads · Meta Ads",
+   "Build a digital channel for the Tumar instalment card that brings in new customers every month, not in one-off spikes.",
+   ["Built the Google Ads account structure via Google Ads Editor",
+    "Launched Meta lead campaigns with monthly cost-per-result reporting",
+    "Integrated the Facebook SDK into the bank's app and linked AppsFlyer with Google Ads"],
+   "Over 15,000 new customers in a year. Digital acquisition became a steady growth engine for the card: ads, app and reporting work as one system."),
+  ("×3", "lower acquisition cost", "Globbing Kazakhstan", "Digital marketing · Acquisition funnel",
+   "Build digital marketing and an acquisition funnel that brings in customers at a clear and falling cost.",
+   ["Built the acquisition funnel from ad to customer",
+    "Optimised channels by cost per acquisition"],
+   "Customer acquisition cost cut threefold."),
+  ("CAC", "built from scratch and optimised", "BI GROUP and Geometry", "Real estate · Meta · Unit economics",
+   "Build digital acquisition and a funnel from scratch, before anyone was measuring the cost of a customer.",
+   ["Built the digital acquisition funnel",
+    "Set up CAC calculation from scratch and made it a working metric",
+    "Optimised acquisition by CAC"],
+   "The project now has a measurable cost per customer, and advertising is optimised for it rather than for clicks and reach."),
+  ("316%", "ROMI", "SAGI", "Performance marketing · Payback",
+   "Cut acquisition cost and make marketing an investment that pays back.",
+   ["Rebuilt acquisition around payback: optimising for cost per customer and return on spend"],
+   "Acquisition cost cut threefold, ROMI 316%."),
+ ],
+}
+
+# Трекинг: (цифра, подпись, название, теги, что изменилось)
+TRACK = {
+ "ru": [
+  ("×1,6", "рост выручки", "Youtrade", "Трекинг · Операционные процессы",
+   ["Выручка выросла в 1,6 раза", "Оптимизировал операционные процессы", "Помог фаундеру выйти из операционки"]),
+  ("3", "первых контракта в Казахстане", "InnMedia", "Трекинг · Выход на рынок",
+   ["Помог выйти на рынок Казахстана", "Первые 3 контракта", "Доупаковал продукт под местный рынок"]),
+  ("30%", "выручки давал недооценённый канал", "Онлайн-образовательный проект", "Трекинг · Стратегия рынков",
+   ["Анализ продаж показал: международная выручка идёт от русскоязычной диаспоры, а не от иноязычных рынков",
+    "Приоритет сменён с США на Узбекистан и Турцию",
+    "Найден недоиспользованный канал: партнёрская программа уже давала около 30% выручки"]),
+ ],
+ "en": [
+  ("×1.6", "revenue growth", "Youtrade", "Tracking · Operations",
+   ["Revenue grew 1.6×", "Streamlined operational processes", "Helped the founder step away from day-to-day operations"]),
+  ("3", "first contracts in Kazakhstan", "InnMedia", "Tracking · Market entry",
+   ["Helped enter the Kazakhstan market", "First 3 contracts signed", "Refined the product packaging for the local market"]),
+  ("30%", "of revenue from an under-used channel", "Online education project", "Tracking · Market strategy",
+   ["Sales analysis showed international revenue came from the Russian-speaking diaspora, not foreign-language markets",
+    "Priority shifted from the US to Uzbekistan and Turkey",
+    "Under-used channel found: the affiliate programme already drove about 30% of revenue"]),
+ ],
+}
 
 def socials(lang):
     ru = lang == "ru"
@@ -104,7 +185,7 @@ FAQ = {
  "ru": [
   ("Кто такой Руслан Хасанов?", T["ru"]["summary"]),
   ("Что такое Revanite?", "Revanite — студия стратегического роста, которую основал Руслан Хасанов. Два направления: Revanite Tracking — трекинг и консалтинг для стартапов и собственников бизнеса, и Revanite Studio — маркетинг под ключ: стратегия, реклама, аналитика. Принцип студии — маркетинг как вложение, а не расход."),
-  ("С кем работает Руслан Хасанов?", "С малым и средним бизнесом в Казахстане и СНГ, стартапами на ранних стадиях и командами в акселераторах. Отраслевой опыт: банки и финтех, страхование, образование, B2B-производство, недвижимость, e-commerce, ивенты. Среди клиентов — BI GROUP, Yeko, Jintropine."),
+  ("С кем работает Руслан Хасанов?", "С малым и средним бизнесом в Казахстане и СНГ, стартапами на ранних стадиях и командами в акселераторах. Отраслевой опыт: банки и финтех, страхование, образование, B2B-производство, недвижимость, e-commerce, ивенты. Среди клиентов — BI GROUP, Бакай Банк, Глоббинг, SAGI, Youtrade, InnMedia, Yeko, Jintropine."),
   ("Чем трекер отличается от маркетолога-исполнителя?", "Трекер не запускает рекламу за команду. Он помогает найти узкое место роста, сформулировать гипотезы, проверить их быстро и дёшево и держать фокус на метриках. Исполнитель реализует выбранное решение. Руслан работает в обеих ролях: трекинг — в Revanite Tracking и IT-хабах, исполнение — в Revanite Studio."),
   ("Где преподаёт Руслан Хасанов?", "В Almaty Management University (AlmaU) — курсы по веб-аналитике, цифровому маркетингу, SMM и инструментам интернет-маркетинга; в Qamalladin University — руководит направлением «Диджитал»; в колледже ICB. Проводит воркшопы в Astana Hub, выступал с гостевой лекцией в Nazarbayev University."),
   ("Как связаться с Русланом Хасановым?", "WhatsApp и телефон: +7 701 458 42 42, Telegram: @messer66. Также Instagram (@hasanov5) и LinkedIn."),
@@ -112,7 +193,7 @@ FAQ = {
  "en": [
   ("Who is Ruslan Khasanov?", T["en"]["summary"]),
   ("What is Revanite?", "Revanite is a strategic growth studio founded by Ruslan Khasanov. It has two service lines: Revanite Tracking — tracking and advisory for startups and business owners, and Revanite Studio — done-for-you marketing covering strategy, advertising and analytics. The studio's principle: marketing is an investment, not an expense."),
-  ("Who does Ruslan Khasanov work with?", "Small and mid-sized businesses in Kazakhstan and the CIS, early-stage startups and accelerator teams. Industry experience includes banking and fintech, insurance, education, B2B manufacturing, real estate, e-commerce and events. Clients include BI GROUP, Yeko and Jintropine."),
+  ("Who does Ruslan Khasanov work with?", "Small and mid-sized businesses in Kazakhstan and the CIS, early-stage startups and accelerator teams. Industry experience includes banking and fintech, insurance, education, B2B manufacturing, real estate, e-commerce and events. Clients include BI GROUP, Bakai Bank, Globbing, SAGI, Youtrade, InnMedia, Yeko and Jintropine."),
   ("How is a startup tracker different from a marketing contractor?", "A tracker does not run the ads for the team. A tracker helps find the growth bottleneck, frame hypotheses, test them quickly and cheaply, and keep the team focused on metrics. A contractor executes the chosen solution. Ruslan works in both roles: tracking through Revanite Tracking and tech hubs, execution through Revanite Studio."),
   ("Where does Ruslan Khasanov teach?", "At Almaty Management University (AlmaU) — web analytics, digital marketing, SMM and online marketing tools; at Qamalladin University, where he leads the Digital program; and at ICB college. He runs workshops at Astana Hub and has given a guest lecture at Nazarbayev University."),
   ("How can I contact Ruslan Khasanov?", "WhatsApp and phone: +7 701 458 42 42, Telegram: @messer66. Also Instagram (@hasanov5) and LinkedIn."),
@@ -236,13 +317,6 @@ CASES = {
     "5 портретов клиента; каналы: поиск Google и Яндекс, 2GIS, Instagram, ABM и тендеры",
     "Сознательное ограничение: продукт сертифицирован под стандартный пожарный режим, поэтому технологические объекты нефтегаза исключены из таргетинга, чтобы не покупать нецелевые заявки"],
    "Стратегия, медиаплан и контент-план переданы в работу."),
-  ("Карта рассрочки, банк в Кыргызстане",
-   "Финтех · Google Ads · Meta Ads",
-   "Запуск и ведение платного трафика на BNPL-продукт банка.",
-   ["Структура кампаний Google Ads, сборка через Google Ads Editor",
-    "Лид-кампании Meta Ads и ежемесячная отчётность по стоимости результата",
-    "Интеграция Facebook SDK в приложение и связка AppsFlyer с Google Ads"],
-   "Рекламная инфраструктура и отчётность работают на постоянной основе."),
   ("Магистратура по психологии: сквозная атрибуция",
    "Образование · CRM · Автоматизация",
    "Понять, какая реклама приводит студентов, когда заявки приходят в WhatsApp и теряют источник.",
@@ -250,13 +324,6 @@ CASES = {
     "Автоматизация выгрузок amoCRM и Bitrix24 через API и Google Apps Script",
     "Сценарии видеорекламы под разные мотивы поступающих"],
    "Источник заявки виден в CRM, отчётность по Meta Ads связана с продажами."),
-  ("Трекинг онлайн-образовательного проекта",
-   "Трекинг · Стратегия рынков",
-   "Команда планировала выход на рынок США.",
-   ["Анализ продаж показал: международная выручка идёт от русскоязычной диаспоры, а не от иноязычных рынков",
-    "Приоритет сменён с США на Узбекистан и Турцию",
-    "Найден недоиспользованный канал: партнёрская программа уже давала около 30% выручки"],
-   "Команда перераспределила ресурсы на рынки и каналы с подтверждённым спросом."),
  ],
  "en": [
   ("Business forum, Astana: paid social and funnel analytics",
@@ -281,13 +348,6 @@ CASES = {
     "5 buyer personas; channels: Google and Yandex search, 2GIS, Instagram, ABM and tenders",
     "Deliberate constraint: the product is certified for the standard fire curve, so oil & gas process facilities were excluded from targeting to avoid paying for unqualified leads"],
    "Strategy, media plan and content plan handed over for execution."),
-  ("Instalment card, bank in Kyrgyzstan",
-   "Fintech · Google Ads · Meta Ads",
-   "Launch and run paid traffic for a bank's BNPL product.",
-   ["Google Ads account structure built via Google Ads Editor",
-    "Meta lead campaigns with monthly cost-per-result reporting",
-    "Facebook SDK integration in the app and AppsFlyer–Google Ads linking"],
-   "Ad infrastructure and reporting run on an ongoing basis."),
   ("Psychology master's programme: end-to-end attribution",
    "Education · CRM · Automation",
    "Identify which ads bring students when leads arrive via WhatsApp and lose their source.",
@@ -295,13 +355,6 @@ CASES = {
     "amoCRM and Bitrix24 exports automated via API and Google Apps Script",
     "Video ad scripts for different applicant motivations"],
    "Lead source is visible in the CRM; Meta Ads reporting is tied to enrolments."),
-  ("Tracking an online education project",
-   "Tracking · Market strategy",
-   "The team planned to expand into the US.",
-   ["Sales analysis showed international revenue came from the Russian-speaking diaspora, not foreign-language markets",
-    "Priority shifted from the US to Uzbekistan and Turkey",
-    "Under-used channel found: the affiliate programme already drove about 30% of revenue"],
-   "The team reallocated resources to markets and channels with proven demand."),
  ],
 }
 
@@ -360,7 +413,7 @@ META = {
   "services": ("Услуги: трекинг, маркетинг под ключ, менторство — Руслан Хасанов",
                "Revanite Tracking, Revanite Studio и менторство: стратегия роста, Google Ads и Meta Ads, сквозная аналитика, атрибуция и обучение маркетологов."),
   "cases": ("Кейсы — Руслан Хасанов, Revanite",
-            "Кейсы Руслана Хасанова: аналитика воронки бизнес-форума с ROAS 234%, мобильная атрибуция финтех-приложения, B2B-стратегия производителя, трекинг стартапов."),
+            "Кейсы Руслана Хасанова: карта Tumar Бакай Банка — 15 000+ новых клиентов за год, Глоббинг и SAGI — стоимость привлечения в 3 раза ниже, ROMI 316%, трекинг Youtrade и InnMedia."),
   "teaching": ("Преподавание и выступления — Руслан Хасанов",
                "Руслан Хасанов преподаёт digital-маркетинг в AlmaU, руководит направлением «Диджитал» в Qamalladin University, проводит воркшопы в Astana Hub."),
   "contact": ("Контакты — Руслан Хасанов, Revanite",
@@ -374,7 +427,7 @@ META = {
   "services": ("Services: tracking, done-for-you marketing, mentoring — Ruslan Khasanov",
                "Revanite Tracking, Revanite Studio and mentoring: growth strategy, Google Ads and Meta Ads, end-to-end analytics, attribution and training for marketers."),
   "cases": ("Case studies — Ruslan Khasanov, Revanite",
-            "Ruslan Khasanov's case studies: business forum funnel analytics with 234% ROAS, fintech app attribution, B2B manufacturer strategy, startup tracking."),
+            "Ruslan Khasanov's case studies: Bakai Bank's Tumar card — 15,000+ new customers in a year, Globbing and SAGI — acquisition cost cut threefold, 316% ROMI, startup tracking for Youtrade and InnMedia."),
   "teaching": ("Teaching and talks — Ruslan Khasanov",
                "Ruslan Khasanov lectures in digital marketing at AlmaU, leads the Digital programme at Qamalladin University and runs workshops at Astana Hub."),
   "contact": ("Contact — Ruslan Khasanov, Revanite",
@@ -545,6 +598,14 @@ footer{border-top:1px solid var(--line);padding:84px 0 36px;background:radial-gr
 .project h3{margin:0;font-size:20px}
 .project p{color:var(--muted);font-size:15px;flex:1}
 .project a{color:var(--accent);text-decoration:none;font-size:15px;font-weight:600}
+.projects.two{grid-template-columns:repeat(2,1fr)}
+.metric{display:block;font-size:clamp(40px,5.4vw,60px);line-height:1;font-weight:700;letter-spacing:-.035em;background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.metric-label{display:block;color:var(--muted);font-size:14px;margin-bottom:10px}
+.project ul{padding-left:18px;color:var(--muted);font-size:15px;flex:1}
+.project li+li{margin-top:6px}
+.metric-row{display:flex;align-items:baseline;flex-wrap:wrap;gap:4px 14px;margin-bottom:14px}
+.metric-row .metric-label{margin:0}
+main section > h2 + .case{margin-top:4px}
 .trust{padding-top:24px !important}
 .trust h2{font-size:12px;color:var(--muted);font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:22px}
 .trust ul{list-style:none;display:flex;flex-wrap:wrap;gap:14px 36px}
@@ -590,6 +651,7 @@ details summary::-webkit-details-marker{display:none}
  .stats li{padding:20px 18px}
  .exp li,.rows li{grid-template-columns:1fr;gap:2px}
  .knowledge{grid-template-columns:1fr;gap:44px}
+ .projects.two{grid-template-columns:1fr}
  .card,.project,.case{padding:22px}
 }
 """
@@ -618,11 +680,17 @@ def body_home(lang):
             if ru else "I find where a business is losing growth and build marketing that pays back: strategy, advertising and analytics from click to payment.")
     cta = "Обсудить задачу" if ru else "Discuss your project"
     stats = "".join(f"<li><b>{n}</b><span>{d}</span></li>" for n, d in STATS[lang])
-    projects = "".join(
-        f'<article class="project"><span class="tag">{CASES[lang][i][1]}</span><h3>{CASES[lang][i][0]}</h3>'
-        f'<p>{CASES[lang][i][4]}</p><a href="{path(lang,"cases")}#case-{i+1}">{"Открыть кейс" if ru else "Open case"} →</a></article>'
-        for i in FEATURED)
-    trust = "".join(f"<li>{c}</li>" for c in TRUST)
+    open_case = "Открыть кейс" if ru else "Open case"
+    major = "".join(
+        f'<article class="project"><b class="metric">{m}</b><span class="metric-label">{ml}</span>'
+        f'<span class="tag">{tag}</span><h3>{title}</h3><p>{task}</p>'
+        f'<a href="{path(lang,"cases")}#major-{n}">{open_case} →</a></article>'
+        for n, (m, ml, title, tag, task, done, result) in enumerate(MAJOR[lang], 1))
+    track = "".join(
+        f'<article class="project"><b class="metric">{m}</b><span class="metric-label">{ml}</span>'
+        f'<span class="tag">{tag}</span><h3>{title}</h3><ul>{"".join(f"<li>{x}</li>" for x in points)}</ul></article>'
+        for m, ml, title, tag, points in TRACK[lang])
+    trust = "".join(f"<li>{c}</li>" for c in TRUST[lang])
     services = "".join(
         f'<article class="card"><span class="tag">{name}</span><h3>{sub}</h3><p>{who}</p>'
         f'<p class="card-links"><a href="{WA}" rel="noopener" target="_blank">{cta}</a>'
@@ -647,7 +715,8 @@ def body_home(lang):
 <div class="cta"><a class="btn" href="{WA}" rel="noopener" target="_blank">{cta}</a><a class="btn ghost" href="{TG}" rel="me noopener" target="_blank">Telegram</a></div>
 </div>{portrait(lang)}</div></section>
 <section style="padding:0 0 8px"><ul class="stats">{stats}</ul></section>
-<section>{head("Кейсы" if ru else "Case studies", path(lang,"cases"), "Все кейсы" if ru else "All case studies")}<div class="projects">{projects}</div></section>
+<section>{head("Крупные проекты" if ru else "Major projects", path(lang,"cases"), "Все кейсы" if ru else "All case studies")}<div class="projects two">{major}</div></section>
+<section>{head("Трекинг стартапов" if ru else "Startup tracking", path(lang,"cases") + "#tracking", "Подробнее" if ru else "Details")}<div class="projects">{track}</div></section>
 <section class="trust"><h2>{"Со мной работали" if ru else "Worked with"}</h2><ul>{trust}</ul></section>
 <section>{head("Чем я помогу" if ru else "How I can help")}<div class="cards">{services}</div></section>
 <section><h2>{"Обо мне" if ru else "About me"}</h2><p class="answer">{t["intro"]}</p>
@@ -710,15 +779,29 @@ def body_services(lang):
 
 def body_cases(lang):
     ru = lang == "ru"
-    intro = ("Работал с BI GROUP, Yeko, Jintropine и другими. Названия клиентов в кейсах не раскрываю без их согласия — только задача, что я сделал и результат."
-             if ru else "I've worked with BI GROUP, Yeko, Jintropine and others. I don't name clients in case studies without their consent — just the task, what I did and the outcome.")
-    out = [f'<section class="page">{crumbs(lang,"cases")}<h1>{H1[lang]["cases"]}</h1><p class="lead">{intro}</p></section><section>']
+    intro = ("Крупные проекты, трекинг стартапов и другие кейсы. Клиентов называю с их согласия, остальные проекты описаны без названий: задача, что я сделал и результат."
+             if ru else "Major projects, startup tracking and other case studies. I name clients with their consent; other projects are described without names: the task, what I did and the outcome.")
+    task_h, done_h, res_h = ("Задача", "Что я сделал", "Результат") if ru else ("Task", "What I did", "Outcome")
+    out = [f'<section class="page">{crumbs(lang,"cases")}<h1>{H1[lang]["cases"]}</h1><p class="lead">{intro}</p></section>',
+           f'<section><h2>{"Крупные проекты" if ru else "Major projects"}</h2>']
+    for n, (m, ml, title, tag, task, done, result) in enumerate(MAJOR[lang], 1):
+        li = "".join(f"<li>{d}</li>" for d in done)
+        out.append(f'<article class="case" id="major-{n}"><p class="metric-row"><b class="metric">{m}</b><span class="metric-label">{ml}</span></p>'
+                   f'<h2>{title}</h2><span class="tag">{tag}</span>'
+                   f'<h3>{task_h}</h3><p>{task}</p><h3>{done_h}</h3><ul>{li}</ul>'
+                   f'<h3>{res_h}</h3><p class="result">{result}</p></article>')
+    out.append(f'</section><section id="tracking"><h2>{"Трекинг стартапов" if ru else "Startup tracking"}</h2>')
+    for n, (m, ml, title, tag, points) in enumerate(TRACK[lang], 1):
+        li = "".join(f"<li>{x}</li>" for x in points)
+        out.append(f'<article class="case" id="track-{n}"><p class="metric-row"><b class="metric">{m}</b><span class="metric-label">{ml}</span></p>'
+                   f'<h2>{title}</h2><span class="tag">{tag}</span>'
+                   f'<h3>{"Что изменилось" if ru else "What changed"}</h3><ul>{li}</ul></article>')
+    out.append(f'</section><section><h2>{"Другие кейсы" if ru else "Other case studies"}</h2>')
     for n, (title, tag, task, done, result) in enumerate(CASES[lang], 1):
         li = "".join(f"<li>{d}</li>" for d in done)
         out.append(f'<article class="case" id="case-{n}"><h2>{title}</h2><span class="tag">{tag}</span>'
-                   f'<h3>{"Задача" if ru else "Task"}</h3><p>{task}</p>'
-                   f'<h3>{"Что я сделал" if ru else "What I did"}</h3><ul>{li}</ul>'
-                   f'<h3>{"Результат" if ru else "Outcome"}</h3><p class="result">{result}</p></article>')
+                   f'<h3>{task_h}</h3><p>{task}</p><h3>{done_h}</h3><ul>{li}</ul>'
+                   f'<h3>{res_h}</h3><p class="result">{result}</p></article>')
     out.append("</section>")
     return "".join(out)
 
@@ -816,7 +899,9 @@ def llms_txt():
         "- Трекер стартапов: Astana Hub, Almaty Hub, Terricon Valley, NURIS, IT Park; акселератор AIpreneurs",
         "- Преподавание: Almaty Management University (AlmaU), Qamalladin University (руководитель направления «Диджитал»), колледж ICB; воркшопы Astana Hub; гостевая лекция Nazarbayev University",
         "- Опыт: Alfa Bank (тимлид маркетинга, малый бизнес), Home Credit Bank (руководитель digital-маркетинга), Halyk Insurance (директор по продукту), Samsung Kazakhstan (запуск онлайн-магазина), BI GROUP (менеджер по маркетинговым проектам), re:Kassa (руководитель digital-маркетинга)",
-        "- Клиенты: " + ", ".join(CLIENTS),
+        "- Клиенты: " + ", ".join(CLIENTS["ru"]),
+        "- Ключевые кейсы: карта рассрочки Tumar (Бакай Банк) — более 15 000 новых клиентов за год; Глоббинг Казахстан — стоимость привлечения снижена в 3 раза; BI GROUP и Geometry — CAC сформирован с нуля и оптимизирован; SAGI — стоимость привлечения в 3 раза ниже, ROMI 316%",
+        "- Трекинг: Youtrade — рост выручки в 1,6 раза, оптимизация операционных процессов; InnMedia — выход на рынок Казахстана, первые 3 контракта",
         "- Компетенции: " + ", ".join(KNOWS["ru"]),
         "",
         "## Страницы / Pages",
