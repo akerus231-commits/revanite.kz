@@ -177,7 +177,7 @@ T = {
               "Был CMO фискальной платформы re:Kassa, руководил digital-маркетингом в Home Credit Bank, был директором по продукту в Halyk Insurance, "
               "руководил маркетингом сегмента малого бизнеса в Alfa Bank. Трекер стартапов в Astana Hub, Almaty Hub, Terricon Valley, NURIS и IT Park, "
               "преподаёт digital-маркетинг в AlmaU и руководит направлением «Диджитал» в Qamalladin University."),
-  "org_desc": ("Revanite — Strategic Growth Partner: стратегический партнёр бизнеса в маркетинге, digital-развитии и привлечении клиентов. "
+  "org_desc": ("Revanite — Strategic Growth Partner: стратегический партнёр бизнеса в маркетинге, digital-развитии и привлечении клиентов с фокусом на росте выручки и прозрачности работы. "
                "Четыре направления: Marketing Management (управление маркетингом), Digital Growth (реклама, сайты и аналитика), "
                "Business Tracking (трекинг бизнеса) и Education (обучение маркетингу). Алматы, Казахстан."),
   "footer_title": "Revanite — Strategic Growth Partner",
@@ -201,7 +201,7 @@ T = {
               "He was CMO at the fiscal technology platform re:Kassa, Head of Digital Marketing at Home Credit Bank, Director of Product at Halyk Insurance "
               "and head of SME marketing at Alfa Bank. He tracks startups at Astana Hub, Almaty Hub, Terricon Valley, NURIS and IT Park, "
               "teaches digital marketing at AlmaU and leads the Digital program at Qamalladin University."),
-  "org_desc": ("Revanite is a Strategic Growth Partner for businesses in marketing, digital development and customer acquisition. "
+  "org_desc": ("Revanite is a Strategic Growth Partner for businesses in marketing, digital development and customer acquisition, focused on revenue growth and transparent work. "
                "Four practices: Marketing Management, Digital Growth (ads, websites and analytics), Business Tracking and Education. Almaty, Kazakhstan."),
   "footer_title": "Revanite — Strategic Growth Partner",
   "footer_sub": "Almaty · Working with businesses in Kazakhstan, Kyrgyzstan and the CIS",
@@ -213,7 +213,7 @@ HOME = {
  "ru": {
   "eyebrow": "Revanite · Strategic Growth Partner",
   "h1": "Your Business Needs More Than a Marketing Agency.",
-  "lead": "Мы становимся стратегическим партнёром бизнеса: управляем маркетингом, развиваем digital-каналы и помогаем находить новые точки роста.",
+  "lead": "Мы становимся стратегическим партнёром бизнеса: управляем маркетингом, развиваем digital-каналы и помогаем находить новые точки роста выручки — прозрачно и на связи на каждом этапе.",
   "cta2": "Наши направления",
   "system_title": "Система Revanite",
   "system_steps": [("Strategy", "цели и приоритеты"), ("Management", "управление маркетингом"),
@@ -225,7 +225,8 @@ HOME = {
                "Нет прозрачной аналитики", "Собственник вынужден контролировать всё самостоятельно"],
   "approach_h3": "Подход Revanite",
   "approach": ("Мы соединяем стратегию, управление, реализацию и аналитику в одну систему. "
-               "Каждое маркетинговое действие связано с целью бизнеса, а результат измеряется заявками, продажами и окупаемостью."),
+               "Каждое маркетинговое действие связано с ростом бизнеса и выручки, а результат измеряется заявками, продажами и окупаемостью. "
+               "Вы всегда видите, что сделано и на что потрачен бюджет."),
   "dirs_h2": "Направления работы",
   "dirs_lead": "Четыре самостоятельных направления, объединённых общей методологией.",
   "method_h2": "Методология Revanite",
@@ -239,12 +240,12 @@ HOME = {
   "founder_more": "Подробнее об основателе",
   "faq_h2": "Частые вопросы",
   "final_h2": "Let's Find Your Next Growth Point.",
-  "final_text": "Расскажите о своей задаче. Мы поможем определить, какие маркетинговые инструменты и решения нужны вашему бизнесу на текущем этапе.",
+  "final_text": "Расскажите о своей задаче. Мы поможем определить, какие маркетинговые инструменты и решения нужны вашему бизнесу на текущем этапе, чтобы расти в выручке.",
  },
  "en": {
   "eyebrow": "Revanite · Strategic Growth Partner",
   "h1": "Your Business Needs More Than a Marketing Agency.",
-  "lead": "We become a strategic partner to your business: we manage marketing, develop digital channels and help you find new growth points.",
+  "lead": "We become a strategic partner to your business: we manage marketing, develop digital channels and help you find new sources of revenue growth — transparently, and in touch at every stage.",
   "cta2": "What we do",
   "system_title": "The Revanite system",
   "system_steps": [("Strategy", "goals and priorities"), ("Management", "marketing management"),
@@ -256,7 +257,8 @@ HOME = {
                "No transparent analytics", "The owner has to control everything personally"],
   "approach_h3": "The Revanite approach",
   "approach": ("We connect strategy, management, execution and analytics into one system. "
-               "Every marketing action is tied to a business goal, and results are measured in leads, sales and payback."),
+               "Every marketing action is tied to business and revenue growth, and results are measured in leads, sales and payback. "
+               "You always see what has been done and where the budget went."),
   "dirs_h2": "What we do",
   "dirs_lead": "Four independent practices united by one methodology.",
   "method_h2": "The Revanite methodology",
@@ -270,8 +272,21 @@ HOME = {
   "founder_more": "More about the founder",
   "faq_h2": "FAQ",
   "final_h2": "Let's Find Your Next Growth Point.",
-  "final_text": "Tell us about your challenge. We will help you decide which marketing tools and solutions your business needs at its current stage.",
+  "final_text": "Tell us about your challenge. We will help you decide which marketing tools and solutions your business needs at its current stage to grow revenue.",
  },
+}
+
+PRINCIPLES = {
+ "ru": ("Принципы работы", [
+   ("Рост выручки — главная метрика", "Оцениваем маркетинг по заявкам, продажам и окупаемости, а не по охватам и кликам."),
+   ("Прозрачность процессов", "Вы видите, что сделано, сколько потрачено и какой получен результат: регулярные отчёты, дашборды и понятный план работ."),
+   ("Всегда на связи", "Один ответственный контакт, регулярные созвоны и оперативные ответы на всех этапах проекта."),
+   ("Ответственность до результата", "Не пропадаем после запуска: доводим задачи до конца и отвечаем за договорённости.")]),
+ "en": ("How we work with clients", [
+   ("Revenue growth is the main metric", "We judge marketing by leads, sales and payback, not by reach and clicks."),
+   ("Transparent processes", "You see what has been done, what has been spent and what it delivered: regular reports, dashboards and a clear work plan."),
+   ("Always in touch", "One accountable contact, regular calls and prompt replies at every stage of the project."),
+   ("Accountable to the end", "We do not disappear after launch: we see tasks through and stand by our commitments.")]),
 }
 
 METHOD = {
@@ -295,7 +310,7 @@ DIRS = {
   "marketing-management": {
    "name": "Marketing Management", "label": "Управление маркетингом", "badge": "Ключевое направление",
    "short": "Становимся внешним маркетинговым партнёром компании: стратегия, план, бюджеты, постановка задач специалистам и подрядчикам, контроль и аналитика.",
-   "value": "Маркетинг управляется как система и связан с целями бизнеса.",
+   "value": "Маркетинг управляется как система и работает на рост выручки.",
    "h1": "Управление маркетингом бизнеса",
    "lead": "Выступаем внешним маркетинговым партнёром компании и берём на себя системное управление маркетингом — от анализа и стратегии до контроля реализации и регулярной аналитики.",
    "blocks": [("Что входит", ["Анализ текущего маркетинга и бизнес-задач", "Разработка маркетинговой стратегии",
@@ -310,15 +325,15 @@ DIRS = {
            "В компании есть маркетологи, но нет общей стратегии и системы управления",
            "Бизнес хочет развивать маркетинг, но пока не готов нанимать руководителя отдела маркетинга"],
    "result_h2": "Результат",
-   "result": "Бизнес получает внешнего стратегического партнёра, который управляет маркетингом и связывает маркетинговые действия с бизнес-целями.",
-   "format": "Ежемесячное сопровождение с еженедельной отчётностью.",
+   "result": "Бизнес получает внешнего стратегического партнёра, который управляет маркетингом, связывает маркетинговые действия с ростом выручки и регулярно отчитывается о результатах.",
+   "format": "Ежемесячное сопровождение с еженедельной отчётностью и постоянной связью с собственником.",
    "note": "Реализацию рекламы, сайтов и аналитики берёт на себя направление Digital Growth. Если задача шире маркетинга и касается бизнеса в целом, подходит Business Tracking.",
    "cases": [0, 2, 5], "diag": True,
   },
   "digital-growth": {
    "name": "Digital Growth", "label": "Реклама, сайты и аналитика", "badge": "",
    "short": "Реализуем стратегию на практике: реклама в Meta и Google, сайты и лендинги, GA4, Google Tag Manager, отчёты и дашборды.",
-   "value": "Каждый digital-инструмент работает как часть общей системы привлечения.",
+   "value": "Каждый digital-инструмент работает на рост заявок и выручки.",
    "h1": "Digital-маркетинг и развитие онлайн-каналов",
    "lead": "Практическая сторона работы Revanite: мы не только определяем стратегию, но и помогаем её реализовать. Реклама, сайт и аналитика подключаются под конкретную задачу бизнеса и оцениваются по результату.",
    "blocks": [("Онлайн-реклама", ["Meta Ads (Facebook и Instagram)", "Google Ads", "Настройка и оптимизация рекламных кампаний",
@@ -332,13 +347,13 @@ DIRS = {
                                                      "Отчёты и дашборды", "Анализ воронки и эффективности привлечения"])],
    "why_h2": "Не отдельные услуги, а система",
    "why": "Настройка рекламы или новый сайт сами по себе не гарантируют продаж. Мы связываем каналы привлечения, сайт, аналитику и CRM, чтобы видеть путь клиента от первого касания до сделки и принимать решения на основе данных.",
-   "format": "Проект или ежемесячное ведение с еженедельной отчётностью.",
+   "format": "Проект или ежемесячное ведение с еженедельной отчётностью: расходы, заявки, продажи.",
    "cases": [1, 3, 4], "diag": False,
   },
   "business-tracking": {
    "name": "Business Tracking", "label": "Трекинг и точки роста", "badge": "",
    "short": "Самостоятельный формат работы с предпринимателем: цели и показатели, поиск ограничений, гипотезы, приоритеты и регулярный контроль прогресса.",
-   "value": "Предприниматель системно движется к целям бизнеса.",
+   "value": "Предприниматель системно движется к росту бизнеса и выручки.",
    "h1": "Трекинг бизнеса и работа с точками роста",
    "lead": "Отдельное направление для предпринимателей и собственников бизнеса. Трекинг помогает системно развивать компанию: определять ограничения, формулировать и проверять гипотезы, двигаться к поставленным целям.",
    "blocks": [("Что входит", ["Постановка целей и определение ключевых показателей", "Анализ текущей ситуации в бизнесе",
@@ -364,7 +379,7 @@ DIRS = {
   "marketing-management": {
    "name": "Marketing Management", "label": "Marketing management", "badge": "Core practice",
    "short": "We act as the company's external marketing partner: strategy, plan, budgets, briefing specialists and contractors, control and analytics.",
-   "value": "Marketing is managed as a system and tied to business goals.",
+   "value": "Marketing is managed as a system and drives revenue growth.",
    "h1": "Managing your business's marketing",
    "lead": "We act as the company's external marketing partner and take on the systematic management of marketing — from analysis and strategy to implementation control and regular analytics.",
    "blocks": [("What's included", ["Analysis of current marketing and business objectives", "Marketing strategy development",
@@ -379,15 +394,15 @@ DIRS = {
            "The company has marketers but no shared strategy or management system",
            "The business wants to grow its marketing but is not ready to hire a head of marketing yet"],
    "result_h2": "Result",
-   "result": "The business gains an external strategic partner who manages marketing and ties marketing actions to business goals.",
-   "format": "Ongoing monthly engagement with weekly reporting.",
+   "result": "The business gains an external strategic partner who manages marketing, ties marketing actions to revenue growth and reports on results regularly.",
+   "format": "Ongoing monthly engagement with weekly reporting and direct, ongoing contact with the owner.",
    "note": "Ads, websites and analytics are implemented by the Digital Growth practice. If the challenge goes beyond marketing and concerns the business as a whole, Business Tracking is the right fit.",
    "cases": [0, 2, 5], "diag": True,
   },
   "digital-growth": {
    "name": "Digital Growth", "label": "Ads, websites and analytics", "badge": "",
    "short": "We put the strategy into practice: Meta and Google ads, websites and landing pages, GA4, Google Tag Manager, reports and dashboards.",
-   "value": "Every digital tool works as part of one acquisition system.",
+   "value": "Every digital tool works toward more leads and revenue.",
    "h1": "Digital marketing and online channel development",
    "lead": "The hands-on side of Revanite: we do not just define the strategy, we help implement it. Ads, the website and analytics are set up for a specific business objective and judged by results.",
    "blocks": [("Online advertising", ["Meta Ads (Facebook and Instagram)", "Google Ads", "Campaign setup and optimization",
@@ -401,13 +416,13 @@ DIRS = {
                                                        "Reports and dashboards", "Funnel and acquisition performance analysis"])],
    "why_h2": "Not separate services, but a system",
    "why": "Setting up ads or launching a new website does not guarantee sales on its own. We connect acquisition channels, the website, analytics and the CRM to see the customer journey from first touch to deal and make data-driven decisions.",
-   "format": "Project-based or ongoing monthly management with weekly reporting.",
+   "format": "Project-based or ongoing monthly management with weekly reporting on spend, leads and sales.",
    "cases": [1, 3, 4], "diag": False,
   },
   "business-tracking": {
    "name": "Business Tracking", "label": "Tracking and growth points", "badge": "",
    "short": "A dedicated format for entrepreneurs: goals and metrics, finding constraints, hypotheses, priorities and regular progress reviews.",
-   "value": "The entrepreneur moves toward business goals systematically.",
+   "value": "The entrepreneur moves systematically toward business and revenue growth.",
    "h1": "Business tracking and growth points",
    "lead": "A separate practice for entrepreneurs and business owners. Tracking helps develop the company systematically: identify constraints, frame and test hypotheses and move toward set goals.",
    "blocks": [("What's included", ["Setting goals and key metrics", "Analysis of the current business situation",
@@ -538,6 +553,7 @@ FAQ = {
  "ru": [
   ("Что такое Revanite?", T["ru"]["org_desc"]),
   ("Чем Revanite отличается от маркетингового агентства?", "Агентство выполняет отдельные задачи: настраивает рекламу, делает сайт, ведёт соцсети. Revanite работает как стратегический партнёр: определяет приоритеты, управляет маркетингом и подрядчиками, связывает рекламу с продажами и аналитикой. При этом практическая реализация — реклама, сайты, аналитика — тоже входит в работу."),
+  ("Как организована работа с клиентом?", "Прозрачно и с постоянной связью: один ответственный контакт, регулярные созвоны, еженедельные отчёты и дашборды по расходам, заявкам, продажам и выручке. Вы всегда знаете, что сделано, сколько потрачено и какой получен результат. Мы не пропадаем после запуска и доводим задачи до конца."),
   ("С кем работает Revanite?", "С малым и средним бизнесом, предпринимателями и растущими компаниями в Казахстане, Кыргызстане и СНГ, а также с начинающими и действующими digital-специалистами и командами, которым нужно обучение. Среди клиентов — Бакай Банк, Глоббинг Казахстан, Yeko Kazakhstan, SAGI, Shanyraq Business Forum, BI GROUP, Geometry, Jintropine, Youtrade, InnMedia."),
   ("Чем Business Tracking отличается от Marketing Management?", "Marketing Management — управление маркетингом компании: стратегия, каналы, бюджеты, подрядчики, аналитика. Business Tracking — работа с предпринимателем над бизнесом в целом: цели, показатели, ограничения, гипотезы и управленческие решения."),
   ("Кто основатель Revanite?", T["ru"]["summary"]),
@@ -546,6 +562,7 @@ FAQ = {
  "en": [
   ("What is Revanite?", T["en"]["org_desc"]),
   ("How is Revanite different from a marketing agency?", "An agency executes separate tasks: setting up ads, building a website, running social media. Revanite works as a strategic partner: it sets priorities, manages marketing and contractors, and connects advertising with sales and analytics. Hands-on implementation — ads, websites, analytics — is part of the work too."),
+  ("How do you work with clients?", "Transparently and in constant contact: one accountable contact, regular calls, weekly reports and dashboards on spend, leads, sales and revenue. You always know what has been done, what has been spent and what it delivered. We do not disappear after launch and see tasks through."),
   ("Who does Revanite work with?", "Small and mid-sized businesses, entrepreneurs and growing companies in Kazakhstan, Kyrgyzstan and the CIS, as well as aspiring and working digital specialists and teams that need training. Clients include Bakai Bank, Globbing Kazakhstan, Yeko Kazakhstan, SAGI, Shanyraq Business Forum, BI GROUP, Geometry, Jintropine, Youtrade and InnMedia."),
   ("How is Business Tracking different from Marketing Management?", "Marketing Management is managing the company's marketing: strategy, channels, budgets, contractors and analytics. Business Tracking is working with the entrepreneur on the business as a whole: goals, metrics, constraints, hypotheses and management decisions."),
   ("Who is the founder of Revanite?", T["en"]["summary"]),
@@ -576,12 +593,12 @@ PROCESS = {
    "Заявка в WhatsApp или Telegram: кратко о бизнесе и задаче",
    "Обсуждение задачи или экспресс-диагностика: анализ данных и определение приоритетов",
    "Предложение: направление, формат, объём работ и стоимость",
-   "Работа с регулярной отчётностью по бизнес-показателям"]),
+   "Работа с прозрачной отчётностью по выручке, заявкам и бюджету — и на связи на каждом этапе"]),
  "en": ("How we work", [
    "Send a request on WhatsApp or Telegram with a short note about your business and the challenge",
    "A discussion or business check-up: data analysis and priorities",
    "Proposal: practice, format, scope and price",
-   "Delivery with regular reporting on business metrics"]),
+   "Delivery with transparent reporting on revenue, leads and budget — and in touch at every stage"]),
 }
 
 SERVICES_PAGE = {
@@ -601,7 +618,7 @@ CASES_PAGE = {
 META = {
  "ru": {
   "": ("Revanite — Strategic Growth Partner | Маркетинг и рост бизнеса, Алматы",
-       "Revanite — стратегический партнёр бизнеса: управление маркетингом, реклама, сайты и аналитика, трекинг бизнеса и обучение маркетингу. Алматы."),
+       "Revanite — стратегический партнёр бизнеса в росте выручки: управление маркетингом, реклама, сайты и аналитика, трекинг и обучение. Алматы."),
   "services": ("Направления работы — Revanite",
                "Четыре направления Revanite: Marketing Management, Digital Growth, Business Tracking и Education. Экспресс-диагностика бизнеса за $99."),
   "marketing-management": ("Marketing Management — управление маркетингом бизнеса | Revanite",
@@ -623,7 +640,7 @@ META = {
  },
  "en": {
   "": ("Revanite — Strategic Growth Partner | Marketing and business growth, Almaty",
-       "Revanite is a strategic growth partner for businesses: marketing management, ads, websites and analytics, business tracking and marketing education."),
+       "Revanite is a strategic partner for revenue growth: marketing management, ads, websites and analytics, business tracking and marketing education."),
   "services": ("Services — Revanite",
                "Revanite's four practices: Marketing Management, Digital Growth, Business Tracking and Education. A $99 business check-up to get started."),
   "marketing-management": ("Marketing Management — outsourced marketing leadership | Revanite",
@@ -983,6 +1000,10 @@ details summary::-webkit-details-marker{display:none}
 .step:not(:last-child)::after{content:"";position:absolute;right:-17px;top:50%;width:9px;height:9px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);transform:translateY(-50%) rotate(45deg)}
 .method-base{margin-top:18px;border:1px dashed rgba(180,140,255,.5);border-radius:14px;padding:16px 20px;color:var(--muted);font-size:15px}
 .method-base b{color:var(--accent2)}
+.principles{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.principles li{border-top:2px solid var(--accent);padding-top:16px;display:flex;flex-direction:column;gap:8px}
+.principles b{font-size:17px}
+.principles span{color:var(--muted);font-size:14.5px}
 .auds{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
 .aud{border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:8px}
 .aud h3{font-size:17px;margin:0}
@@ -1021,6 +1042,7 @@ details summary::-webkit-details-marker{display:none}
  .hero-grid{grid-template-columns:1fr}
  .system{width:100%;max-width:460px}
  .method{grid-template-columns:repeat(2,1fr)}
+ .principles{grid-template-columns:repeat(2,1fr)}
  .step:nth-child(2)::after{display:none}
 }
 @media (max-width:760px){
@@ -1041,6 +1063,7 @@ details summary::-webkit-details-marker{display:none}
  .system{max-width:none}
  .split,.founder,.edu-split{grid-template-columns:1fr;gap:24px}
  .dirs{grid-template-columns:1fr}
+ .principles{grid-template-columns:1fr;gap:22px}
  .method{grid-template-columns:1fr;gap:28px}
  .step:not(:last-child)::after,.step:nth-child(2)::after{display:block;right:auto;left:30px;top:auto;bottom:-20px;transform:rotate(135deg)}
  .panel{padding:24px}
@@ -1099,6 +1122,11 @@ def case_card(lang, n):
     return (f'<article class="project"><span class="tag">{tools}</span><h3>{title}</h3><p>{result}</p>'
             f'<a href="{path(lang,"cases")}#case-{n}">{"Открыть кейс" if lang == "ru" else "Open case"} →</a></article>')
 
+def principles(lang):
+    title, items = PRINCIPLES[lang]
+    cards = "".join(f'<li><b>{a}</b><span>{b}</span></li>' for a, b in items)
+    return f'<section id="principles"><h2>{title}</h2><ul class="principles">{cards}</ul></section>'
+
 def method_diagram(lang, compact=False):
     steps = "".join(f'<li class="step"><span class="step-n">0{i}</span><b>{name}</b><span>{text}</span></li>'
                     for i, (name, text) in enumerate(METHOD[lang], 1))
@@ -1148,6 +1176,7 @@ def body_home(lang):
 <div class="panel approach"><p class="eyebrow">Revanite</p><h3>{h["approach_h3"]}</h3><p>{h["approach"]}</p></div></div></section>
 <section id="directions">{head(h["dirs_h2"], path(lang,"services"), "Все направления" if lang == "ru" else "All services")}<p class="answer" style="margin:-8px 0 28px">{h["dirs_lead"]}</p><div class="dirs">{dirs}</div></section>
 <section id="method"><h2>{h["method_h2"]}</h2><p class="answer" style="margin-bottom:32px">{h["method_lead"]}</p>{method_diagram(lang)}</section>
+{principles(lang)}
 <section id="audience"><h2>{h["aud_h2"]}</h2><div class="auds">{aud}</div></section>
 <section id="cases">{head(h["cases_h2"], path(lang,"cases"), h["cases_all"])}<ul class="stats">{stats}</ul>
 <div class="projects two" style="margin-top:18px">{cases}</div><p class="note"><b>{h["clients"]}:</b> {clients}</p></section>
@@ -1166,6 +1195,7 @@ def body_services(lang):
         out.append(f'<section id="{s}"><p class="eyebrow">0{i} · {d["name"]}{badge}</p><h2>{d["label"]}</h2><p class="answer">{d["short"]}</p>'
                    f'<p class="dir-value" style="margin-top:14px">{d["value"]}</p><p class="card-links"><a href="{path(lang, s)}">{more} →</a></p></section>')
     out.append(f'<section id="method"><h2>{HOME[lang]["method_h2"]}</h2>{method_diagram(lang)}</section>')
+    out.append(principles(lang))
     out.append(diag_section(lang))
     out.append(f'<section id="process"><h2>{p_title}</h2><ol class="steps">{"".join(f"<li><span>{x}</span></li>" for x in p_steps)}</ol>{cta_row(lang)}</section>')
     return "".join(out)
@@ -1247,8 +1277,8 @@ def body_about(lang):
 
 def body_contact(lang):
     ru = lang == "ru"
-    lead = ("Расскажите о задаче в Telegram или WhatsApp: коротко о бизнесе и цели. Мы ответим и предложим направление и формат работы."
-            if ru else "Tell us about your challenge on Telegram or WhatsApp: a few lines about your business and goal. We will reply with a suggested practice and format.")
+    lead = ("Расскажите о задаче в Telegram или WhatsApp: коротко о бизнесе и цели. Мы ответим, предложим направление и формат работы и останемся на связи на всех этапах."
+            if ru else "Tell us about your challenge on Telegram or WhatsApp: a few lines about your business and goal. We will reply with a suggested practice and format, and stay in touch at every stage.")
     note = ("Алматы, Казахстан. Работаем с бизнесом в Казахстане, Кыргызстане, СНГ и онлайн."
             if ru else "Almaty, Kazakhstan. Working with businesses in Kazakhstan, Kyrgyzstan, the CIS and online.")
     return f"""
@@ -1348,6 +1378,7 @@ def llms_txt():
         "- Revanite — стратегический партнёр малого и среднего бизнеса в маркетинге, digital-развитии и привлечении клиентов; Алматы, Казахстан",
         "- Ключевая идея: не просто выполнять маркетинговые задачи, а думать вместе с бизнесом, определять приоритеты и управлять развитием",
         "- Методология: Strategy → Management → Execution → Tracking & Growth; Education дополняет систему",
+        "- Принципы работы: рост выручки как главная метрика; прозрачность процессов (регулярные отчёты и дашборды по расходам, заявкам, продажам); всегда на связи (один ответственный контакт, регулярные созвоны); ответственность до результата",
         "- Marketing Management: внешнее управление маркетингом — стратегия, план, бюджеты, постановка задач специалистам и подрядчикам, контроль, аналитика, качество лидов",
         "- Digital Growth: Meta Ads, Google Ads, сайты и лендинги (Tilda, AI-инструменты), GA4, Google Tag Manager, интеграция с CRM, отчёты и дашборды",
         "- Business Tracking: трекинг для предпринимателей — цели и показатели, ограничения, гипотезы, приоритеты, регулярный контроль прогресса",

@@ -1,13 +1,14 @@
 # Revanite — Strategic Growth Partner
 
-> Revanite — Strategic Growth Partner: стратегический партнёр бизнеса в маркетинге, digital-развитии и привлечении клиентов. Четыре направления: Marketing Management (управление маркетингом), Digital Growth (реклама, сайты и аналитика), Business Tracking (трекинг бизнеса) и Education (обучение маркетингу). Алматы, Казахстан.
+> Revanite — Strategic Growth Partner: стратегический партнёр бизнеса в маркетинге, digital-развитии и привлечении клиентов с фокусом на росте выручки и прозрачности работы. Четыре направления: Marketing Management (управление маркетингом), Digital Growth (реклама, сайты и аналитика), Business Tracking (трекинг бизнеса) и Education (обучение маркетингу). Алматы, Казахстан.
 
-> Revanite is a Strategic Growth Partner for businesses in marketing, digital development and customer acquisition. Four practices: Marketing Management, Digital Growth (ads, websites and analytics), Business Tracking and Education. Almaty, Kazakhstan.
+> Revanite is a Strategic Growth Partner for businesses in marketing, digital development and customer acquisition, focused on revenue growth and transparent work. Four practices: Marketing Management, Digital Growth (ads, websites and analytics), Business Tracking and Education. Almaty, Kazakhstan.
 
 ## Ключевые факты / Key facts
 - Revanite — стратегический партнёр малого и среднего бизнеса в маркетинге, digital-развитии и привлечении клиентов; Алматы, Казахстан
 - Ключевая идея: не просто выполнять маркетинговые задачи, а думать вместе с бизнесом, определять приоритеты и управлять развитием
 - Методология: Strategy → Management → Execution → Tracking & Growth; Education дополняет систему
+- Принципы работы: рост выручки как главная метрика; прозрачность процессов (регулярные отчёты и дашборды по расходам, заявкам, продажам); всегда на связи (один ответственный контакт, регулярные созвоны); ответственность до результата
 - Marketing Management: внешнее управление маркетингом — стратегия, план, бюджеты, постановка задач специалистам и подрядчикам, контроль, аналитика, качество лидов
 - Digital Growth: Meta Ads, Google Ads, сайты и лендинги (Tilda, AI-инструменты), GA4, Google Tag Manager, интеграция с CRM, отчёты и дашборды
 - Business Tracking: трекинг для предпринимателей — цели и показатели, ограничения, гипотезы, приоритеты, регулярный контроль прогресса
@@ -20,7 +21,7 @@
 - Трекинг: Youtrade — рост выручки в 1,6 раза, перестройка операционных процессов; InnMedia — выход на рынок Казахстана, первые 3 контракта; онлайн-школа — смена приоритетных рынков, партнёрский канал около 30% выручки
 
 ## Страницы / Pages
-- [Revanite — Strategic Growth Partner | Маркетинг и рост бизнеса, Алматы](https://revanite.kz/): Revanite — стратегический партнёр бизнеса: управление маркетингом, реклама, сайты и аналитика, трекинг бизнеса и обучение маркетингу. Алматы.
+- [Revanite — Strategic Growth Partner | Маркетинг и рост бизнеса, Алматы](https://revanite.kz/): Revanite — стратегический партнёр бизнеса в росте выручки: управление маркетингом, реклама, сайты и аналитика, трекинг и обучение. Алматы.
 - [Направления работы — Revanite](https://revanite.kz/services/): Четыре направления Revanite: Marketing Management, Digital Growth, Business Tracking и Education. Экспресс-диагностика бизнеса за $99.
 - [Marketing Management — управление маркетингом бизнеса | Revanite](https://revanite.kz/marketing-management/): Внешнее управление маркетингом для малого и среднего бизнеса: стратегия, план, бюджеты, управление подрядчиками, аналитика и качество лидов.
 - [Digital Growth — реклама, сайты и аналитика | Revanite](https://revanite.kz/digital-growth/): Meta Ads и Google Ads, сайты и лендинги на Tilda, GA4, Google Tag Manager, сквозная аналитика и дашборды как часть системы привлечения клиентов.
@@ -30,7 +31,7 @@
 - [Руслан Хасанов — основатель Revanite](https://revanite.kz/about/): Руслан Хасанов — основатель Revanite: экс-CMO re:Kassa, опыт в Home Credit Bank, Halyk Insurance и Alfa Bank, трекер стартапов, преподаватель AlmaU.
 - [Преподавание и выступления — Руслан Хасанов](https://revanite.kz/teaching/): Руслан Хасанов преподаёт digital-маркетинг в AlmaU, руководит направлением «Диджитал» в Qamalladin University, проводит воркшопы в Astana Hub.
 - [Контакты — Revanite](https://revanite.kz/contact/): Связаться с Revanite: Telegram @messer66, WhatsApp и телефон +7 701 458 42 42, Instagram, LinkedIn. Алматы, Казахстан.
-- [Revanite — Strategic Growth Partner | Marketing and business growth, Almaty](https://revanite.kz/en/): Revanite is a strategic growth partner for businesses: marketing management, ads, websites and analytics, business tracking and marketing education.
+- [Revanite — Strategic Growth Partner | Marketing and business growth, Almaty](https://revanite.kz/en/): Revanite is a strategic partner for revenue growth: marketing management, ads, websites and analytics, business tracking and marketing education.
 - [Services — Revanite](https://revanite.kz/en/services/): Revanite's four practices: Marketing Management, Digital Growth, Business Tracking and Education. A $99 business check-up to get started.
 - [Marketing Management — outsourced marketing leadership | Revanite](https://revanite.kz/en/marketing-management/): External marketing management for small and mid-sized businesses: strategy, plan, budgets, contractor management, analytics and lead quality.
 - [Digital Growth — ads, websites and analytics | Revanite](https://revanite.kz/en/digital-growth/): Meta Ads and Google Ads, Tilda websites and landing pages, GA4, Google Tag Manager, end-to-end analytics and dashboards as one acquisition system.
