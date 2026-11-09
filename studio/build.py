@@ -1317,6 +1317,8 @@ def render(lang, slug):
     nav = "".join(
         f'<a href="{path(lang,s)}"{cur if s == active else ""}{"" if s else ' class="nav-home"'}>{t["nav"][s]}</a>'
         for s in NAV)
+    # пункт меню на личный сайт основателя
+    nav += f'<a href="{"/" if lang == "ru" else "/en/"}">{"Личный сайт" if lang == "ru" else "Personal site"}</a>'
     return f"""<!doctype html>
 <html lang="{lang}">
 <head>

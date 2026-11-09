@@ -650,10 +650,19 @@ details summary::-webkit-details-marker{display:none}
 .page{padding-bottom:24px !important}
 .crumbs{font-size:14px;color:var(--muted);margin-bottom:18px}
 .crumbs a{text-decoration:none}
+.mnav{display:none}
+.mnav summary{cursor:pointer;list-style:none;border:1px solid var(--line);border-radius:8px;padding:4px 12px;font-size:14px;font-weight:600}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav[open] summary{border-color:var(--accent)}
+.mnav-list{position:absolute;left:0;right:0;top:64px;background:#0A0C10;border-bottom:1px solid var(--line);box-shadow:0 24px 40px rgba(0,0,0,.6);padding:8px 20px 16px;display:flex;flex-direction:column}
+.mnav-list a{padding:12px 0;border-top:1px solid var(--line);text-decoration:none;color:var(--muted);font-size:16px}
+.mnav-list a:first-child{border-top:0}
+.mnav-list a[aria-current]{color:var(--text)}
 @media (max-width:760px){
  body{font-size:16px}
  .bar{gap:8px}.brand span{display:none}
- nav{gap:10px}nav a{font-size:13px}nav .nav-home{display:none}
+ nav{display:none}
+ .mnav{display:block;margin-left:auto}
  .hero{padding:52px 0 40px}
  .hero-grid{grid-template-columns:1fr;gap:28px}
  .portrait{width:112px;height:132px;font-size:30px;border-radius:16px;order:-1}
@@ -848,6 +857,8 @@ def render(lang, slug):
     nav = "".join(
         f'<a href="{path(lang,s)}"{cur if s == slug else ""}{"" if s else ' class="nav-home"'}>{t["nav"][s]}</a>'
         for s in NAV)
+    # пункт меню на сайт студии
+    nav += f'<a href="{"/studio/" if lang == "ru" else "/studio/en/"}">Revanite Studio</a>'
     return f"""<!doctype html>
 <html lang="{lang}">
 <head>
@@ -883,7 +894,7 @@ def render(lang, slug):
 <body>
 <header><div class="wrap bar">
 <a class="brand" href="{path(lang,"")}">{LOGO}<span>Revanite</span></a>
-<nav aria-label="{"Основное меню" if lang=="ru" else "Main menu"}">{nav}</nav><a class="lang" href="{path(other,slug)}" hreflang="{other}" lang="{other}" title="{t["switch"][1]}">{t["switch"][0]}</a>
+<nav aria-label="{"Основное меню" if lang=="ru" else "Main menu"}">{nav}</nav><details class="mnav"><summary>{"Меню" if lang=="ru" else "Menu"}</summary><div class="mnav-list">{nav}</div></details><a class="lang" href="{path(other,slug)}" hreflang="{other}" lang="{other}" title="{t["switch"][1]}">{t["switch"][0]}</a>
 </div></header>
 <main class="wrap">{BODIES[slug](lang)}</main>
 <footer id="contact"><div class="wrap">
