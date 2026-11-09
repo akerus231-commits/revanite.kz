@@ -29,89 +29,93 @@ CLIENTS = {
 # Блок клиентов на главной: (заголовок группы, названия)
 GROUPS = {
  "ru": [("Клиенты", CLIENTS["ru"]),
-        ("Где работал", ["Alfa Bank", "Home Credit Bank", "Halyk Insurance", "Samsung Kazakhstan", "re:Kassa"]),
+        ("Опыт работы", ["re:Kassa", "Alfa Bank", "Home Credit Bank", "Halyk Insurance", "Samsung Kazakhstan"]),
         ("Трекинг и преподавание", ["Astana Hub", "Almaty Hub", "Terricon Valley", "NURIS", "IT Park", "AlmaU", "Qamalladin University"])],
  "en": [("Clients", CLIENTS["en"]),
-        ("Previously at", ["Alfa Bank", "Home Credit Bank", "Halyk Insurance", "Samsung Kazakhstan", "re:Kassa"]),
+        ("Previously at", ["re:Kassa", "Alfa Bank", "Home Credit Bank", "Halyk Insurance", "Samsung Kazakhstan"]),
         ("Tracking and teaching", ["Astana Hub", "Almaty Hub", "Terricon Valley", "NURIS", "IT Park", "AlmaU", "Qamalladin University"])],
 }
 
 STATS = {
- "ru": [("316%", "ROMI программы лояльности SAGI"), ("×2,4", "дешевле лид для Yeko Kazakhstan"),
-        ("−45%", "стоимость регистрации в Глоббинг Казахстан"), ("1 600+", "обращений за один запуск бизнес-форума Shanyraq")],
- "en": [("316%", "ROMI for the SAGI loyalty app"), ("×2.4", "cheaper leads for Yeko Kazakhstan"),
-        ("−45%", "cost per sign-up at Globbing Kazakhstan"), ("1,600+", "leads from one launch of Shanyraq Business Forum")],
+ "ru": [("316%", "ROMI — приложение программы лояльности SAGI"), ("×2,4", "снижение стоимости лида — Yeko Kazakhstan"),
+        ("−45%", "стоимость регистрации — Глоббинг Казахстан"), ("1 600+", "обращений за один запуск — Shanyraq Business Forum")],
+ "en": [("316%", "ROMI — SAGI loyalty app"), ("×2.4", "lower cost per lead — Yeko Kazakhstan"),
+        ("−45%", "cost per sign-up — Globbing Kazakhstan"), ("1,600+", "leads from a single launch — Shanyraq Business Forum")],
 }
 STATS_NOTE = {
- "ru": "Трекер в 5 IT-хабах Казахстана · Преподаю в AlmaU, Qamalladin University и колледже ICB",
- "en": "Tracker at 5 Kazakhstan tech hubs · Teaching at AlmaU, Qamalladin University and ICB College",
+ "ru": "Трекер стартапов в 5 IT-хабах Казахстана · Преподаватель AlmaU, Qamalladin University и колледжа ICB",
+ "en": "Startup tracker at 5 Kazakhstan tech hubs · Lecturer at AlmaU, Qamalladin University and ICB College",
 }
 
-# Кейсы: (название, каналы, задача, что сделано, результат)
+# Цена экспресс-диагностики: старая (зачёркнутая) и действующая
+PRICE_OLD, PRICE = "$200", "$99"
+PRICE_HTML = f'<span class="price"><s>{PRICE_OLD}</s> {PRICE}</span>'
+
+# Кейсы: (название, каналы и инструменты, задача, решение, результат)
 CASES = {
  "ru": [
-  ("Shanyraq Business Forum — бизнес-форум, 3 города", "Meta Ads, WhatsApp, amoCRM",
-   "Продать билеты и видеть, что происходит с заявкой после клика.",
-   ["Еженедельный разбор воронки в amoCRM — статусы, каналы, работа менеджеров, доля квалифицированных заявок.",
-    "Аудит переписки менеджеров в WhatsApp нашёл 4 повторяющихся типа ошибок, по итогам внедрили чат-бот.",
-    "Рекламу и CRM свели в единую отчётность."],
-   "1 600+ заявок и обращений за первый запуск, ROAS 234%. Формат повторили в Шымкенте и Алматы."),
+  ("Shanyraq Business Forum — бизнес-форум, 3 города", "Meta Ads, WhatsApp, amoCRM, чат-бот",
+   "Обеспечить продажи билетов и прозрачность воронки — от клика до оплаты.",
+   ["Еженедельный анализ воронки в amoCRM: статусы сделок, источники, эффективность менеджеров, доля квалифицированных заявок.",
+    "Аудит коммуникаций отдела продаж в WhatsApp: выявлены 4 системные ошибки, по итогам внедрён чат-бот.",
+    "Данные рекламных кабинетов и CRM объединены в единую систему отчётности."],
+   "1 600+ заявок и обращений за первый запуск, ROAS 234%. Формат масштабирован на Шымкент и Алматы."),
   ("Глоббинг Казахстан — сервис доставки покупок из-за рубежа", "Meta Ads",
-   "Получать больше новых пользователей по меньшей цене.",
-   ["Разобрали результаты по городам и нашли, где бюджет работает, а где нет.",
-    "Провели аудит структуры кабинета: кампании были раздроблены, и алгоритму не хватало данных.",
-    "Сравнили таргет на аудитории блогеров с гео-таргетом и перераспределили бюджет."],
-   "+60% новых регистраций, стоимость регистрации ниже на 45%."),
-  ("Yeko Kazakhstan — отечественный бренд техники", "Онлайн-реклама",
-   "Не просто больше заявок, а больше заявок, с которыми можно работать.",
-   ["Перестроили онлайн-рекламу под качество заявок: оптимизация по квалифицированным лидам, а не по количеству."],
-   "Доля квалифицированных лидов выросла с 30% до 70%, стоимость лида снижена в 2,4 раза."),
-  ("SAGI — приложение программы лояльности", "Онлайн-реклама, воронка",
-   "Привлекать пользователей в приложение так, чтобы реклама окупалась.",
-   ["Запуск и ведение онлайн-рекламы, работа с воронкой от первого касания до целевого действия, оптимизация по возврату вложений."],
+   "Увеличить приток новых пользователей при снижении стоимости привлечения.",
+   ["Анализ эффективности по городам: выявлены регионы с низкой отдачей бюджета.",
+    "Аудит структуры рекламного кабинета: избыточная фрагментация кампаний ограничивала обучение алгоритма.",
+    "Тестирование аудиторий блогеров против гео-таргетинга и перераспределение бюджета по результатам."],
+   "+60% новых регистраций при снижении стоимости регистрации на 45%."),
+  ("Yeko Kazakhstan — отечественный бренд техники", "Онлайн-реклама, квалификация лидов",
+   "Повысить качество входящих заявок, а не только их количество.",
+   ["Перестройка онлайн-рекламы под качество лидов: оптимизация по квалифицированным заявкам вместо объёма."],
+   "Доля квалифицированных лидов выросла с 30% до 70%, стоимость лида снизилась в 2,4 раза."),
+  ("SAGI — приложение программы лояльности", "Онлайн-реклама, продуктовая воронка",
+   "Привлекать пользователей в приложение с окупаемостью рекламных вложений.",
+   ["Запуск и ведение онлайн-рекламы, управление воронкой от первого касания до целевого действия, оптимизация по возврату инвестиций."],
    "ROMI 316%."),
-  ("Карта рассрочки Тумар, Бакай Банк (Кыргызстан)", "Google Ads, Meta Ads, мобильная атрибуция",
-   "Цифровой канал, который приводит клиентов каждый месяц, а не всплесками.",
+  ("Карта рассрочки Тумар, Бакай Банк (Кыргызстан)", "Google Ads, Meta Ads, мобильная атрибуция, CRM-маркетинг",
+   "Построить цифровой канал с равномерным ежемесячным притоком клиентов.",
    ["Структура кампаний Google Ads и лид-кампании Meta с ежемесячной отчётностью.",
-    "Подключили мобильную атрибуцию приложения к рекламным кабинетам.",
-    "Затем запустили активацию уже выданных карт по сегментам: «ни разу не покупал», «остывает», «спит» — с партнёрскими офферами под каждую аудиторию."],
-   "Стабильный ежемесячный поток новых клиентов банка и отдельная работа с уже привлечёнными — чтобы карта не лежала в кошельке."),
+    "Интеграция мобильной атрибуции приложения с рекламными кабинетами.",
+    "Программа активации выданных карт с сегментацией базы — «не совершали покупок», «снижают активность», «неактивны» — и партнёрскими предложениями для каждого сегмента."],
+   "Стабильный ежемесячный поток новых клиентов банка и отдельная программа активации действующих держателей карт."),
   ("BI GROUP и Geometry — девелопмент", "Meta Ads, юнит-экономика",
-   "Выстроить цифровое привлечение с нуля, когда стоимость клиента никто не считал.",
-   ["Цифровая воронка, расчёт стоимости привлечения клиента с нуля, оптимизация рекламы по этой метрике."],
-   "У команды появилась измеримая стоимость клиента, реклама оптимизируется по ней, а не по кликам и охватам."),
+   "Выстроить цифровое привлечение с нуля при отсутствии данных о стоимости клиента.",
+   ["Построение цифровой воронки, расчёт стоимости привлечения клиента (CAC) и оптимизация рекламы по этой метрике."],
+   "Команда получила измеримую стоимость клиента; реклама оптимизируется по CAC, а не по кликам и охватам."),
  ],
  "en": [
-  ("Shanyraq Business Forum — business forum, 3 cities", "Meta Ads, WhatsApp, amoCRM",
-   "Sell tickets and see what happens to each lead after the click.",
-   ["Weekly amoCRM funnel reviews: stages, channels, sales rep performance, qualified-lead share.",
-    "A WhatsApp chat audit found 4 recurring sales-rep mistakes and led to a chatbot.",
-    "Ads and CRM merged into one report."],
-   "1,600+ leads from the first launch, 234% ROAS. The format was repeated in Shymkent and Almaty."),
+  ("Shanyraq Business Forum — business forum, 3 cities", "Meta Ads, WhatsApp, amoCRM, chatbot",
+   "Drive ticket sales and make the funnel transparent from click to payment.",
+   ["Weekly amoCRM funnel analysis: deal stages, sources, sales rep performance, qualified-lead share.",
+    "Audit of the sales team's WhatsApp communication: 4 systemic errors identified, followed by a chatbot rollout.",
+    "Ad account and CRM data consolidated into a single reporting system."],
+   "1,600+ leads from the first launch, 234% ROAS. The format was scaled to Shymkent and Almaty."),
   ("Globbing Kazakhstan — cross-border shopping delivery", "Meta Ads",
-   "Get more new users at a lower cost.",
-   ["City-level performance review to see where the budget worked and where it didn't.",
-    "Account structure audit: campaigns were too fragmented for the algorithm to learn.",
-    "Blogger-audience vs. geo targeting test, then the budget was reallocated."],
-   "+60% new sign-ups, 45% lower cost per sign-up."),
-  ("Yeko Kazakhstan — local electronics brand", "Online ads",
-   "Not just more leads, but more leads the sales team can actually work with.",
-   ["Online ads rebuilt around lead quality: optimizing for qualified leads, not volume."],
-   "Qualified lead share up from 30% to 70%, cost per lead down 2.4×."),
-  ("SAGI — loyalty app", "Online ads, funnel",
-   "Bring users into the app in a way that makes advertising pay back.",
-   ["Online acquisition launched and managed, funnel work from first touch to the target action, optimized for return on spend."],
+   "Increase new user acquisition while lowering acquisition cost.",
+   ["City-level performance analysis: regions with low budget efficiency identified.",
+    "Ad account structure audit: excessive campaign fragmentation was limiting algorithm learning.",
+    "Blogger-audience vs. geo-targeting test, with budget reallocated based on the results."],
+   "+60% new sign-ups with a 45% lower cost per sign-up."),
+  ("Yeko Kazakhstan — local electronics brand", "Online ads, lead qualification",
+   "Improve the quality of inbound leads, not just their volume.",
+   ["Online advertising rebuilt around lead quality: optimizing for qualified leads instead of volume."],
+   "Qualified lead share rose from 30% to 70%; cost per lead fell 2.4×."),
+  ("SAGI — loyalty app", "Online ads, product funnel",
+   "Acquire app users with advertising that pays back.",
+   ["Online acquisition launched and managed, funnel managed from first touch to the target action, optimized for return on investment."],
    "316% ROMI."),
-  ("Tumar installment card, Bakai Bank (Kyrgyzstan)", "Google Ads, Meta Ads, mobile attribution",
-   "A digital channel that brings in customers every month, not in spikes.",
+  ("Tumar installment card, Bakai Bank (Kyrgyzstan)", "Google Ads, Meta Ads, mobile attribution, CRM marketing",
+   "Build a digital channel with a steady monthly inflow of customers.",
    ["Google Ads campaign structure and Meta lead campaigns with monthly reporting.",
-    "Mobile app attribution connected to the ad accounts.",
-    "Then activation of issued cards by segment — never purchased, cooling, dormant — with partner offers for each audience."],
-   "A steady monthly flow of new bank customers, plus a separate program to get existing cardholders spending."),
+    "Mobile app attribution integrated with the ad accounts.",
+    "Activation program for issued cards, segmenting the base — no purchases yet, declining activity, inactive — with partner offers for each segment."],
+   "A steady monthly flow of new bank customers and a dedicated activation program for existing cardholders."),
   ("BI GROUP and Geometry — real estate", "Meta Ads, unit economics",
-   "Build digital acquisition from scratch when nobody was tracking the cost of a customer.",
-   ["Digital funnel built from scratch, customer acquisition cost calculated for the first time, ads optimized against that metric."],
-   "The team now has a measurable cost per customer, and ads are optimized for it, not for clicks or reach."),
+   "Build digital acquisition from scratch with no data on the cost of a customer.",
+   ["Digital funnel built, customer acquisition cost (CAC) calculated and advertising optimized against that metric."],
+   "The team now has a measurable cost per customer; advertising is optimized for CAC rather than clicks and reach."),
  ],
 }
 
@@ -119,29 +123,29 @@ CASES = {
 TRACK = {
  "ru": [
   ("×1,6", "рост выручки", "Youtrade", "Трекинг · Операционные процессы",
-   ["Выручка ×1,6", "Операционные процессы перестроены", "Фаундер вышел из операционки"]),
+   ["Рост выручки в 1,6 раза", "Перестройка операционных процессов", "Выход фаундера из операционного управления"]),
   ("3", "первых контракта в Казахстане", "InnMedia", "Трекинг · Выход на рынок",
-   ["Выход на рынок Казахстана", "Первые 3 контракта", "Продукт доупакован под местный рынок"]),
-  ("30%", "выручки давала недоиспользуемая партнёрка", "Онлайн-школа", "Трекинг · Стратегия рынков",
-   ["Анализ продаж показал, что зарубежную выручку даёт русскоязычная диаспора",
-    "Фокус перенесли с США на Узбекистан и Турцию",
-    "Нашли недоиспользуемый канал — партнёрка уже давала около 30% выручки"]),
+   ["Выход на рынок Казахстана", "Первые 3 контракта", "Адаптация продукта под местный рынок"]),
+  ("30%", "выручки — недоиспользуемый партнёрский канал", "Онлайн-школа", "Трекинг · Стратегия рынков",
+   ["Анализ продаж: зарубежную выручку формирует русскоязычная диаспора",
+    "Смена приоритетных рынков: Узбекистан и Турция вместо США",
+    "Выявлен недоиспользуемый партнёрский канал, обеспечивавший около 30% выручки"]),
  ],
  "en": [
   ("×1.6", "revenue growth", "Youtrade", "Tracking · Operations",
-   ["Revenue ×1.6", "Operations rebuilt", "Founder out of day-to-day ops"]),
+   ["Revenue up 1.6×", "Operating processes rebuilt", "Founder moved out of day-to-day operations"]),
   ("3", "first contracts in Kazakhstan", "InnMedia", "Tracking · Market entry",
-   ["Entered the Kazakhstan market", "First 3 contracts", "Product repackaged for the local market"]),
+   ["Entry into the Kazakhstan market", "First 3 contracts", "Product adapted for the local market"]),
   ("30%", "of revenue from an under-used affiliate channel", "Online school", "Tracking · Market strategy",
-   ["Found that foreign revenue came from the Russian-speaking diaspora",
-    "Shifted focus from the US to Uzbekistan and Turkey",
-    "Surfaced an affiliate channel already bringing ~30% of revenue"]),
+   ["Sales analysis: foreign revenue came from the Russian-speaking diaspora",
+    "Priority markets shifted from the US to Uzbekistan and Turkey",
+    "Under-used affiliate channel identified, already generating about 30% of revenue"]),
  ],
 }
 
 CASES_NOTE = {
- "ru": "Jintropine — сквозная аналитика Meta Ads + amoCRM: источник каждой заявки из WhatsApp виден в CRM, реклама связана с продажами в дашборде.",
- "en": "Jintropine — end-to-end analytics for Meta Ads + amoCRM: every WhatsApp lead's source is visible in the CRM, and ads are tied to sales in one dashboard.",
+ "ru": "Jintropine — сквозная аналитика Meta Ads и amoCRM: источник каждой заявки из WhatsApp фиксируется в CRM, реклама связана с продажами в едином дашборде.",
+ "en": "Jintropine — end-to-end analytics across Meta Ads and amoCRM: the source of every WhatsApp lead is recorded in the CRM, and advertising is tied to sales in a single dashboard.",
 }
 
 def socials(lang):
@@ -165,11 +169,11 @@ def path(lang, slug):
 T = {
  "ru": {
   "name": "Руслан Хасанов",
-  "role": "Growth-стратег · трекер стартапов · преподаватель digital-маркетинга",
+  "role": "Консультант по росту бизнеса · трекер стартапов · преподаватель",
   "about": [
-   "Я Руслан Хасанов, growth-стратег из Алматы. Вырос в корпоративном маркетинге финсектора: руководил digital-маркетингом в Home Credit Bank, был директором по продукту в Halyk Insurance, вёл маркетинг сегмента малого бизнеса в Alfa Bank, участвовал в запуске онлайн-магазина Samsung Kazakhstan.",
-   "Сейчас работаю сам на себя. Трекаю стартапы в Astana Hub, Almaty Hub, Terricon Valley, NURIS и IT Park. Через студию Revanite веду проекты для бизнеса в Казахстане и Кыргызстане. Преподаю digital-маркетинг и веб-аналитику в AlmaU, руковожу направлением «Диджитал» в Qamalladin University.",
-   "Принцип один: сначала найти, где теряется рост, и только потом тратить деньги. Маркетинг — это вложение, и оно должно окупаться и измеряться.",
+   "Я консультант по росту бизнеса из Алматы и основатель студии стратегического роста Revanite. Карьеру строил в корпоративном секторе: был CMO фискальной платформы re:Kassa, руководил digital-маркетингом в Home Credit Bank, занимал позицию директора по продукту в Halyk Insurance, отвечал за маркетинг сегмента малого бизнеса в Alfa Bank, участвовал в запуске онлайн-магазина Samsung Kazakhstan.",
+   "Сегодня работаю независимо. Как трекер сопровождаю стартапы в Astana Hub, Almaty Hub, Terricon Valley, NURIS и IT Park. Через Revanite веду проекты для компаний Казахстана и Кыргызстана — от стратегии и продаж до маркетинга, CRM и автоматизации процессов. Преподаю digital-маркетинг и веб-аналитику в AlmaU, руковожу направлением «Диджитал» в Qamalladin University.",
+   "Мой подход: сначала определить, где бизнес теряет рост и деньги, и только затем инвестировать. Стратегию, продажи, маркетинг и процессы рассматриваю как единую систему, результат которой измеряется выручкой и окупаемостью.",
   ],
   "nav": {"": "Главная", "about": "Обо мне", "services": "Услуги", "cases": "Кейсы", "teaching": "Преподавание", "contact": "Контакты"},
   "home": "Главная",
@@ -178,19 +182,20 @@ T = {
   "footer": "Руслан Хасанов · Revanite — студия стратегического роста · Алматы, Казахстан",
   "jobTitle": "Консультант по росту бизнеса",
   "summary": ("Руслан Хасанов — консультант по росту бизнеса из Алматы (Казахстан), основатель студии стратегического роста Revanite. "
-              "Находит узкие места в продукте, продажах, маркетинге и экономике бизнеса и помогает расти быстрее без лишних расходов. "
-              "Руководил digital-маркетингом в Home Credit Bank, был директором по продукту в Halyk Insurance, вёл маркетинг сегмента "
-              "малого бизнеса в Alfa Bank. Трекер стартапов в Astana Hub, Almaty Hub, Terricon Valley, NURIS и IT Park, преподаёт "
-              "digital-маркетинг в AlmaU и руководит направлением «Диджитал» в Qamalladin University."),
-  "org_desc": "Revanite — студия стратегического роста Руслана Хасанова: экспресс-диагностика роста, трекинг и консалтинг (Revanite Tracking) и маркетинг под ключ (Revanite Studio) для бизнеса в Казахстане, Кыргызстане и СНГ.",
+              "Находит ограничения роста в стратегии, продажах, маркетинге, процессах и экономике бизнеса и выстраивает систему роста: "
+              "от воронки продаж и рекламы до CRM, сквозной аналитики и автоматизации. Был CMO фискальной платформы re:Kassa, "
+              "руководил digital-маркетингом в Home Credit Bank, был директором по продукту в Halyk Insurance, отвечал за маркетинг "
+              "сегмента малого бизнеса в Alfa Bank. Трекер стартапов в Astana Hub, Almaty Hub, Terricon Valley, NURIS и IT Park, "
+              "преподаёт digital-маркетинг в AlmaU и руководит направлением «Диджитал» в Qamalladin University."),
+  "org_desc": "Revanite — студия стратегического роста Руслана Хасанова: диагностика бизнеса, трекинг и консалтинг (Revanite Tracking), продажи, маркетинг и автоматизация под ключ (Revanite Studio) для компаний Казахстана, Кыргызстана и СНГ.",
  },
  "en": {
   "name": "Ruslan Khasanov",
-  "role": "Growth strategist · startup tracker · digital marketing lecturer",
+  "role": "Business growth consultant · startup tracker · lecturer",
   "about": [
-   "I'm Ruslan Khasanov, a growth strategist based in Almaty. I come from corporate marketing in financial services: Head of Digital Marketing at Home Credit Bank, Director of Product at Halyk Insurance, marketing team lead for the SME segment at Alfa Bank, and part of the Samsung Kazakhstan online store launch.",
-   "Today I work independently. I track startups at Astana Hub, Almaty Hub, Terricon Valley, NURIS and IT Park. Through my studio Revanite I work with businesses in Kazakhstan and Kyrgyzstan. I teach digital marketing and web analytics at AlmaU and lead the Digital program at Qamalladin University.",
-   "One rule: find where growth leaks first, then spend. Marketing is an investment, and it has to pay back and be measurable.",
+   "I am a business growth consultant based in Almaty and the founder of Revanite, a strategic growth studio. My background is in the corporate sector: CMO at the fiscal technology platform re:Kassa, Head of Digital Marketing at Home Credit Bank, Director of Product at Halyk Insurance, head of SME marketing at Alfa Bank, and part of the team that launched Samsung Kazakhstan's online store.",
+   "Today I work independently. As a tracker, I support startups at Astana Hub, Almaty Hub, Terricon Valley, NURIS and IT Park. Through Revanite I run projects for companies in Kazakhstan and Kyrgyzstan — from strategy and sales to marketing, CRM and process automation. I teach digital marketing and web analytics at AlmaU and lead the Digital program at Qamalladin University.",
+   "My approach: first identify where the business is losing growth and money, then invest. I treat strategy, sales, marketing and operations as one system, measured by revenue and payback.",
   ],
   "nav": {"": "Home", "about": "About", "services": "Services", "cases": "Case studies", "teaching": "Teaching", "contact": "Contact"},
   "home": "Home",
@@ -199,36 +204,40 @@ T = {
   "footer": "Ruslan Khasanov · Revanite — Strategic Growth Studio · Almaty, Kazakhstan",
   "jobTitle": "Business growth consultant",
   "summary": ("Ruslan Khasanov is a business growth consultant based in Almaty, Kazakhstan, and the founder of Revanite, a strategic growth studio. "
-              "He finds the bottlenecks in a company's product, sales, marketing and unit economics and helps it grow faster without wasting money. "
-              "He was Head of Digital Marketing at Home Credit Bank, Director of Product at Halyk Insurance and marketing team lead for the SME "
-              "segment at Alfa Bank. He tracks startups at Astana Hub, Almaty Hub, Terricon Valley, NURIS and IT Park, teaches digital marketing "
-              "at AlmaU and leads the Digital program at Qamalladin University."),
-  "org_desc": "Revanite is Ruslan Khasanov's strategic growth studio: growth check-ups, tracking and advisory (Revanite Tracking) and done-for-you marketing (Revanite Studio) for businesses in Kazakhstan, Kyrgyzstan and the CIS.",
+              "He identifies the constraints on growth across a company's strategy, sales, marketing, operations and unit economics and builds a growth system: "
+              "from the sales funnel and advertising to CRM, end-to-end analytics and automation. He was CMO at the fiscal technology platform re:Kassa, "
+              "Head of Digital Marketing at Home Credit Bank, Director of Product at Halyk Insurance and head of SME marketing at Alfa Bank. "
+              "He tracks startups at Astana Hub, Almaty Hub, Terricon Valley, NURIS and IT Park, teaches digital marketing at AlmaU "
+              "and leads the Digital program at Qamalladin University."),
+  "org_desc": "Revanite is Ruslan Khasanov's strategic growth studio: business check-ups, tracking and advisory (Revanite Tracking), and done-for-you sales, marketing and automation (Revanite Studio) for companies in Kazakhstan, Kyrgyzstan and the CIS.",
  },
 }
+
 KNOWS = {
- "ru": ["Стратегия роста", "Трекинг стартапов", "Go-to-market", "Performance-маркетинг", "Google Ads", "Meta Ads",
-        "Сквозная аналитика", "Веб-аналитика", "GA4", "Google Tag Manager", "Мобильная атрибуция", "AppsFlyer",
-        "amoCRM", "Bitrix24", "Юнит-экономика", "Воронка продаж", "AI в маркетинге", "GEO"],
- "en": ["Growth strategy", "Startup tracking", "Go-to-market", "Performance marketing", "Google Ads", "Meta Ads",
-        "End-to-end marketing analytics", "Web analytics", "GA4", "Google Tag Manager", "Mobile attribution", "AppsFlyer",
-        "amoCRM", "Bitrix24", "Unit economics", "Sales funnel", "AI in marketing", "Generative Engine Optimization"],
+ "ru": ["Стратегия роста", "Трекинг стартапов", "Go-to-market", "Воронка продаж", "Аудит отдела продаж", "Юнит-экономика",
+        "CRM: amoCRM, Bitrix24", "Автоматизация процессов", "Оцифровка бизнеса", "Сквозная аналитика", "Веб-аналитика", "GA4",
+        "Google Tag Manager", "Мобильная атрибуция", "AppsFlyer", "Performance-маркетинг", "Google Ads", "Meta Ads",
+        "AI в маркетинге", "GEO"],
+ "en": ["Growth strategy", "Startup tracking", "Go-to-market", "Sales funnel", "Sales team audit", "Unit economics",
+        "CRM: amoCRM, Bitrix24", "Process automation", "Business digitization", "End-to-end analytics", "Web analytics", "GA4",
+        "Google Tag Manager", "Mobile attribution", "AppsFlyer", "Performance marketing", "Google Ads", "Meta Ads",
+        "AI in marketing", "Generative Engine Optimization"],
 }
 
 FAQ = {
  "ru": [
   ("Кто такой Руслан Хасанов?", T["ru"]["summary"]),
-  ("Что такое Revanite?", "Revanite — студия стратегического роста, которую основал Руслан Хасанов. Студия помогает бизнесу найти узкие места в продукте, продажах, маркетинге и экономике и расти быстрее без лишних расходов. Форматы: экспресс-диагностика роста за $100, Revanite Tracking — трекинг и консалтинг для стартапов и собственников, Revanite Studio — маркетинг под ключ: стратегия, реклама, аналитика. Принцип — маркетинг как вложение, а не расход."),
-  ("С кем работает Руслан Хасанов?", "С малым и средним бизнесом в Казахстане, Кыргызстане и СНГ, стартапами на ранних стадиях и командами в акселераторах. Отраслевой опыт: банки и финтех, страхование, девелопмент, техника, доставка и e-commerce, ивенты, образование. Среди клиентов — Бакай Банк, Глоббинг Казахстан, Yeko Kazakhstan, SAGI, Shanyraq Business Forum, BI GROUP, Geometry, Jintropine, Youtrade, InnMedia."),
-  ("Чем трекер отличается от маркетолога-исполнителя?", "Трекер не запускает рекламу за команду. Он помогает найти узкое место роста, сформулировать гипотезы, проверить их быстро и дёшево и держать фокус на метриках. Исполнитель реализует выбранное решение. Руслан работает в обеих ролях: трекинг — в Revanite Tracking и IT-хабах, исполнение — в Revanite Studio."),
+  ("Что такое Revanite?", "Revanite — студия стратегического роста, основанная Русланом Хасановым. Студия помогает компаниям выявить ограничения роста в стратегии, продажах, маркетинге, процессах и экономике и выстроить систему, которая приносит измеримый результат. Форматы работы: экспресс-диагностика бизнеса ($99 вместо $200), Revanite Tracking — трекинг и консалтинг для стартапов и собственников, Revanite Studio — продажи, маркетинг и автоматизация под ключ. Принцип студии — маркетинг как вложение, а не расход."),
+  ("С кем работает Руслан Хасанов?", "С малым и средним бизнесом в Казахстане, Кыргызстане и СНГ, стартапами на ранних стадиях и командами акселераторов. Отраслевой опыт: банки и финтех, страхование, девелопмент, техника, доставка и e-commerce, ивенты, образование. Среди клиентов — Бакай Банк, Глоббинг Казахстан, Yeko Kazakhstan, SAGI, Shanyraq Business Forum, BI GROUP, Geometry, Jintropine, Youtrade, InnMedia."),
+  ("Чем трекер отличается от маркетолога-исполнителя?", "Трекер не выполняет работу за команду: он помогает найти ключевое ограничение роста, сформулировать гипотезы, быстро и экономно их проверить и удерживать фокус на метриках. Исполнитель реализует выбранное решение. Руслан работает в обеих ролях: трекинг — в Revanite Tracking и IT-хабах, внедрение — в Revanite Studio, включая продажи, CRM и автоматизацию."),
   ("Где преподаёт Руслан Хасанов?", "В Almaty Management University (AlmaU) — курсы по веб-аналитике, цифровому маркетингу, SMM и инструментам интернет-маркетинга; в Qamalladin University — руководит направлением «Диджитал»; в колледже ICB. Проводит воркшопы в Astana Hub, выступал с гостевой лекцией в Nazarbayev University."),
   ("Как связаться с Русланом Хасановым?", "WhatsApp и телефон: +7 701 458 42 42, Telegram: @messer66. Также Instagram (@hasanov5) и LinkedIn."),
  ],
  "en": [
   ("Who is Ruslan Khasanov?", T["en"]["summary"]),
-  ("What is Revanite?", "Revanite is a strategic growth studio founded by Ruslan Khasanov. It helps companies find the bottlenecks in their product, sales, marketing and unit economics and grow faster without wasting money. Formats: a $100 growth check-up, Revanite Tracking — tracking and advisory for startups and business owners, and Revanite Studio — done-for-you marketing covering strategy, advertising and analytics. The principle: marketing is an investment, not an expense."),
+  ("What is Revanite?", "Revanite is a strategic growth studio founded by Ruslan Khasanov. It helps companies identify the constraints on growth across strategy, sales, marketing, operations and unit economics and build a system that delivers measurable results. Engagement formats: a business check-up ($99 instead of $200), Revanite Tracking — tracking and advisory for startups and business owners, and Revanite Studio — done-for-you sales, marketing and automation. The studio's principle: marketing is an investment, not an expense."),
   ("Who does Ruslan Khasanov work with?", "Small and mid-sized businesses in Kazakhstan, Kyrgyzstan and the CIS, early-stage startups and accelerator teams. Industry experience includes banking and fintech, insurance, real estate, consumer electronics, delivery and e-commerce, events and education. Clients include Bakai Bank, Globbing Kazakhstan, Yeko Kazakhstan, SAGI, Shanyraq Business Forum, BI GROUP, Geometry, Jintropine, Youtrade and InnMedia."),
-  ("How is a startup tracker different from a marketing contractor?", "A tracker does not run the ads for the team. A tracker helps find the growth bottleneck, frame hypotheses, test them quickly and cheaply, and keep the team focused on metrics. A contractor executes the chosen solution. Ruslan works in both roles: tracking through Revanite Tracking and tech hubs, execution through Revanite Studio."),
+  ("How is a startup tracker different from a marketing contractor?", "A tracker does not do the work for the team: a tracker helps find the key constraint on growth, frame hypotheses, test them quickly and economically, and keep the team focused on metrics. A contractor implements the chosen solution. Ruslan works in both roles: tracking through Revanite Tracking and tech hubs, implementation through Revanite Studio, including sales, CRM and automation."),
   ("Where does Ruslan Khasanov teach?", "At Almaty Management University (AlmaU) — web analytics, digital marketing, SMM and online marketing tools; at Qamalladin University, where he leads the Digital program; and at ICB college. He runs workshops at Astana Hub and has given a guest lecture at Nazarbayev University."),
   ("How can I contact Ruslan Khasanov?", "WhatsApp and phone: +7 701 458 42 42, Telegram: @messer66. Also Instagram (@hasanov5) and LinkedIn."),
  ],
@@ -238,121 +247,124 @@ EXPERIENCE = {
  "ru": [
   ("Revanite", "Основатель студии стратегического роста"),
   ("IT-хабы Казахстана", "Трекер стартапов; линейный трекер акселератора AIpreneurs"),
-  ("AlmaU, Qamalladin University, колледж ICB", "Преподаватель, руководитель направления"),
-  ("re:Kassa", "Руководил digital-маркетингом (до 2026)"),
+  ("AlmaU, Qamalladin University, колледж ICB", "Преподаватель; руководитель направления «Диджитал» в Qamalladin University"),
+  ("re:Kassa", "CMO (до 2026)"),
   ("Halyk Insurance", "Директор по продукту"),
   ("Home Credit Bank", "Руководитель digital-маркетинга"),
-  ("Alfa Bank", "Тимлид маркетинга, сегмент малого бизнеса"),
-  ("BI GROUP", "Менеджер маркетинговых проектов; позже — клиент Revanite"),
+  ("Alfa Bank", "Руководитель маркетинга сегмента малого бизнеса"),
+  ("BI GROUP", "Менеджер маркетинговых проектов; впоследствии — клиент Revanite"),
   ("Samsung Kazakhstan", "Запуск онлайн-магазина"),
  ],
  "en": [
   ("Revanite", "Founder of a strategic growth studio"),
   ("Kazakhstan tech hubs", "Startup tracker; line tracker at the AIpreneurs accelerator"),
-  ("AlmaU, Qamalladin University, ICB College", "Lecturer, program lead"),
-  ("re:Kassa", "Head of Digital Marketing (until 2026)"),
+  ("AlmaU, Qamalladin University, ICB College", "Lecturer; head of the Digital program at Qamalladin University"),
+  ("re:Kassa", "CMO (until 2026)"),
   ("Halyk Insurance", "Director of Product"),
   ("Home Credit Bank", "Head of Digital Marketing"),
-  ("Alfa Bank", "Marketing Team Lead, SME segment"),
+  ("Alfa Bank", "Head of SME Segment Marketing"),
   ("BI GROUP", "Marketing Project Manager; later a Revanite client"),
   ("Samsung Kazakhstan", "Online store launch"),
  ],
 }
+
 FORMULA = {
- "ru": [("Инсайт", "понять клиента, рынок и реальную причину покупки"),
-        ("Экономика", "посчитать юнит-экономику: CAC, LTV, маржа, окупаемость"),
-        ("Стратегия", "выбрать сегменты, каналы и оффер"),
-        ("Гипотезы", "составить и приоритизировать список проверок"),
-        ("Исполнение", "запустить быстро и дёшево"),
-        ("Аналитика", "сквозная: от клика до оплаты в CRM"),
-        ("Масштаб", "вкладывать в то, что окупается, и отключать остальное")],
- "en": [("Insight", "understand the customer, the market and the real reason to buy"),
-        ("Economics", "model unit economics: CAC, LTV, margin, payback"),
-        ("Strategy", "choose segments, channels and the offer"),
-        ("Hypotheses", "build and prioritize a testing backlog"),
-        ("Execution", "launch fast and cheap"),
-        ("Analytics", "end-to-end, from click to paid deal in the CRM"),
-        ("Scale", "invest in what pays back, switch off the rest")],
+ "ru": [("Инсайт", "понимание клиента, рынка и реальных мотивов покупки"),
+        ("Экономика", "юнит-экономика: CAC, LTV, маржинальность, окупаемость"),
+        ("Стратегия", "выбор сегментов, каналов и ценностного предложения"),
+        ("Гипотезы", "приоритизированный план проверок"),
+        ("Исполнение", "быстрый запуск с минимальными затратами"),
+        ("Аналитика", "сквозная — от первого касания до оплаты в CRM"),
+        ("Масштаб", "инвестиции в окупаемые решения, отказ от неэффективных")],
+ "en": [("Insight", "understanding the customer, the market and the real reasons to buy"),
+        ("Economics", "unit economics: CAC, LTV, margin, payback"),
+        ("Strategy", "choice of segments, channels and value proposition"),
+        ("Hypotheses", "a prioritized testing plan"),
+        ("Execution", "fast launch at minimal cost"),
+        ("Analytics", "end-to-end, from first touch to payment in the CRM"),
+        ("Scale", "invest in what pays back, drop what does not")],
 }
 
 # Экспресс-диагностика: (надзаголовок на главной, заголовок на главной, текст, заголовок на странице услуг, пункты, кнопка)
 DIAG = {
- "ru": ("С чего начать", "Экспресс-диагностика роста — $100",
-        "Изучу ваши данные — продажи, воронку, рекламу, экономику — и за 60 минут созвона покажу, где главное узкое место, на чём вы теряете деньги и что сделать в первую очередь. После созвона — краткий список действий. Если дальше работаем вместе, стоимость диагностики засчитывается.",
-        "С чего начать: экспресс-диагностика — $100",
-        ["Доступ на просмотр к данным: продажи, CRM, рекламные кабинеты",
-         "Созвон 60 минут: главное узкое место, где теряются деньги, что делать первым",
-         "После созвона — краткий список действий",
-         "Если продолжаем работу — $100 засчитывается"],
+ "ru": ("Первый шаг", f"Экспресс-диагностика бизнеса — {PRICE_HTML}",
+        "Анализирую ключевые данные компании — продажи, воронку, маркетинг, процессы и экономику. На 60-минутной сессии показываю главное ограничение роста, зоны потерь и приоритетные шаги. По итогам вы получаете краткий план действий. При продолжении работы стоимость диагностики засчитывается.",
+        f"Первый шаг: экспресс-диагностика бизнеса — {PRICE_HTML}",
+        ["Доступ к данным в режиме просмотра: продажи, CRM, рекламные кабинеты, отчётность",
+         "Сессия 60 минут: ключевое ограничение роста, зоны потерь, приоритеты",
+         "Краткий план действий по итогам сессии",
+         f"При продолжении работы {PRICE} засчитываются в стоимость проекта"],
         "Записаться на диагностику"),
- "en": ("Where to start", "Growth check-up — $100",
-        "I review your data — sales, funnel, ads and unit economics — then in a 60-minute call show your main bottleneck, where you're losing money and what to do first. You get a short action list after the call. If we continue working together, the $100 is credited.",
-        "Where to start: growth check-up — $100",
-        ["View-only access to your data: sales, CRM, ad accounts",
-         "60-minute call: your main bottleneck, where you're losing money, what to do first",
-         "A short action list after the call",
-         "If we keep working together, the $100 is credited"],
+ "en": ("First step", f"Business check-up — {PRICE_HTML}",
+        "I analyze your key business data — sales, funnel, marketing, operations and unit economics. In a 60-minute session I show the main constraint on growth, where you are losing money and which steps come first. You receive a concise action plan afterwards. If we continue working together, the fee is credited.",
+        f"First step: business check-up — {PRICE_HTML}",
+        ["View-only access to your data: sales, CRM, ad accounts, reporting",
+         "60-minute session: the key constraint on growth, areas of loss, priorities",
+         "A concise action plan after the session",
+         f"If we continue, the {PRICE} is credited toward the project"],
         "Book a check-up"),
 }
 
 SERVICES = {
  "ru": [
-  ("studio", "Revanite Studio", "Маркетинг под ключ",
-   "Для малого и среднего бизнеса, которому нужны продажи, а не охваты.",
-   ["Стратегия и медиаплан с расчётом окупаемости",
-    "Google Ads, Meta Ads, TikTok Ads",
-    "Аналитика: GA4, Google Tag Manager, Яндекс Метрика, Meta Pixel и Conversions API, AppsFlyer",
-    "Связка реклама → WhatsApp → CRM (amoCRM, Bitrix24) → продажи",
+  ("studio", "Revanite Studio", "Продажи, маркетинг и автоматизация под ключ",
+   "Для малого и среднего бизнеса, которому нужен измеримый рост продаж, а не охваты.",
+   ["Стратегия роста и медиаплан с расчётом окупаемости",
+    "Аудит воронки и отдела продаж: этапы сделки, конверсии, коммуникации с клиентами",
+    "Оцифровка и автоматизация: CRM (amoCRM, Bitrix24), интеграции, чат-боты",
+    "Performance-маркетинг: Google Ads, Meta Ads, TikTok Ads",
+    "Сквозная аналитика: GA4, Google Tag Manager, Яндекс Метрика, Meta Pixel и Conversions API, AppsFlyer — от рекламы до продажи в CRM",
     "Дашборды в Looker Studio и отчётность план-факт"],
-   "проект или ежемесячное ведение, отчёт каждую неделю."),
+   "проектная работа или ежемесячное сопровождение с еженедельной отчётностью."),
   ("tracking", "Revanite Tracking", "Трекинг и стратегия",
-   "Для стартапов и собственников, у которых рост упёрся в потолок.",
-   ["Диагностика: что сейчас сильнее всего тормозит рост",
-    "Проверка продуктовых и маркетинговых гипотез",
-    "Go-to-market, воронка продаж, первые клиенты",
-    "Работа с фаундером по фокусу и приоритетам"],
-   "трекшн-встречи раз в неделю или две, трекшн-карта, разбор метрик между встречами."),
+   "Для стартапов и собственников бизнеса, чей рост вышел на плато.",
+   ["Диагностика ключевых ограничений роста",
+    "Проверка продуктовых, коммерческих и маркетинговых гипотез",
+    "Go-to-market, построение воронки продаж, привлечение первых клиентов",
+    "Операционные процессы и работа с фаундером: фокус, приоритеты, делегирование"],
+   "трекшн-сессии раз в одну-две недели, трекшн-карта, контроль метрик между сессиями."),
   ("mentoring", "Обучение и менторство", "Для маркетологов и команд", "",
-   ["Индивидуальный трек: digital-маркетинг, аналитика, AI-инструменты",
-    "Корпоративные воркшопы: go-to-market, лидогенерация, воронки",
+   ["Индивидуальная программа: digital-маркетинг, аналитика, AI-инструменты",
+    "Корпоративные воркшопы: go-to-market, лидогенерация, воронки продаж",
     "Выступления и гостевые лекции"],
-   "онлайн или офлайн в Алматы."),
+   "онлайн или очно в Алматы."),
  ],
  "en": [
-  ("studio", "Revanite Studio", "Done-for-you marketing",
-   "For small and mid-sized businesses that need sales, not reach.",
-   ["Strategy and media plan with payback modeling",
-    "Google Ads, Meta Ads, TikTok Ads",
-    "Analytics: GA4, Google Tag Manager, Yandex Metrica, Meta Pixel and Conversions API, AppsFlyer",
-    "Ads → WhatsApp → CRM (amoCRM, Bitrix24) → sales, connected end to end",
+  ("studio", "Revanite Studio", "Done-for-you sales, marketing and automation",
+   "For small and mid-sized businesses that need measurable sales growth, not reach.",
+   ["Growth strategy and media plan with payback modeling",
+    "Sales funnel and sales team audit: deal stages, conversion rates, customer communication",
+    "Digitization and automation: CRM (amoCRM, Bitrix24), integrations, chatbots",
+    "Performance marketing: Google Ads, Meta Ads, TikTok Ads",
+    "End-to-end analytics: GA4, Google Tag Manager, Yandex Metrica, Meta Pixel and Conversions API, AppsFlyer — from ad to sale in the CRM",
     "Looker Studio dashboards and plan-vs-actual reporting"],
-   "project-based or monthly, with a report every week."),
+   "project-based or ongoing monthly engagement with weekly reporting."),
   ("tracking", "Revanite Tracking", "Tracking & strategy",
-   "For startups and business owners whose growth has hit a ceiling.",
-   ["Diagnosis: what is holding growth back the most right now",
-    "Testing product and marketing hypotheses",
-    "Go-to-market, sales funnel, first customers",
-    "Working with the founder on focus and priorities"],
-   "traction meetings every week or two, a traction map, metric reviews between meetings."),
+   "For startups and business owners whose growth has plateaued.",
+   ["Diagnosis of the key constraints on growth",
+    "Testing product, commercial and marketing hypotheses",
+    "Go-to-market, sales funnel design, first customer acquisition",
+    "Operations and founder work: focus, priorities, delegation"],
+   "traction sessions every one to two weeks, a traction map, metric tracking between sessions."),
   ("mentoring", "Teaching & mentoring", "For marketers and teams", "",
-   ["One-to-one track: digital marketing, analytics, AI tools",
-    "Corporate workshops: go-to-market, lead generation, funnels",
+   ["Individual program: digital marketing, analytics, AI tools",
+    "Corporate workshops: go-to-market, lead generation, sales funnels",
     "Talks and guest lectures"],
    "online or in person in Almaty."),
  ],
 }
 
 PROCESS = {
- "ru": ("Как мы работаем", [
-   "Вы пишете в WhatsApp или Telegram: коротко о бизнесе и задаче",
-   "Экспресс-диагностика: смотрю данные и показываю, где деньги",
-   "Предлагаю формат и стоимость: Studio, Tracking или разовая задача",
-   "Работа с еженедельной отчётностью по деньгам, а не по кликам"]),
+ "ru": ("Порядок работы", [
+   "Заявка в WhatsApp или Telegram: кратко о бизнесе и задаче",
+   "Экспресс-диагностика: анализ данных и определение зон потерь",
+   "Предложение: формат, объём работ и стоимость — Studio, Tracking или отдельный проект",
+   "Работа с еженедельной отчётностью по финансовым показателям, а не по кликам"]),
  "en": ("How we work", [
-   "You message me on WhatsApp or Telegram: a few lines about your business and the challenge",
-   "Growth check-up: I review your data and show where the money is",
-   "I propose a format and price: Studio, Tracking or a one-off task",
-   "We work with weekly reporting on money, not clicks"]),
+   "Send a request on WhatsApp or Telegram with a short note about your business and the challenge",
+   "Business check-up: data analysis and identification of areas of loss",
+   "Proposal: format, scope and price — Studio, Tracking or a standalone project",
+   "Delivery with weekly reporting on financial metrics, not clicks"]),
 }
 TEACH = {
  "ru": [
@@ -402,12 +414,12 @@ AI_COURSE = {
 
 META = {
  "ru": {
-  "": ("Руслан Хасанов — growth-стратег, трекер стартапов, digital-маркетинг | Алматы",
-       "Руслан Хасанов — консультант по росту бизнеса из Алматы. Нахожу узкие места и помогаю расти быстрее без лишних затрат. Трекер стартапов, преподаватель."),
+  "": ("Руслан Хасанов — консультант по росту бизнеса | Алматы",
+       "Руслан Хасанов — консультант по росту бизнеса в Алматы: стратегия, продажи, маркетинг, CRM и автоматизация. Экс-CMO re:Kassa, трекер стартапов."),
   "about": ("Обо мне — Руслан Хасанов",
-            "Биография Руслана Хасанова: опыт в Alfa Bank, Home Credit Bank, Halyk Insurance, Samsung Kazakhstan, re:Kassa; трекинг стартапов, преподавание в AlmaU, студия Revanite."),
-  "services": ("Услуги: диагностика роста, маркетинг под ключ, трекинг — Руслан Хасанов",
-               "Экспресс-диагностика роста за $100, Revanite Studio, Revanite Tracking и менторство: реклама, сквозная аналитика, трекинг стартапов и обучение команд."),
+            "Биография Руслана Хасанова: CMO re:Kassa, Home Credit Bank, Halyk Insurance, Alfa Bank, Samsung Kazakhstan; трекинг стартапов, преподавание в AlmaU."),
+  "services": ("Услуги: диагностика бизнеса, продажи и маркетинг, трекинг — Руслан Хасанов",
+               "Экспресс-диагностика бизнеса за $99, Revanite Studio, Revanite Tracking и обучение: продажи, маркетинг, CRM, автоматизация и трекинг стартапов."),
   "cases": ("Кейсы — Руслан Хасанов, Revanite",
             "Кейсы Руслана Хасанова: ROMI 316% для SAGI, лид в 2,4 раза дешевле для Yeko, −45% к стоимости регистрации в Глоббинг, ROAS 234% для Shanyraq."),
   "teaching": ("Преподавание и выступления — Руслан Хасанов",
@@ -416,12 +428,12 @@ META = {
               "Как связаться с Русланом Хасановым: Telegram @messer66, WhatsApp и телефон +7 701 458 42 42, Instagram, LinkedIn. Алматы, Казахстан."),
  },
  "en": {
-  "": ("Ruslan Khasanov — growth strategist, startup tracker, digital marketing | Almaty",
-       "Ruslan Khasanov, business growth consultant in Almaty. I find bottlenecks and help companies grow faster without wasting money. Startup tracker."),
+  "": ("Ruslan Khasanov — business growth consultant | Almaty",
+       "Ruslan Khasanov, business growth consultant in Almaty: strategy, sales, marketing, CRM and automation. Former CMO at re:Kassa, startup tracker."),
   "about": ("About — Ruslan Khasanov",
-            "Biography of Ruslan Khasanov: Alfa Bank, Home Credit Bank, Halyk Insurance, Samsung Kazakhstan, re:Kassa; startup tracking, lecturing at AlmaU, Revanite studio."),
-  "services": ("Services: growth check-up, done-for-you marketing, tracking — Ruslan Khasanov",
-               "A $100 growth check-up, Revanite Studio, Revanite Tracking and mentoring: advertising, end-to-end analytics, startup tracking and team training."),
+            "Biography of Ruslan Khasanov: CMO at re:Kassa, Home Credit Bank, Halyk Insurance, Alfa Bank, Samsung Kazakhstan; startup tracking, lecturing at AlmaU, Revanite."),
+  "services": ("Services: business check-up, sales and marketing, tracking — Ruslan Khasanov",
+               "A $99 business check-up, Revanite Studio, Revanite Tracking and training: sales, marketing, CRM, automation and startup tracking."),
   "cases": ("Case studies — Ruslan Khasanov, Revanite",
             "Ruslan Khasanov's case studies: 316% ROMI for SAGI, 2.4× cheaper leads for Yeko, 45% lower cost per sign-up at Globbing, 234% ROAS for Shanyraq."),
   "teaching": ("Teaching and talks — Ruslan Khasanov",
@@ -575,6 +587,8 @@ p+p{margin-top:14px}
 .case ul{padding-left:18px}
 .case li+li{margin-top:6px}
 .result{border-left:2px solid var(--accent);padding-left:16px}
+.price{white-space:nowrap}
+s{opacity:.55;font-weight:500;margin-right:.1em}
 .note{color:var(--muted);font-size:15px;margin-top:18px}
 footer{border-top:1px solid var(--line);padding:84px 0 36px;background:radial-gradient(900px 400px at 10% 0,rgba(180,140,255,.10),transparent 60%),var(--surface)}
 .footer-title{font-size:clamp(30px,5vw,54px);line-height:1.08;margin-bottom:14px;max-width:820px}
@@ -674,15 +688,17 @@ def body_home(lang):
     t = T[lang]
     ru = lang == "ru"
     eyebrow = "Руслан Хасанов · Revanite · Алматы" if ru else "Ruslan Khasanov · Revanite · Almaty"
-    h1 = "Нахожу, что тормозит рост бизнеса" if ru else "I find what's holding your business back"
-    lead = ("Смотрю на бизнес целиком — продукт, продажи, маркетинг и экономику — и нахожу узкие места, где теряются деньги и время. "
-            "Дальше — план и сопровождение до результата. Руководил направлениями в банках и страховании, сейчас — трекер стартапов в IT-хабах Казахстана."
+    h1 = "Системный рост бизнеса" if ru else "Business growth as a system"
+    lead = ("Анализирую бизнес целиком — стратегию, продажи, маркетинг, процессы и экономику — и выстраиваю систему роста: "
+            "от воронки продаж и рекламы до CRM, сквозной аналитики и автоматизации. Опыт руководителя в банках, страховании и финтехе; "
+            "трекер стартапов в IT-хабах Казахстана."
             if ru else
-            "I look at the whole business — product, sales, marketing and unit economics — to find the bottlenecks that cost you money and time, "
-            "then build the plan and stay with you until it works. Former executive in banking and insurance; now a startup tracker at Kazakhstan's tech hubs.")
-    btn_diag = "Экспресс-диагностика за $100" if ru else "Growth check-up — $100"
+            "I analyze the whole business — strategy, sales, marketing, operations and unit economics — and build a growth system: "
+            "from the sales funnel and advertising to CRM, end-to-end analytics and automation. Former executive in banking, insurance "
+            "and fintech; startup tracker at Kazakhstan's tech hubs.")
+    btn_diag = f"Диагностика бизнеса — {PRICE_HTML}" if ru else f"Business check-up — {PRICE_HTML}"
     btn_tg = "Написать в Telegram" if ru else "Message on Telegram"
-    cta = "Обсудить задачу" if ru else "Discuss your project"
+    cta = "Обсудить проект" if ru else "Discuss a project"
     stats = "".join(f"<li><b>{n}</b><span>{d}</span></li>" for n, d in STATS[lang])
     open_case = "Открыть кейс" if ru else "Open case"
     cases = "".join(
@@ -720,12 +736,12 @@ def body_home(lang):
 <div class="cta"><a class="btn" href="{WA}" rel="noopener" target="_blank">{btn_diag}</a><a class="btn ghost" href="{TG}" rel="me noopener" target="_blank">{btn_tg}</a></div>
 </div>{portrait(lang)}</div></section>
 <section style="padding:0 0 8px"><ul class="stats">{stats}</ul><p class="note">{STATS_NOTE[lang]}</p></section>
-<section>{head("Крупные проекты" if ru else "Major projects", path(lang,"cases"), "Все кейсы" if ru else "All case studies")}<div class="projects two">{cases}</div></section>
+<section>{head("Ключевые проекты" if ru else "Key projects", path(lang,"cases"), "Все кейсы" if ru else "All case studies")}<div class="projects two">{cases}</div></section>
 <section>{head("Трекинг стартапов" if ru else "Startup tracking", path(lang,"cases") + "#tracking", "Подробнее" if ru else "Details")}<div class="projects">{track}</div></section>
 <section class="trust">{groups}</section>
 <section id="diagnostics"><p class="eyebrow">{d_eyebrow}</p><h2>{d_title}</h2><p class="answer">{d_text}</p>
 <div class="cta"><a class="btn" href="{WA}" rel="noopener" target="_blank">{d_btn}</a></div></section>
-<section>{head("Чем я помогу" if ru else "How I can help")}<div class="cards">{services}</div></section>
+<section>{head("Форматы работы" if ru else "Engagement formats")}<div class="cards">{services}</div></section>
 <section><h2>{"Обо мне" if ru else "About me"}</h2>{about}
 <p class="card-links"><a href="{path(lang,"about")}">{"Подробная биография" if ru else "Full biography"} →</a><a href="{IG}" rel="me noopener" target="_blank">Instagram</a><a href="{LI}" rel="me noopener" target="_blank">LinkedIn</a></p></section>
 <section><div class="knowledge">
@@ -772,8 +788,8 @@ def body_services(lang):
     ru = lang == "ru"
     _, _, _, d_title, d_items, d_btn = DIAG[lang]
     p_title, p_steps = PROCESS[lang]
-    lead = ("Начните с экспресс-диагностики, дальше — один из трёх форматов: маркетинг под ключ, трекинг или обучение."
-            if ru else "Start with a growth check-up, then pick one of three formats: done-for-you marketing, tracking or training.")
+    lead = ("Работа начинается с экспресс-диагностики бизнеса. Далее — один из форматов: продажи, маркетинг и автоматизация под ключ, трекинг или обучение команды."
+            if ru else "Every engagement starts with a business check-up, followed by one of three formats: done-for-you sales, marketing and automation, tracking, or team training.")
     out = [f'<section class="page">{crumbs(lang,"services")}<h1>{H1[lang]["services"]}</h1><p class="lead">{lead}</p></section>',
            f'<section id="diagnostics"><h2>{d_title}</h2><div class="card" style="margin-top:20px"><ul>{"".join(f"<li>{i}</li>" for i in d_items)}</ul></div>'
            f'<div class="cta"><a class="btn" href="{WA}" rel="noopener" target="_blank">{d_btn}</a></div></section>']
@@ -787,11 +803,11 @@ def body_services(lang):
 
 def body_cases(lang):
     ru = lang == "ru"
-    intro = ("Проекты для бизнеса и трекинг стартапов. В каждом кейсе — каналы, задача, что сделано и результат."
-             if ru else "Client projects and startup tracking. Each case covers the channels, the task, what was done and the result.")
-    ch_h, task_h, done_h, res_h = ("Каналы", "Задача", "Что сделано", "Результат") if ru else ("Channels", "Task", "What was done", "Result")
+    intro = ("Проекты для бизнеса и трекинг стартапов. По каждому кейсу — каналы и инструменты, задача, решение и результат."
+             if ru else "Client projects and startup tracking. Each case covers the channels and tools, the challenge, the solution and the result.")
+    ch_h, task_h, done_h, res_h = ("Каналы и инструменты", "Задача", "Решение", "Результат") if ru else ("Channels and tools", "Challenge", "Solution", "Result")
     out = [f'<section class="page">{crumbs(lang,"cases")}<h1>{H1[lang]["cases"]}</h1><p class="lead">{intro}</p></section>',
-           f'<section><h2>{"Крупные проекты" if ru else "Major projects"}</h2>']
+           f'<section><h2>{"Ключевые проекты" if ru else "Key projects"}</h2>']
     for n, (title, channels, task, done, result) in enumerate(CASES[lang], 1):
         li = "".join(f"<li>{d}</li>" for d in done)
         out.append(f'<article class="case" id="case-{n}"><h2>{title}</h2>'
@@ -893,16 +909,16 @@ def llms_txt():
         "## Ключевые факты / Key facts",
         "- Имя: Руслан Хасанов (Хасанов Руслан Фархадович); латиницей Ruslan Khasanov, в LinkedIn — Ruslan Khassanov",
         "- Город: Алматы, Казахстан / Almaty, Kazakhstan",
-        "- Роль: консультант по росту бизнеса, growth-стратег, трекер стартапов, преподаватель digital-маркетинга, основатель Revanite",
-        "- Позиционирование: нахожу узкие места в продукте, продажах, маркетинге и экономике бизнеса и помогаю расти быстрее без лишних расходов; консалтинг плюс исполнение",
-        "- Revanite — студия стратегического роста: экспресс-диагностика роста ($100, засчитывается при продолжении работы), Revanite Tracking (трекинг и консалтинг), Revanite Studio (маркетинг под ключ). Принцип: маркетинг как вложение, а не расход",
+        "- Роль: консультант по росту бизнеса, трекер стартапов, преподаватель digital-маркетинга, основатель Revanite; экс-CMO re:Kassa",
+        "- Позиционирование: системный рост бизнеса — диагностика стратегии, продаж, маркетинга, процессов и экономики; внедрение от воронки продаж и рекламы до CRM, сквозной аналитики и автоматизации",
+        "- Revanite — студия стратегического роста: экспресс-диагностика бизнеса ($99 вместо $200, засчитывается при продолжении работы), Revanite Tracking (трекинг и консалтинг), Revanite Studio (продажи, маркетинг и автоматизация под ключ). Принцип: маркетинг как вложение, а не расход",
         "- Метод: Revanite Growth Formula — Инсайт → Экономика → Стратегия → Гипотезы → Исполнение → Аналитика → Масштаб",
         "- Трекер стартапов: Astana Hub, Almaty Hub, Terricon Valley, NURIS, IT Park; акселератор AIpreneurs",
         "- Преподавание: Almaty Management University (AlmaU), Qamalladin University (руководитель направления «Диджитал»), колледж ICB; воркшопы Astana Hub; гостевая лекция Nazarbayev University",
-        "- Опыт: Home Credit Bank (руководитель digital-маркетинга), Halyk Insurance (директор по продукту), Alfa Bank (тимлид маркетинга, сегмент малого бизнеса), Samsung Kazakhstan (запуск онлайн-магазина), BI GROUP (менеджер маркетинговых проектов), re:Kassa (руководил digital-маркетингом до 2026)",
+        "- Опыт: Home Credit Bank (руководитель digital-маркетинга), Halyk Insurance (директор по продукту), Alfa Bank (тимлид маркетинга, сегмент малого бизнеса), Samsung Kazakhstan (запуск онлайн-магазина), BI GROUP (менеджер маркетинговых проектов), re:Kassa (CMO, до 2026)",
         "- Клиенты: " + ", ".join(CLIENTS["ru"]),
         "- Кейсы: SAGI — ROMI 316%; Yeko Kazakhstan — доля квалифицированных лидов с 30% до 70%, стоимость лида ниже в 2,4 раза; Глоббинг Казахстан — +60% новых регистраций, стоимость регистрации ниже на 45%; Shanyraq Business Forum — 1 600+ заявок и обращений за первый запуск, ROAS 234%; карта рассрочки Тумар (Бакай Банк) — стабильный ежемесячный поток новых клиентов и активация выданных карт; BI GROUP и Geometry — стоимость привлечения клиента рассчитана с нуля, реклама оптимизируется по ней; Jintropine — сквозная аналитика Meta Ads + amoCRM",
-        "- Трекинг: Youtrade — выручка ×1,6, операционные процессы перестроены, фаундер вышел из операционки; InnMedia — выход на рынок Казахстана, первые 3 контракта; онлайн-школа — фокус перенесён с США на Узбекистан и Турцию, партнёрский канал давал около 30% выручки",
+        "- Трекинг: Youtrade — рост выручки в 1,6 раза, перестройка операционных процессов, выход фаундера из операционного управления; InnMedia — выход на рынок Казахстана, первые 3 контракта; онлайн-школа — смена приоритетных рынков с США на Узбекистан и Турцию, выявлен партнёрский канал, обеспечивавший около 30% выручки",
         "- Компетенции: " + ", ".join(KNOWS["ru"]),
         "",
         "## Страницы / Pages",
