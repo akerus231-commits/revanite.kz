@@ -147,10 +147,19 @@ details summary::-webkit-details-marker{display:none}
 .page{padding-bottom:24px !important}
 .crumbs{font-size:14px;color:var(--muted);margin-bottom:18px}
 .crumbs a{text-decoration:none}
+.mnav{display:none}
+.mnav summary{cursor:pointer;list-style:none;border:1px solid var(--line);border-radius:8px;padding:4px 12px;font-size:14px;font-weight:600}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav[open] summary{border-color:var(--accent)}
+.mnav-list{position:absolute;left:0;right:0;top:64px;background:#0A0C10;border-bottom:1px solid var(--line);box-shadow:0 24px 40px rgba(0,0,0,.6);padding:8px 20px 16px;display:flex;flex-direction:column}
+.mnav-list a{padding:12px 0;border-top:1px solid var(--line);text-decoration:none;color:var(--muted);font-size:16px}
+.mnav-list a:first-child{border-top:0}
+.mnav-list a[aria-current]{color:var(--text)}
 @media (max-width:760px){
  body{font-size:16px}
  .bar{gap:8px}.brand span{display:none}
- nav{gap:10px}nav a{font-size:13px}nav .nav-home{display:none}
+ nav{display:none}
+ .mnav{display:block;margin-left:auto}
  .hero{padding:52px 0 40px}
  .hero-grid{grid-template-columns:1fr;gap:28px}
  .portrait{width:112px;height:132px;font-size:30px;border-radius:16px;order:-1}
@@ -328,7 +337,7 @@ details summary::-webkit-details-marker{display:none}
 <body>
 <header><div class="wrap bar">
 <a class="brand" href="/"><svg class="logo" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M10 26V6h7.5a5 5 0 0 1 0 10H10"/><path d="M15.5 16 22 26"/><path d="M4 29 28 3" stroke="#5B82C9" stroke-width="1.2"/></svg><span>Revanite</span></a>
-<nav aria-label="Основное меню"><a href="/" class="nav-home">Главная</a><a href="/cases/">Кейсы</a><a href="/services/">Услуги</a><a href="/teaching/">Преподавание</a><a href="/contact/" aria-current="page">Контакты</a></nav><a class="lang" href="/en/contact/" hreflang="en" lang="en" title="English version">EN</a>
+<nav aria-label="Основное меню"><a href="/" class="nav-home">Главная</a><a href="/cases/">Кейсы</a><a href="/services/">Услуги</a><a href="/teaching/">Преподавание</a><a href="/contact/" aria-current="page">Контакты</a><a href="/studio/">Revanite Studio</a></nav><details class="mnav"><summary>Меню</summary><div class="mnav-list"><a href="/" class="nav-home">Главная</a><a href="/cases/">Кейсы</a><a href="/services/">Услуги</a><a href="/teaching/">Преподавание</a><a href="/contact/" aria-current="page">Контакты</a><a href="/studio/">Revanite Studio</a></div></details><a class="lang" href="/en/contact/" hreflang="en" lang="en" title="English version">EN</a>
 </div></header>
 <main class="wrap">
 <section class="page"><p class="crumbs"><a href="/">Главная</a> / Контакты</p><h1>Контакты</h1><p class="lead">Напишите в Telegram или WhatsApp: коротко о бизнесе и задаче. Отвечу и предложу формат работы.</p></section>
