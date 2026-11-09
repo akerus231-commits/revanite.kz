@@ -41,3 +41,4 @@ User-agent: CCBot
 Allow: /
 
 Sitemap: https://revanite.kz/sitemap.xml
+Sitemap: https://revanite.kz/studio/sitemap.xml

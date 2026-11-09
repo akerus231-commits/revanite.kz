@@ -1,15 +1,19 @@
-# revanite.kz — Revanite, Strategic Growth Partner
+# revanite.kz — личный сайт Руслана Хасанова + Revanite Studio
 
 Статический сайт (RU + EN), рассчитанный на индексацию поисковиками и ИИ-системами.
 
 ## Структура
 
-- `build.py` — генератор. Весь текст сайта находится в нём (словари `T`, `FAQ`, `EXPERIENCE`, `SERVICES`, `CASES`, `TEACH`, `CLIENTS`).
-- `site/` — готовый сайт, который заливается на хостинг.
-- Страницы: главная, `/services/` (обзор направлений), `/marketing-management/`, `/digital-growth/`, `/business-tracking/`, `/education/`, `/cases/`, `/about/` (основатель), `/teaching/`, `/contact/` — RU в корне, EN в `/en/`.
-- Главная: первый экран → проблема и подход → четыре направления → методология Strategy → Management → Execution → Tracking & Growth → для кого → кейсы → основатель → FAQ → финальный призыв.
-- Кейсы: `CASES` в `build.py`. Поле «исходная ситуация» показывается только если заполнено — сейчас пусто у Shanyraq, SAGI и Тумар.
-- `site_src/` — исходники. Сюда кладётся фото `ruslan-khasanov.jpg`.
+На домене два раздельных сайта:
+
+- **revanite.kz/** — личный сайт Руслана Хасанова. Генератор: `build.py`.
+- **revanite.kz/studio/** — сайт Revanite Studio (Strategic Growth Partner): четыре направления, методология, кейсы, обучение. Генератор: `studio/build.py`.
+
+Обе части собираются одной командой `python3 build.py` (корневой генератор сам запускает `studio/build.py`). Результат — папка `site/`, студия — в `site/studio/`.
+
+- `site_src/` — исходники: фото `ruslan-khasanov.jpg`, картинка для соцсетей `og-image.jpg` (1200×630). Общие для обоих сайтов.
+- `robots.txt` один на домен и ссылается на обе карты сайта: `/sitemap.xml` и `/studio/sitemap.xml`. `llms.txt` — у каждого сайта свой.
+- Кейсы студии: `CASES` в `studio/build.py`. Поле «исходная ситуация» показывается, только если заполнено — сейчас пусто у Shanyraq, SAGI и Тумар.
 
 ## Как обновить
 
