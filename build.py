@@ -674,8 +674,7 @@ def body_home(lang):
     t = T[lang]
     ru = lang == "ru"
     eyebrow = "Руслан Хасанов · Revanite · Алматы" if ru else "Ruslan Khasanov · Revanite · Almaty"
-    h1 = ("Нахожу, что тормозит рост бизнеса, и помогаю расти быстрее без лишних расходов"
-          if ru else "I find what's holding your business back and help it grow faster without wasting money")
+    h1 = "Нахожу, что тормозит рост бизнеса" if ru else "I find what's holding your business back"
     lead = ("Смотрю на бизнес целиком — продукт, продажи, маркетинг и экономику — и нахожу узкие места, где теряются деньги и время. "
             "Дальше — план и сопровождение до результата. Руководил направлениями в банках и страховании, сейчас — трекер стартапов в IT-хабах Казахстана."
             if ru else
