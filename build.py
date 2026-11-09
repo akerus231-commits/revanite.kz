@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-"""Генератор статического сайта revanite.kz (RU/EN).
+"""Генератор статического сайта revanite.kz (RU/EN): Revanite — Strategic Growth Partner.
 Запуск: python3 build.py  ->  папка site/
 Чтобы добавить фото: положи файл в site_src/ruslan-khasanov.jpg.
 Картинка для соцсетей (1200×630): site_src/og-image.jpg.
@@ -26,98 +26,94 @@ CLIENTS = {
         "Geometry", "Jintropine", "Youtrade", "InnMedia"],
 }
 
-# Блок клиентов на главной: (заголовок группы, названия)
-GROUPS = {
- "ru": [("Клиенты", CLIENTS["ru"]),
-        ("Опыт работы", ["re:Kassa", "Alfa Bank", "Home Credit Bank", "Halyk Insurance", "Samsung Kazakhstan"]),
-        ("Трекинг и преподавание", ["Astana Hub", "Almaty Hub", "Terricon Valley", "NURIS", "IT Park", "AlmaU", "Qamalladin University"])],
- "en": [("Clients", CLIENTS["en"]),
-        ("Previously at", ["re:Kassa", "Alfa Bank", "Home Credit Bank", "Halyk Insurance", "Samsung Kazakhstan"]),
-        ("Tracking and teaching", ["Astana Hub", "Almaty Hub", "Terricon Valley", "NURIS", "IT Park", "AlmaU", "Qamalladin University"])],
-}
-
 STATS = {
  "ru": [("316%", "ROMI — приложение программы лояльности SAGI"), ("×2,4", "снижение стоимости лида — Yeko Kazakhstan"),
         ("−45%", "стоимость регистрации — Глоббинг Казахстан"), ("1 600+", "обращений за один запуск — Shanyraq Business Forum")],
  "en": [("316%", "ROMI — SAGI loyalty app"), ("×2.4", "lower cost per lead — Yeko Kazakhstan"),
         ("−45%", "cost per sign-up — Globbing Kazakhstan"), ("1,600+", "leads from a single launch — Shanyraq Business Forum")],
 }
-STATS_NOTE = {
- "ru": "Трекер стартапов в 5 IT-хабах Казахстана · Преподаватель AlmaU, Qamalladin University и колледжа ICB",
- "en": "Startup tracker at 5 Kazakhstan tech hubs · Lecturer at AlmaU, Qamalladin University and ICB College",
-}
 
 # Цена экспресс-диагностики: старая (зачёркнутая) и действующая
 PRICE_OLD, PRICE = "$200", "$99"
 PRICE_HTML = f'<span class="price"><s>{PRICE_OLD}</s> {PRICE}</span>'
 
-# Кейсы: (название, каналы и инструменты, задача, решение, результат)
+# Кейсы: (название, инструменты, задача, исходная ситуация — "" если не известна, что сделано, результат)
 CASES = {
  "ru": [
   ("Shanyraq Business Forum — бизнес-форум, 3 города", "Meta Ads, WhatsApp, amoCRM, чат-бот",
-   "Обеспечить продажи билетов и прозрачность воронки — от клика до оплаты.",
+   "Обеспечить продажи билетов и прозрачность воронки — от клика до оплаты.", "",
    ["Еженедельный анализ воронки в amoCRM: статусы сделок, источники, эффективность менеджеров, доля квалифицированных заявок.",
     "Аудит коммуникаций отдела продаж в WhatsApp: выявлены 4 системные ошибки, по итогам внедрён чат-бот.",
     "Данные рекламных кабинетов и CRM объединены в единую систему отчётности."],
    "1 600+ заявок и обращений за первый запуск, ROAS 234%. Формат масштабирован на Шымкент и Алматы."),
   ("Глоббинг Казахстан — сервис доставки покупок из-за рубежа", "Meta Ads",
    "Увеличить приток новых пользователей при снижении стоимости привлечения.",
+   "Кампании в рекламном кабинете были раздроблены, и алгоритму не хватало данных для обучения.",
    ["Анализ эффективности по городам: выявлены регионы с низкой отдачей бюджета.",
-    "Аудит структуры рекламного кабинета: избыточная фрагментация кампаний ограничивала обучение алгоритма.",
+    "Аудит структуры рекламного кабинета.",
     "Тестирование аудиторий блогеров против гео-таргетинга и перераспределение бюджета по результатам."],
    "+60% новых регистраций при снижении стоимости регистрации на 45%."),
   ("Yeko Kazakhstan — отечественный бренд техники", "Онлайн-реклама, квалификация лидов",
    "Повысить качество входящих заявок, а не только их количество.",
+   "Доля квалифицированных лидов составляла 30%.",
    ["Перестройка онлайн-рекламы под качество лидов: оптимизация по квалифицированным заявкам вместо объёма."],
    "Доля квалифицированных лидов выросла с 30% до 70%, стоимость лида снизилась в 2,4 раза."),
   ("SAGI — приложение программы лояльности", "Онлайн-реклама, продуктовая воронка",
-   "Привлекать пользователей в приложение с окупаемостью рекламных вложений.",
+   "Привлекать пользователей в приложение с окупаемостью рекламных вложений.", "",
    ["Запуск и ведение онлайн-рекламы, управление воронкой от первого касания до целевого действия, оптимизация по возврату инвестиций."],
    "ROMI 316%."),
   ("Карта рассрочки Тумар, Бакай Банк (Кыргызстан)", "Google Ads, Meta Ads, мобильная атрибуция, CRM-маркетинг",
-   "Построить цифровой канал с равномерным ежемесячным притоком клиентов.",
+   "Построить цифровой канал с равномерным ежемесячным притоком клиентов.", "",
    ["Структура кампаний Google Ads и лид-кампании Meta с ежемесячной отчётностью.",
     "Интеграция мобильной атрибуции приложения с рекламными кабинетами.",
     "Программа активации выданных карт с сегментацией базы — «не совершали покупок», «снижают активность», «неактивны» — и партнёрскими предложениями для каждого сегмента."],
    "Стабильный ежемесячный поток новых клиентов банка и отдельная программа активации действующих держателей карт."),
   ("BI GROUP и Geometry — девелопмент", "Meta Ads, юнит-экономика",
-   "Выстроить цифровое привлечение с нуля при отсутствии данных о стоимости клиента.",
+   "Выстроить цифровое привлечение с нуля.",
+   "Стоимость привлечения клиента не рассчитывалась.",
    ["Построение цифровой воронки, расчёт стоимости привлечения клиента (CAC) и оптимизация рекламы по этой метрике."],
    "Команда получила измеримую стоимость клиента; реклама оптимизируется по CAC, а не по кликам и охватам."),
  ],
  "en": [
   ("Shanyraq Business Forum — business forum, 3 cities", "Meta Ads, WhatsApp, amoCRM, chatbot",
-   "Drive ticket sales and make the funnel transparent from click to payment.",
+   "Drive ticket sales and make the funnel transparent from click to payment.", "",
    ["Weekly amoCRM funnel analysis: deal stages, sources, sales rep performance, qualified-lead share.",
     "Audit of the sales team's WhatsApp communication: 4 systemic errors identified, followed by a chatbot rollout.",
     "Ad account and CRM data consolidated into a single reporting system."],
    "1,600+ leads from the first launch, 234% ROAS. The format was scaled to Shymkent and Almaty."),
   ("Globbing Kazakhstan — cross-border shopping delivery", "Meta Ads",
    "Increase new user acquisition while lowering acquisition cost.",
+   "Campaigns in the ad account were fragmented, so the algorithm lacked data to learn.",
    ["City-level performance analysis: regions with low budget efficiency identified.",
-    "Ad account structure audit: excessive campaign fragmentation was limiting algorithm learning.",
+    "Ad account structure audit.",
     "Blogger-audience vs. geo-targeting test, with budget reallocated based on the results."],
    "+60% new sign-ups with a 45% lower cost per sign-up."),
   ("Yeko Kazakhstan — local electronics brand", "Online ads, lead qualification",
    "Improve the quality of inbound leads, not just their volume.",
+   "Qualified leads made up 30% of the total.",
    ["Online advertising rebuilt around lead quality: optimizing for qualified leads instead of volume."],
    "Qualified lead share rose from 30% to 70%; cost per lead fell 2.4×."),
   ("SAGI — loyalty app", "Online ads, product funnel",
-   "Acquire app users with advertising that pays back.",
+   "Acquire app users with advertising that pays back.", "",
    ["Online acquisition launched and managed, funnel managed from first touch to the target action, optimized for return on investment."],
    "316% ROMI."),
   ("Tumar installment card, Bakai Bank (Kyrgyzstan)", "Google Ads, Meta Ads, mobile attribution, CRM marketing",
-   "Build a digital channel with a steady monthly inflow of customers.",
+   "Build a digital channel with a steady monthly inflow of customers.", "",
    ["Google Ads campaign structure and Meta lead campaigns with monthly reporting.",
     "Mobile app attribution integrated with the ad accounts.",
     "Activation program for issued cards, segmenting the base — no purchases yet, declining activity, inactive — with partner offers for each segment."],
    "A steady monthly flow of new bank customers and a dedicated activation program for existing cardholders."),
   ("BI GROUP and Geometry — real estate", "Meta Ads, unit economics",
-   "Build digital acquisition from scratch with no data on the cost of a customer.",
+   "Build digital acquisition from scratch.",
+   "Customer acquisition cost was not being calculated.",
    ["Digital funnel built, customer acquisition cost (CAC) calculated and advertising optimized against that metric."],
    "The team now has a measurable cost per customer; advertising is optimized for CAC rather than clicks and reach."),
  ],
 }
+
+PAGES = ["", "services", "marketing-management", "digital-growth", "business-tracking", "education", "cases", "about", "teaching", "contact"]
+NAV = ["", "services", "cases", "education", "about", "contact"]
+DIR_SLUGS = ["marketing-management", "digital-growth", "business-tracking", "education"]
 
 # Трекинг: (цифра, подпись, название, теги, что изменилось)
 TRACK = {
@@ -154,9 +150,6 @@ def socials(lang):
             ("Телефон" if ru else "Phone", PHONE_H, "tel:" + PHONE), ("Instagram", "@hasanov5", IG),
             ("LinkedIn", "ruslan-khassanov", LI)]
 
-PAGES = ["", "about", "services", "cases", "teaching", "contact"]
-NAV = ["", "cases", "services", "teaching", "contact"]
-
 def url(lang, slug):
     prefix = "" if lang == "ru" else "/en"
     return BASE + prefix + "/" + (slug + "/" if slug else "")
@@ -169,48 +162,497 @@ def path(lang, slug):
 T = {
  "ru": {
   "name": "Руслан Хасанов",
-  "role": "Консультант по росту бизнеса · трекер стартапов · преподаватель",
-  "about": [
-   "Я консультант по росту бизнеса из Алматы и основатель студии стратегического роста Revanite. Карьеру строил в корпоративном секторе: был CMO фискальной платформы re:Kassa, руководил digital-маркетингом в Home Credit Bank, занимал позицию директора по продукту в Halyk Insurance, отвечал за маркетинг сегмента малого бизнеса в Alfa Bank, участвовал в запуске онлайн-магазина Samsung Kazakhstan.",
-   "Сегодня работаю независимо. Как трекер сопровождаю стартапы в Astana Hub, Almaty Hub, Terricon Valley, NURIS и IT Park. Через Revanite веду проекты для компаний Казахстана и Кыргызстана — от стратегии и продаж до маркетинга, CRM и автоматизации процессов. Преподаю digital-маркетинг и веб-аналитику в AlmaU, руковожу направлением «Диджитал» в Qamalladin University.",
-   "Мой подход: сначала определить, где бизнес теряет рост и деньги, и только затем инвестировать. Стратегию, продажи, маркетинг и процессы рассматриваю как единую систему, результат которой измеряется выручкой и окупаемостью.",
-  ],
-  "nav": {"": "Главная", "about": "Обо мне", "services": "Услуги", "cases": "Кейсы", "teaching": "Преподавание", "contact": "Контакты"},
+  "brand": "Revanite",
+  "tagline": "Strategic Growth Partner",
+  "nav": {"": "Главная", "services": "Направления", "cases": "Кейсы", "education": "Обучение", "about": "Основатель", "contact": "Контакты",
+          "marketing-management": "Marketing Management", "digital-growth": "Digital Growth", "business-tracking": "Business Tracking",
+          "teaching": "Преподавание"},
   "home": "Главная",
   "switch": ("EN", "English version"),
-  "contact": "Связаться",
-  "footer": "Руслан Хасанов · Revanite — студия стратегического роста · Алматы, Казахстан",
-  "jobTitle": "Консультант по росту бизнеса",
-  "summary": ("Руслан Хасанов — консультант по росту бизнеса из Алматы (Казахстан), основатель студии стратегического роста Revanite. "
-              "Находит ограничения роста в стратегии, продажах, маркетинге, процессах и экономике бизнеса и выстраивает систему роста: "
-              "от воронки продаж и рекламы до CRM, сквозной аналитики и автоматизации. Был CMO фискальной платформы re:Kassa, "
-              "руководил digital-маркетингом в Home Credit Bank, был директором по продукту в Halyk Insurance, отвечал за маркетинг "
-              "сегмента малого бизнеса в Alfa Bank. Трекер стартапов в Astana Hub, Almaty Hub, Terricon Valley, NURIS и IT Park, "
+  "discuss": "Обсудить проект",
+  "details": "Подробнее",
+  "jobTitle": "Основатель Revanite, Strategic Growth Partner",
+  "summary": ("Руслан Хасанов — основатель Revanite, стратегический партнёр бизнеса в маркетинге и digital-развитии (Алматы, Казахстан). "
+              "Работает с собственниками бизнеса: диагностика маркетинга, стратегия, приоритеты, управление маркетинговыми процессами и контроль результата. "
+              "Был CMO фискальной платформы re:Kassa, руководил digital-маркетингом в Home Credit Bank, был директором по продукту в Halyk Insurance, "
+              "руководил маркетингом сегмента малого бизнеса в Alfa Bank. Трекер стартапов в Astana Hub, Almaty Hub, Terricon Valley, NURIS и IT Park, "
               "преподаёт digital-маркетинг в AlmaU и руководит направлением «Диджитал» в Qamalladin University."),
-  "org_desc": "Revanite — студия стратегического роста Руслана Хасанова: диагностика бизнеса, трекинг и консалтинг (Revanite Tracking), продажи, маркетинг и автоматизация под ключ (Revanite Studio) для компаний Казахстана, Кыргызстана и СНГ.",
+  "org_desc": ("Revanite — Strategic Growth Partner: стратегический партнёр бизнеса в маркетинге, digital-развитии и привлечении клиентов. "
+               "Четыре направления: Marketing Management (управление маркетингом), Digital Growth (реклама, сайты и аналитика), "
+               "Business Tracking (трекинг бизнеса) и Education (обучение маркетингу). Алматы, Казахстан."),
+  "footer_title": "Revanite — Strategic Growth Partner",
+  "footer_sub": "Алматы · Работаем с бизнесом в Казахстане, Кыргызстане и СНГ",
+  "copy": "Revanite · Основатель — Руслан Хасанов · Алматы, Казахстан",
  },
  "en": {
   "name": "Ruslan Khasanov",
-  "role": "Business growth consultant · startup tracker · lecturer",
-  "about": [
-   "I am a business growth consultant based in Almaty and the founder of Revanite, a strategic growth studio. My background is in the corporate sector: CMO at the fiscal technology platform re:Kassa, Head of Digital Marketing at Home Credit Bank, Director of Product at Halyk Insurance, head of SME marketing at Alfa Bank, and part of the team that launched Samsung Kazakhstan's online store.",
-   "Today I work independently. As a tracker, I support startups at Astana Hub, Almaty Hub, Terricon Valley, NURIS and IT Park. Through Revanite I run projects for companies in Kazakhstan and Kyrgyzstan — from strategy and sales to marketing, CRM and process automation. I teach digital marketing and web analytics at AlmaU and lead the Digital program at Qamalladin University.",
-   "My approach: first identify where the business is losing growth and money, then invest. I treat strategy, sales, marketing and operations as one system, measured by revenue and payback.",
-  ],
-  "nav": {"": "Home", "about": "About", "services": "Services", "cases": "Case studies", "teaching": "Teaching", "contact": "Contact"},
+  "brand": "Revanite",
+  "tagline": "Strategic Growth Partner",
+  "nav": {"": "Home", "services": "Services", "cases": "Case studies", "education": "Education", "about": "Founder", "contact": "Contact",
+          "marketing-management": "Marketing Management", "digital-growth": "Digital Growth", "business-tracking": "Business Tracking",
+          "teaching": "Teaching"},
   "home": "Home",
   "switch": ("RU", "Русская версия"),
-  "contact": "Get in touch",
-  "footer": "Ruslan Khasanov · Revanite — Strategic Growth Studio · Almaty, Kazakhstan",
-  "jobTitle": "Business growth consultant",
-  "summary": ("Ruslan Khasanov is a business growth consultant based in Almaty, Kazakhstan, and the founder of Revanite, a strategic growth studio. "
-              "He identifies the constraints on growth across a company's strategy, sales, marketing, operations and unit economics and builds a growth system: "
-              "from the sales funnel and advertising to CRM, end-to-end analytics and automation. He was CMO at the fiscal technology platform re:Kassa, "
-              "Head of Digital Marketing at Home Credit Bank, Director of Product at Halyk Insurance and head of SME marketing at Alfa Bank. "
-              "He tracks startups at Astana Hub, Almaty Hub, Terricon Valley, NURIS and IT Park, teaches digital marketing at AlmaU "
-              "and leads the Digital program at Qamalladin University."),
-  "org_desc": "Revanite is Ruslan Khasanov's strategic growth studio: business check-ups, tracking and advisory (Revanite Tracking), and done-for-you sales, marketing and automation (Revanite Studio) for companies in Kazakhstan, Kyrgyzstan and the CIS.",
+  "discuss": "Discuss a project",
+  "details": "Learn more",
+  "jobTitle": "Founder of Revanite, Strategic Growth Partner",
+  "summary": ("Ruslan Khasanov is the founder of Revanite, a strategic growth partner for businesses in marketing and digital development (Almaty, Kazakhstan). "
+              "He works with business owners on marketing diagnostics, strategy, priorities, marketing process management and results control. "
+              "He was CMO at the fiscal technology platform re:Kassa, Head of Digital Marketing at Home Credit Bank, Director of Product at Halyk Insurance "
+              "and head of SME marketing at Alfa Bank. He tracks startups at Astana Hub, Almaty Hub, Terricon Valley, NURIS and IT Park, "
+              "teaches digital marketing at AlmaU and leads the Digital program at Qamalladin University."),
+  "org_desc": ("Revanite is a Strategic Growth Partner for businesses in marketing, digital development and customer acquisition. "
+               "Four practices: Marketing Management, Digital Growth (ads, websites and analytics), Business Tracking and Education. Almaty, Kazakhstan."),
+  "footer_title": "Revanite — Strategic Growth Partner",
+  "footer_sub": "Almaty · Working with businesses in Kazakhstan, Kyrgyzstan and the CIS",
+  "copy": "Revanite · Founder — Ruslan Khasanov · Almaty, Kazakhstan",
  },
+}
+
+HOME = {
+ "ru": {
+  "eyebrow": "Revanite · Strategic Growth Partner",
+  "h1": "Your Business Needs More Than a Marketing Agency.",
+  "lead": "Мы становимся стратегическим партнёром бизнеса: управляем маркетингом, развиваем digital-каналы и помогаем находить новые точки роста.",
+  "cta2": "Наши направления",
+  "system_title": "Система Revanite",
+  "system_steps": [("Strategy", "цели и приоритеты"), ("Management", "управление маркетингом"),
+                   ("Execution", "реклама, сайты, аналитика"), ("Tracking & Growth", "результат и новые точки роста")],
+  "system_edu": "+ Education — развитие специалистов и команд",
+  "problem_h2": "Почему бизнесу недостаточно отдельных маркетинговых услуг",
+  "problem_lead": "Реклама, сайт, аналитика и подрядчики часто существуют по отдельности. Каждый элемент может работать, но система в целом не даёт результата.",
+  "problems": ["Нет единой маркетинговой стратегии", "Реклама работает отдельно от продаж", "Подрядчики не управляются системно",
+               "Нет прозрачной аналитики", "Собственник вынужден контролировать всё самостоятельно"],
+  "approach_h3": "Подход Revanite",
+  "approach": ("Мы соединяем стратегию, управление, реализацию и аналитику в одну систему. "
+               "Каждое маркетинговое действие связано с целью бизнеса, а результат измеряется заявками, продажами и окупаемостью."),
+  "dirs_h2": "Направления работы",
+  "dirs_lead": "Четыре самостоятельных направления, объединённых общей методологией.",
+  "method_h2": "Методология Revanite",
+  "method_lead": ("Авторский подход, который позволяет видеть маркетинг целиком: каждый этап опирается на предыдущий и проверяется следующим, "
+                  "поэтому решения в рекламе, на сайте и в продажах не противоречат друг другу."),
+  "aud_h2": "Для кого мы работаем",
+  "cases_h2": "Кейсы и проекты",
+  "cases_all": "Все кейсы",
+  "clients": "Клиенты",
+  "founder_h2": "Об основателе",
+  "founder_more": "Подробнее об основателе",
+  "faq_h2": "Частые вопросы",
+  "final_h2": "Let's Find Your Next Growth Point.",
+  "final_text": "Расскажите о своей задаче. Мы поможем определить, какие маркетинговые инструменты и решения нужны вашему бизнесу на текущем этапе.",
+ },
+ "en": {
+  "eyebrow": "Revanite · Strategic Growth Partner",
+  "h1": "Your Business Needs More Than a Marketing Agency.",
+  "lead": "We become a strategic partner to your business: we manage marketing, develop digital channels and help you find new growth points.",
+  "cta2": "What we do",
+  "system_title": "The Revanite system",
+  "system_steps": [("Strategy", "goals and priorities"), ("Management", "marketing management"),
+                   ("Execution", "ads, websites, analytics"), ("Tracking & Growth", "results and new growth points")],
+  "system_edu": "+ Education — developing specialists and teams",
+  "problem_h2": "Why separate marketing services are not enough",
+  "problem_lead": "Ads, the website, analytics and contractors often live separately. Each piece may work, yet the system as a whole does not deliver.",
+  "problems": ["No single marketing strategy", "Advertising is disconnected from sales", "Contractors are not managed as a system",
+               "No transparent analytics", "The owner has to control everything personally"],
+  "approach_h3": "The Revanite approach",
+  "approach": ("We connect strategy, management, execution and analytics into one system. "
+               "Every marketing action is tied to a business goal, and results are measured in leads, sales and payback."),
+  "dirs_h2": "What we do",
+  "dirs_lead": "Four independent practices united by one methodology.",
+  "method_h2": "The Revanite methodology",
+  "method_lead": ("Our own approach to seeing marketing as a whole: each stage builds on the previous one and is tested by the next, "
+                  "so decisions in advertising, on the website and in sales do not contradict each other."),
+  "aud_h2": "Who we work with",
+  "cases_h2": "Case studies and projects",
+  "cases_all": "All case studies",
+  "clients": "Clients",
+  "founder_h2": "About the founder",
+  "founder_more": "More about the founder",
+  "faq_h2": "FAQ",
+  "final_h2": "Let's Find Your Next Growth Point.",
+  "final_text": "Tell us about your challenge. We will help you decide which marketing tools and solutions your business needs at its current stage.",
+ },
+}
+
+METHOD = {
+ "ru": [("Strategy", "Понимаем бизнес, определяем цели, аудиторию, позиционирование и приоритеты."),
+        ("Management", "Выстраиваем систему управления маркетингом, каналами, бюджетами и специалистами."),
+        ("Execution", "Реализуем рекламные кампании, создаём сайты, внедряем аналитику и digital-инструменты."),
+        ("Tracking & Growth", "Анализируем результаты, проверяем гипотезы и находим новые возможности для роста.")],
+ "en": [("Strategy", "We understand the business and define goals, audience, positioning and priorities."),
+        ("Management", "We build a system for managing marketing, channels, budgets and specialists."),
+        ("Execution", "We run ad campaigns, build websites and implement analytics and digital tools."),
+        ("Tracking & Growth", "We analyze results, test hypotheses and find new growth opportunities.")],
+}
+METHOD_EDU = {
+ "ru": ("Education", "Дополняет систему: развиваем специалистов и команды, которые способны эффективно работать с маркетингом."),
+ "en": ("Education", "Complements the system: we develop specialists and teams who can work with marketing effectively."),
+}
+
+# Направления: карточка на главной и отдельная страница
+DIRS = {
+ "ru": {
+  "marketing-management": {
+   "name": "Marketing Management", "label": "Управление маркетингом", "badge": "Ключевое направление",
+   "short": "Становимся внешним маркетинговым партнёром компании: стратегия, план, бюджеты, постановка задач специалистам и подрядчикам, контроль и аналитика.",
+   "value": "Маркетинг управляется как система и связан с целями бизнеса.",
+   "h1": "Управление маркетингом бизнеса",
+   "lead": "Выступаем внешним маркетинговым партнёром компании и берём на себя системное управление маркетингом — от анализа и стратегии до контроля реализации и регулярной аналитики.",
+   "blocks": [("Что входит", ["Анализ текущего маркетинга и бизнес-задач", "Разработка маркетинговой стратегии",
+                              "Определение целевой аудитории и позиционирования", "Формирование маркетингового плана",
+                              "Планирование рекламных каналов и бюджетов",
+                              "Постановка задач маркетологам, дизайнерам, подрядчикам и другим специалистам",
+                              "Контроль реализации маркетинговых активностей", "Анализ эффективности каналов привлечения",
+                              "Работа с воронкой продаж и качеством лидов", "Регулярная аналитика и рекомендации по развитию"])],
+   "for_h2": "Для кого",
+   "for": ["У бизнеса нет собственного руководителя маркетинга",
+           "Собственник сам управляет маркетологами и подрядчиками, но хочет делегировать эту функцию",
+           "В компании есть маркетологи, но нет общей стратегии и системы управления",
+           "Бизнес хочет развивать маркетинг, но пока не готов нанимать руководителя отдела маркетинга"],
+   "result_h2": "Результат",
+   "result": "Бизнес получает внешнего стратегического партнёра, который управляет маркетингом и связывает маркетинговые действия с бизнес-целями.",
+   "format": "Ежемесячное сопровождение с еженедельной отчётностью.",
+   "note": "Реализацию рекламы, сайтов и аналитики берёт на себя направление Digital Growth. Если задача шире маркетинга и касается бизнеса в целом, подходит Business Tracking.",
+   "cases": [0, 2, 5], "diag": True,
+  },
+  "digital-growth": {
+   "name": "Digital Growth", "label": "Реклама, сайты и аналитика", "badge": "",
+   "short": "Реализуем стратегию на практике: реклама в Meta и Google, сайты и лендинги, GA4, Google Tag Manager, отчёты и дашборды.",
+   "value": "Каждый digital-инструмент работает как часть общей системы привлечения.",
+   "h1": "Digital-маркетинг и развитие онлайн-каналов",
+   "lead": "Практическая сторона работы Revanite: мы не только определяем стратегию, но и помогаем её реализовать. Реклама, сайт и аналитика подключаются под конкретную задачу бизнеса и оцениваются по результату.",
+   "blocks": [("Онлайн-реклама", ["Meta Ads (Facebook и Instagram)", "Google Ads", "Настройка и оптимизация рекламных кампаний",
+                                 "Разработка рекламных гипотез", "Анализ эффективности рекламы", "Управление рекламными бюджетами"]),
+              ("Создание сайтов", ["Разработка сайтов для бизнеса", "Лендинги и посадочные страницы", "Сайты для продуктов и услуг",
+                                  "Структура и прототипирование", "UX/UI и конверсионная логика",
+                                  "Разработка на Tilda и с использованием современных AI-инструментов"]),
+              ("Аналитика и digital-инфраструктура", ["Google Analytics 4", "Google Tag Manager", "Настройка событий и конверсий",
+                                                     "Отслеживание заявок и действий пользователей", "Интеграция аналитики с рекламными каналами",
+                                                     "Мобильная атрибуция: AppsFlyer", "Интеграция с CRM (amoCRM, Bitrix24), чат-боты и автоматизация передачи заявок",
+                                                     "Отчёты и дашборды", "Анализ воронки и эффективности привлечения"])],
+   "why_h2": "Не отдельные услуги, а система",
+   "why": "Настройка рекламы или новый сайт сами по себе не гарантируют продаж. Мы связываем каналы привлечения, сайт, аналитику и CRM, чтобы видеть путь клиента от первого касания до сделки и принимать решения на основе данных.",
+   "format": "Проект или ежемесячное ведение с еженедельной отчётностью.",
+   "cases": [1, 3, 4], "diag": False,
+  },
+  "business-tracking": {
+   "name": "Business Tracking", "label": "Трекинг и точки роста", "badge": "",
+   "short": "Самостоятельный формат работы с предпринимателем: цели и показатели, поиск ограничений, гипотезы, приоритеты и регулярный контроль прогресса.",
+   "value": "Предприниматель системно движется к целям бизнеса.",
+   "h1": "Трекинг бизнеса и работа с точками роста",
+   "lead": "Отдельное направление для предпринимателей и собственников бизнеса. Трекинг помогает системно развивать компанию: определять ограничения, формулировать и проверять гипотезы, двигаться к поставленным целям.",
+   "blocks": [("Что входит", ["Постановка целей и определение ключевых показателей", "Анализ текущей ситуации в бизнесе",
+                              "Поиск ограничений и узких мест", "Формирование и проверка гипотез", "Определение приоритетных действий",
+                              "Регулярные встречи и контроль прогресса", "Работа с показателями и результатами",
+                              "Помощь в принятии управленческих решений"])],
+   "why_h2": "Чем трекинг отличается от управления маркетингом",
+   "why": ("В Marketing Management мы управляем маркетингом компании. В трекинге работаем с предпринимателем над бизнесом в целом: "
+           "целями, показателями, ограничениями и управленческими решениями. Трекер не выполняет работу за команду — он помогает выбрать приоритеты и удерживать фокус."),
+   "format": "Трекшн-сессии раз в одну-две недели, трекшн-карта, контроль показателей между сессиями.",
+   "exp": "Основатель Revanite — трекер стартапов в Astana Hub, Almaty Hub, Terricon Valley, NURIS и IT Park, линейный трекер акселератора AIpreneurs.",
+   "cases": [], "diag": False,
+  },
+  "education": {
+   "name": "Education", "label": "Обучение маркетингу", "badge": "",
+   "short": "Практическое обучение для будущих и действующих маркетологов и таргетологов и корпоративные программы для команд.",
+   "value": "Специалисты и команды, способные эффективно работать с маркетингом.",
+   "h1": "Обучение маркетингу и развитие digital-компетенций",
+   "lead": "Самостоятельное направление Revanite. Обучаем практическим навыкам на реальных инструментах — специалистов, которые строят карьеру в digital, и компании, которые развивают свои команды.",
+  },
+ },
+ "en": {
+  "marketing-management": {
+   "name": "Marketing Management", "label": "Marketing management", "badge": "Core practice",
+   "short": "We act as the company's external marketing partner: strategy, plan, budgets, briefing specialists and contractors, control and analytics.",
+   "value": "Marketing is managed as a system and tied to business goals.",
+   "h1": "Managing your business's marketing",
+   "lead": "We act as the company's external marketing partner and take on the systematic management of marketing — from analysis and strategy to implementation control and regular analytics.",
+   "blocks": [("What's included", ["Analysis of current marketing and business objectives", "Marketing strategy development",
+                                   "Target audience and positioning", "Marketing plan",
+                                   "Planning of ad channels and budgets",
+                                   "Briefing and managing marketers, designers, contractors and other specialists",
+                                   "Control over marketing activities", "Analysis of acquisition channel performance",
+                                   "Sales funnel and lead quality", "Regular analytics and growth recommendations"])],
+   "for_h2": "Who it's for",
+   "for": ["The business has no in-house head of marketing",
+           "The owner manages marketers and contractors personally but wants to delegate this function",
+           "The company has marketers but no shared strategy or management system",
+           "The business wants to grow its marketing but is not ready to hire a head of marketing yet"],
+   "result_h2": "Result",
+   "result": "The business gains an external strategic partner who manages marketing and ties marketing actions to business goals.",
+   "format": "Ongoing monthly engagement with weekly reporting.",
+   "note": "Ads, websites and analytics are implemented by the Digital Growth practice. If the challenge goes beyond marketing and concerns the business as a whole, Business Tracking is the right fit.",
+   "cases": [0, 2, 5], "diag": True,
+  },
+  "digital-growth": {
+   "name": "Digital Growth", "label": "Ads, websites and analytics", "badge": "",
+   "short": "We put the strategy into practice: Meta and Google ads, websites and landing pages, GA4, Google Tag Manager, reports and dashboards.",
+   "value": "Every digital tool works as part of one acquisition system.",
+   "h1": "Digital marketing and online channel development",
+   "lead": "The hands-on side of Revanite: we do not just define the strategy, we help implement it. Ads, the website and analytics are set up for a specific business objective and judged by results.",
+   "blocks": [("Online advertising", ["Meta Ads (Facebook and Instagram)", "Google Ads", "Campaign setup and optimization",
+                                     "Ad hypothesis development", "Ad performance analysis", "Ad budget management"]),
+              ("Websites", ["Business websites", "Landing pages", "Websites for products and services",
+                            "Structure and prototyping", "UX/UI and conversion logic",
+                            "Built on Tilda and with modern AI tools"]),
+              ("Analytics and digital infrastructure", ["Google Analytics 4", "Google Tag Manager", "Event and conversion setup",
+                                                       "Lead and user action tracking", "Analytics integrated with ad channels",
+                                                       "Mobile attribution: AppsFlyer", "CRM integration (amoCRM, Bitrix24), chatbots and lead routing automation",
+                                                       "Reports and dashboards", "Funnel and acquisition performance analysis"])],
+   "why_h2": "Not separate services, but a system",
+   "why": "Setting up ads or launching a new website does not guarantee sales on its own. We connect acquisition channels, the website, analytics and the CRM to see the customer journey from first touch to deal and make data-driven decisions.",
+   "format": "Project-based or ongoing monthly management with weekly reporting.",
+   "cases": [1, 3, 4], "diag": False,
+  },
+  "business-tracking": {
+   "name": "Business Tracking", "label": "Tracking and growth points", "badge": "",
+   "short": "A dedicated format for entrepreneurs: goals and metrics, finding constraints, hypotheses, priorities and regular progress reviews.",
+   "value": "The entrepreneur moves toward business goals systematically.",
+   "h1": "Business tracking and growth points",
+   "lead": "A separate practice for entrepreneurs and business owners. Tracking helps develop the company systematically: identify constraints, frame and test hypotheses and move toward set goals.",
+   "blocks": [("What's included", ["Setting goals and key metrics", "Analysis of the current business situation",
+                                   "Finding constraints and bottlenecks", "Framing and testing hypotheses", "Defining priority actions",
+                                   "Regular sessions and progress reviews", "Working with metrics and results",
+                                   "Support with management decisions"])],
+   "why_h2": "How tracking differs from marketing management",
+   "why": ("In Marketing Management we manage the company's marketing. In tracking we work with the entrepreneur on the business as a whole: "
+           "goals, metrics, constraints and management decisions. A tracker does not do the work for the team — a tracker helps choose priorities and keep focus."),
+   "format": "Traction sessions every one to two weeks, a traction map, metric reviews between sessions.",
+   "exp": "The founder of Revanite is a startup tracker at Astana Hub, Almaty Hub, Terricon Valley, NURIS and IT Park and a line tracker at the AIpreneurs accelerator.",
+   "cases": [], "diag": False,
+  },
+  "education": {
+   "name": "Education", "label": "Marketing education", "badge": "",
+   "short": "Hands-on training for aspiring and working marketers and media buyers, and corporate programs for teams.",
+   "value": "Specialists and teams who can work with marketing effectively.",
+   "h1": "Marketing education and digital skills",
+   "lead": "An independent Revanite practice. We teach practical skills on real tools — to specialists building a career in digital and to companies developing their teams.",
+  },
+ },
+}
+
+EDU = {
+ "ru": {
+  "a_tag": "Для специалистов", "a_h2": "Обучение начинающих и действующих специалистов",
+  "a_intro": "Для тех, кто хочет освоить профессию маркетолога или таргетолога, начать карьеру в digital или повысить квалификацию и доход.",
+  "a_prog_h": "Программы",
+  "a_prog": ["Профессия интернет-маркетолог", "Обучение таргетированной рекламе", "Meta Ads с нуля", "Google Ads", "Digital-маркетинг",
+             "Веб-аналитика и Google Analytics 4", "Google Tag Manager", "Маркетинговая стратегия", "Работа с воронками продаж",
+             "Практическое применение AI в маркетинге", "Повышение квалификации для действующих маркетологов и таргетологов"],
+  "a_fmt_h": "Форматы",
+  "a_fmt": ["Индивидуальное обучение", "Наставничество", "Практические курсы", "Групповые программы", "Интенсивы и воркшопы"],
+  "a_focus": "Главный акцент — практика: реальные рекламные кабинеты, аналитика и задачи, с которыми специалист работает на настоящих проектах.",
+  "a_cta": "Узнать о программах",
+  "b_tag": "Для компаний", "b_h2": "Корпоративное обучение",
+  "b_intro": "Для компаний, предпринимателей и действующих команд, которым нужно повысить компетенции сотрудников, развить внутренний маркетинг и внедрить современные digital- и AI-инструменты.",
+  "b_prog_h": "Направления",
+  "b_prog": ["Обучение сотрудников digital-маркетингу", "Обучение таргетированной рекламе", "Работа с рекламными кабинетами",
+             "Веб-аналитика", "Маркетинговая стратегия", "AI-инструменты для маркетинга",
+             "Обучение руководителей и маркетинговых команд", "Практические корпоративные воркшопы"],
+  "b_fmt": "Программа собирается под задачи компании и уровень команды: онлайн или очно в Алматы.",
+  "b_cta": "Обсудить обучение команды",
+  "terms": "Состав программ, формат и стоимость согласуются индивидуально.",
+  "exp_h2": "Опыт преподавания",
+  "exp": "Основатель Revanite преподаёт digital-маркетинг и веб-аналитику в AlmaU (с 2022 года), руководит направлением «Диджитал» в Qamalladin University, преподаёт в колледже ICB, проводит воркшопы в Astana Hub и выступал с гостевой лекцией в Nazarbayev University. Автор программы курса «AI в маркетинге».",
+  "exp_link": "Подробнее о преподавании",
+ },
+ "en": {
+  "a_tag": "For specialists", "a_h2": "Training for aspiring and working specialists",
+  "a_intro": "For people who want to become a marketer or media buyer, start a career in digital, or upgrade their skills and income.",
+  "a_prog_h": "Programs",
+  "a_prog": ["Online marketer career track", "Paid social advertising", "Meta Ads from scratch", "Google Ads", "Digital marketing",
+             "Web analytics and Google Analytics 4", "Google Tag Manager", "Marketing strategy", "Sales funnels",
+             "Practical AI in marketing", "Advanced training for working marketers and media buyers"],
+  "a_fmt_h": "Formats",
+  "a_fmt": ["One-to-one training", "Mentoring", "Hands-on courses", "Group programs", "Intensives and workshops"],
+  "a_focus": "The focus is practice: real ad accounts, analytics and the tasks a specialist handles on actual projects.",
+  "a_cta": "Ask about programs",
+  "b_tag": "For companies", "b_h2": "Corporate training",
+  "b_intro": "For companies, entrepreneurs and existing teams that need to upskill employees, build in-house marketing and adopt modern digital and AI tools.",
+  "b_prog_h": "Topics",
+  "b_prog": ["Digital marketing for employees", "Paid social advertising", "Working with ad accounts",
+             "Web analytics", "Marketing strategy", "AI tools for marketing",
+             "Training for managers and marketing teams", "Hands-on corporate workshops"],
+  "b_fmt": "Each program is built around the company's goals and the team's level: online or in person in Almaty.",
+  "b_cta": "Discuss team training",
+  "terms": "Program content, format and pricing are agreed individually.",
+  "exp_h2": "Teaching experience",
+  "exp": "The founder of Revanite teaches digital marketing and web analytics at AlmaU (since 2022), leads the Digital program at Qamalladin University, teaches at ICB College, runs workshops at Astana Hub and has given a guest lecture at Nazarbayev University. Author of the “AI in Marketing” course program.",
+  "exp_link": "More about teaching",
+ },
+}
+
+AUDIENCES = {
+ "ru": [("Собственники малого и среднего бизнеса", "Нужно больше клиентов и продаж, нет ясности, насколько эффективен текущий маркетинг, и нет желания самостоятельно управлять всеми подрядчиками.", "marketing-management"),
+        ("Растущие компании", "Уже инвестируют в рекламу, работают с маркетологами или подрядчиками и хотят улучшить результат за счёт стратегии, управления и аналитики.", "digital-growth"),
+        ("Предприниматели", "Ищут точки роста и хотят системнее управлять компанией.", "business-tracking"),
+        ("Начинающие и действующие digital-специалисты", "Хотят освоить профессию маркетолога или таргетолога, получить практические навыки и повысить доход.", "education#specialists"),
+        ("Компании, которым нужно обучить команду", "Развивают внутреннюю маркетинговую команду и внедряют современные digital- и AI-инструменты.", "education#corporate")],
+ "en": [("Small and mid-sized business owners", "Need more customers and sales, are unsure how effective current marketing is, and do not want to manage every contractor themselves.", "marketing-management"),
+        ("Growing companies", "Already invest in advertising, work with marketers or contractors, and want better results through strategy, management and analytics.", "digital-growth"),
+        ("Entrepreneurs", "Look for growth points and want to run the company more systematically.", "business-tracking"),
+        ("Aspiring and working digital specialists", "Want to become a marketer or media buyer, gain practical skills and increase their income.", "education#specialists"),
+        ("Companies training their teams", "Develop in-house marketing teams and adopt modern digital and AI tools.", "education#corporate")],
+}
+
+FOUNDER = {
+ "ru": {
+  "role": "Основатель Revanite · Strategic Growth Partner",
+  "short": ["Руслан Хасанов работает с собственниками бизнеса: диагностирует маркетинг, разрабатывает стратегию, определяет приоритеты, управляет маркетинговыми процессами и контролирует результат.",
+            "Опыт — руководящие позиции в маркетинге и продукте: CMO re:Kassa, руководитель digital-маркетинга Home Credit Bank, директор по продукту Halyk Insurance, руководитель маркетинга сегмента малого бизнеса Alfa Bank. Трекер стартапов в IT-хабах Казахстана, преподаватель digital-маркетинга в AlmaU и Qamalladin University."],
+  "chips": ["Маркетинговая стратегия", "Digital", "Управление рекламой", "Аналитика", "Трекинг", "Обучение"],
+  "h1": "Руслан Хасанов — основатель Revanite",
+  "lead": "Strategic Growth Partner: стратегическое мышление и практический опыт реализации маркетинговых проектов.",
+  "role_h2": "Роль в Revanite",
+  "roles": ["Работа с собственниками бизнеса", "Диагностика маркетинга", "Разработка стратегии", "Определение приоритетов",
+            "Управление маркетинговыми процессами", "Контроль результатов", "Развитие компании и клиентских проектов"],
+  "bio_h2": "Опыт",
+  "bio": ["Карьера Руслана сложилась в корпоративном маркетинге и продукте: CMO фискальной платформы re:Kassa, руководитель digital-маркетинга Home Credit Bank, директор по продукту Halyk Insurance, руководитель маркетинга сегмента малого бизнеса Alfa Bank, менеджер маркетинговых проектов BI GROUP, участие в запуске онлайн-магазина Samsung Kazakhstan.",
+          "Сегодня — основатель Revanite и трекер стартапов в Astana Hub, Almaty Hub, Terricon Valley, NURIS и IT Park. Преподаёт digital-маркетинг и веб-аналитику в AlmaU, руководит направлением «Диджитал» в Qamalladin University, проводит воркшопы в Astana Hub.",
+          "Принцип работы: сначала определить, где бизнес теряет рост и деньги, и только затем инвестировать. Маркетинг — это вложение, которое должно окупаться и измеряться."],
+  "exp_h2": "Карьера", "skills_h2": "Компетенции",
+  "names_h2": "Как пишется имя",
+  "names": "Руслан Хасанов (полное имя — Хасанов Руслан Фархадович). Латиницей — Ruslan Khasanov; в LinkedIn используется написание Ruslan Khassanov.",
+ },
+ "en": {
+  "role": "Founder of Revanite · Strategic Growth Partner",
+  "short": ["Ruslan Khasanov works with business owners: he diagnoses marketing, develops strategy, sets priorities, manages marketing processes and controls results.",
+            "Background — leadership roles in marketing and product: CMO at re:Kassa, Head of Digital Marketing at Home Credit Bank, Director of Product at Halyk Insurance, head of SME marketing at Alfa Bank. Startup tracker at Kazakhstan's tech hubs, digital marketing lecturer at AlmaU and Qamalladin University."],
+  "chips": ["Marketing strategy", "Digital", "Ad management", "Analytics", "Tracking", "Education"],
+  "h1": "Ruslan Khasanov — founder of Revanite",
+  "lead": "Strategic Growth Partner: strategic thinking combined with hands-on experience delivering marketing projects.",
+  "role_h2": "Role at Revanite",
+  "roles": ["Working with business owners", "Marketing diagnostics", "Strategy development", "Setting priorities",
+            "Managing marketing processes", "Results control", "Developing the company and client projects"],
+  "bio_h2": "Background",
+  "bio": ["Ruslan built his career in corporate marketing and product: CMO at the fiscal technology platform re:Kassa, Head of Digital Marketing at Home Credit Bank, Director of Product at Halyk Insurance, head of SME marketing at Alfa Bank, Marketing Project Manager at BI GROUP, and part of the team that launched Samsung Kazakhstan's online store.",
+          "Today he is the founder of Revanite and a startup tracker at Astana Hub, Almaty Hub, Terricon Valley, NURIS and IT Park. He teaches digital marketing and web analytics at AlmaU, leads the Digital program at Qamalladin University and runs workshops at Astana Hub.",
+          "His principle: first identify where the business is losing growth and money, then invest. Marketing is an investment that has to pay back and be measurable."],
+  "exp_h2": "Career", "skills_h2": "Expertise",
+  "names_h2": "Name spelling",
+  "names": "Ruslan Khasanov (Russian: Руслан Хасанов; full name Хасанов Руслан Фархадович). LinkedIn uses the spelling Ruslan Khassanov.",
+ },
+}
+
+FAQ = {
+ "ru": [
+  ("Что такое Revanite?", T["ru"]["org_desc"]),
+  ("Чем Revanite отличается от маркетингового агентства?", "Агентство выполняет отдельные задачи: настраивает рекламу, делает сайт, ведёт соцсети. Revanite работает как стратегический партнёр: определяет приоритеты, управляет маркетингом и подрядчиками, связывает рекламу с продажами и аналитикой. При этом практическая реализация — реклама, сайты, аналитика — тоже входит в работу."),
+  ("С кем работает Revanite?", "С малым и средним бизнесом, предпринимателями и растущими компаниями в Казахстане, Кыргызстане и СНГ, а также с начинающими и действующими digital-специалистами и командами, которым нужно обучение. Среди клиентов — Бакай Банк, Глоббинг Казахстан, Yeko Kazakhstan, SAGI, Shanyraq Business Forum, BI GROUP, Geometry, Jintropine, Youtrade, InnMedia."),
+  ("Чем Business Tracking отличается от Marketing Management?", "Marketing Management — управление маркетингом компании: стратегия, каналы, бюджеты, подрядчики, аналитика. Business Tracking — работа с предпринимателем над бизнесом в целом: цели, показатели, ограничения, гипотезы и управленческие решения."),
+  ("Кто основатель Revanite?", T["ru"]["summary"]),
+  ("Как начать работу?", "Напишите в WhatsApp или Telegram: коротко о бизнесе и задаче. Мы обсудим ситуацию и предложим направление и формат работы. Для быстрого старта есть экспресс-диагностика бизнеса — $99 вместо $200. Контакты: +7 701 458 42 42, Telegram @messer66."),
+ ],
+ "en": [
+  ("What is Revanite?", T["en"]["org_desc"]),
+  ("How is Revanite different from a marketing agency?", "An agency executes separate tasks: setting up ads, building a website, running social media. Revanite works as a strategic partner: it sets priorities, manages marketing and contractors, and connects advertising with sales and analytics. Hands-on implementation — ads, websites, analytics — is part of the work too."),
+  ("Who does Revanite work with?", "Small and mid-sized businesses, entrepreneurs and growing companies in Kazakhstan, Kyrgyzstan and the CIS, as well as aspiring and working digital specialists and teams that need training. Clients include Bakai Bank, Globbing Kazakhstan, Yeko Kazakhstan, SAGI, Shanyraq Business Forum, BI GROUP, Geometry, Jintropine, Youtrade and InnMedia."),
+  ("How is Business Tracking different from Marketing Management?", "Marketing Management is managing the company's marketing: strategy, channels, budgets, contractors and analytics. Business Tracking is working with the entrepreneur on the business as a whole: goals, metrics, constraints, hypotheses and management decisions."),
+  ("Who is the founder of Revanite?", T["en"]["summary"]),
+  ("How do I get started?", "Message us on WhatsApp or Telegram with a short note about your business and the challenge. We will discuss the situation and suggest a practice and format. For a quick start there is a business check-up — $99 instead of $200. Contact: +7 701 458 42 42, Telegram @messer66."),
+ ],
+}
+
+# Экспресс-диагностика: (надзаголовок, заголовок, текст, пункты, кнопка)
+DIAG = {
+ "ru": ("С чего начать", f"Экспресс-диагностика бизнеса — {PRICE_HTML}",
+        "Анализируем ключевые данные компании — продажи, воронку, маркетинг, процессы и экономику. На 60-минутной сессии показываем главное ограничение роста, зоны потерь и приоритетные шаги.",
+        ["Доступ к данным в режиме просмотра: продажи, CRM, рекламные кабинеты, отчётность",
+         "Сессия 60 минут: ключевое ограничение роста, зоны потерь, приоритеты",
+         "Краткий план действий по итогам сессии",
+         f"При продолжении работы {PRICE} засчитываются в стоимость проекта"],
+        "Записаться на диагностику"),
+ "en": ("Where to start", f"Business check-up — {PRICE_HTML}",
+        "We analyze your key business data — sales, funnel, marketing, operations and unit economics. In a 60-minute session we show the main constraint on growth, where you are losing money and which steps come first.",
+        ["View-only access to your data: sales, CRM, ad accounts, reporting",
+         "60-minute session: the key constraint on growth, areas of loss, priorities",
+         "A concise action plan after the session",
+         f"If we continue, the {PRICE} is credited toward the project"],
+        "Book a check-up"),
+}
+
+PROCESS = {
+ "ru": ("Порядок работы", [
+   "Заявка в WhatsApp или Telegram: кратко о бизнесе и задаче",
+   "Обсуждение задачи или экспресс-диагностика: анализ данных и определение приоритетов",
+   "Предложение: направление, формат, объём работ и стоимость",
+   "Работа с регулярной отчётностью по бизнес-показателям"]),
+ "en": ("How we work", [
+   "Send a request on WhatsApp or Telegram with a short note about your business and the challenge",
+   "A discussion or business check-up: data analysis and priorities",
+   "Proposal: practice, format, scope and price",
+   "Delivery with regular reporting on business metrics"]),
+}
+
+SERVICES_PAGE = {
+ "ru": ("Четыре самостоятельных направления, объединённых методологией Strategy → Management → Execution → Tracking & Growth.", "Подробнее о направлении"),
+ "en": ("Four independent practices united by the Strategy → Management → Execution → Tracking & Growth methodology.", "More about this practice"),
+}
+
+CASES_PAGE = {
+ "ru": {"intro": "Проекты для бизнеса и трекинг стартапов. По каждому кейсу — задача, исходная ситуация, решение, инструменты и результат.",
+        "projects": "Проекты для бизнеса", "tracking": "Трекинг стартапов",
+        "h": ("Задача", "Исходная ситуация", "Что сделано", "Инструменты", "Результат"), "changed": "Что изменилось"},
+ "en": {"intro": "Client projects and startup tracking. Each case covers the challenge, the starting point, the solution, the tools and the result.",
+        "projects": "Client projects", "tracking": "Startup tracking",
+        "h": ("Challenge", "Starting point", "What was done", "Tools", "Result"), "changed": "What changed"},
+}
+
+META = {
+ "ru": {
+  "": ("Revanite — Strategic Growth Partner | Маркетинг и рост бизнеса, Алматы",
+       "Revanite — стратегический партнёр бизнеса: управление маркетингом, реклама, сайты и аналитика, трекинг бизнеса и обучение маркетингу. Алматы."),
+  "services": ("Направления работы — Revanite",
+               "Четыре направления Revanite: Marketing Management, Digital Growth, Business Tracking и Education. Экспресс-диагностика бизнеса за $99."),
+  "marketing-management": ("Marketing Management — управление маркетингом бизнеса | Revanite",
+                           "Внешнее управление маркетингом для малого и среднего бизнеса: стратегия, план, бюджеты, управление подрядчиками, аналитика и качество лидов."),
+  "digital-growth": ("Digital Growth — реклама, сайты и аналитика | Revanite",
+                     "Meta Ads и Google Ads, сайты и лендинги на Tilda, GA4, Google Tag Manager, сквозная аналитика и дашборды как часть системы привлечения клиентов."),
+  "business-tracking": ("Business Tracking — трекинг бизнеса | Revanite",
+                        "Трекинг для предпринимателей: цели и показатели, поиск ограничений, проверка гипотез, приоритеты и регулярный контроль прогресса."),
+  "education": ("Обучение маркетингу и таргетированной рекламе | Revanite",
+                "Практическое обучение интернет-маркетингу, Meta Ads, Google Ads и веб-аналитике для специалистов и корпоративные программы для команд."),
+  "cases": ("Кейсы и проекты — Revanite",
+            "Кейсы Revanite: ROMI 316% для SAGI, лид в 2,4 раза дешевле для Yeko, −45% к стоимости регистрации в Глоббинг, ROAS 234% для Shanyraq."),
+  "about": ("Руслан Хасанов — основатель Revanite",
+            "Руслан Хасанов — основатель Revanite: экс-CMO re:Kassa, опыт в Home Credit Bank, Halyk Insurance и Alfa Bank, трекер стартапов, преподаватель AlmaU."),
+  "teaching": ("Преподавание и выступления — Руслан Хасанов",
+               "Руслан Хасанов преподаёт digital-маркетинг в AlmaU, руководит направлением «Диджитал» в Qamalladin University, проводит воркшопы в Astana Hub."),
+  "contact": ("Контакты — Revanite",
+              "Связаться с Revanite: Telegram @messer66, WhatsApp и телефон +7 701 458 42 42, Instagram, LinkedIn. Алматы, Казахстан."),
+ },
+ "en": {
+  "": ("Revanite — Strategic Growth Partner | Marketing and business growth, Almaty",
+       "Revanite is a strategic growth partner for businesses: marketing management, ads, websites and analytics, business tracking and marketing education."),
+  "services": ("Services — Revanite",
+               "Revanite's four practices: Marketing Management, Digital Growth, Business Tracking and Education. A $99 business check-up to get started."),
+  "marketing-management": ("Marketing Management — outsourced marketing leadership | Revanite",
+                           "External marketing management for small and mid-sized businesses: strategy, plan, budgets, contractor management, analytics and lead quality."),
+  "digital-growth": ("Digital Growth — ads, websites and analytics | Revanite",
+                     "Meta Ads and Google Ads, Tilda websites and landing pages, GA4, Google Tag Manager, end-to-end analytics and dashboards as one acquisition system."),
+  "business-tracking": ("Business Tracking — tracking for entrepreneurs | Revanite",
+                        "Business tracking for entrepreneurs: goals and metrics, finding constraints, testing hypotheses, priorities and regular progress reviews."),
+  "education": ("Marketing and paid social training | Revanite",
+                "Hands-on training in online marketing, Meta Ads, Google Ads and web analytics for specialists, plus corporate programs for teams."),
+  "cases": ("Case studies — Revanite",
+            "Revanite case studies: 316% ROMI for SAGI, 2.4× cheaper leads for Yeko, 45% lower cost per sign-up at Globbing, 234% ROAS for Shanyraq."),
+  "about": ("Ruslan Khasanov — founder of Revanite",
+            "Ruslan Khasanov, founder of Revanite: former CMO at re:Kassa, Home Credit Bank, Halyk Insurance and Alfa Bank, startup tracker, AlmaU lecturer."),
+  "teaching": ("Teaching and talks — Ruslan Khasanov",
+               "Ruslan Khasanov lectures in digital marketing at AlmaU, leads the Digital programme at Qamalladin University and runs workshops at Astana Hub."),
+  "contact": ("Contact — Revanite",
+              "Contact Revanite: Telegram @messer66, WhatsApp and phone +7 701 458 42 42, Instagram, LinkedIn. Almaty, Kazakhstan."),
+ },
+}
+
+# Названия страниц для хлебных крошек и разметки
+H1 = {
+ "ru": {"services": "Направления работы", "marketing-management": "Marketing Management", "digital-growth": "Digital Growth",
+        "business-tracking": "Business Tracking", "education": "Education", "cases": "Кейсы и проекты",
+        "about": "Основатель", "teaching": "Преподавание и выступления", "contact": "Контакты"},
+ "en": {"services": "Services", "marketing-management": "Marketing Management", "digital-growth": "Digital Growth",
+        "business-tracking": "Business Tracking", "education": "Education", "cases": "Case studies",
+        "about": "Founder", "teaching": "Teaching and talks", "contact": "Contact"},
 }
 
 KNOWS = {
@@ -224,28 +666,9 @@ KNOWS = {
         "AI in marketing", "Generative Engine Optimization"],
 }
 
-FAQ = {
- "ru": [
-  ("Кто такой Руслан Хасанов?", T["ru"]["summary"]),
-  ("Что такое Revanite?", "Revanite — студия стратегического роста, основанная Русланом Хасановым. Студия помогает компаниям выявить ограничения роста в стратегии, продажах, маркетинге, процессах и экономике и выстроить систему, которая приносит измеримый результат. Форматы работы: экспресс-диагностика бизнеса ($99 вместо $200), Revanite Tracking — трекинг и консалтинг для стартапов и собственников, Revanite Studio — продажи, маркетинг и автоматизация под ключ. Принцип студии — маркетинг как вложение, а не расход."),
-  ("С кем работает Руслан Хасанов?", "С малым и средним бизнесом в Казахстане, Кыргызстане и СНГ, стартапами на ранних стадиях и командами акселераторов. Отраслевой опыт: банки и финтех, страхование, девелопмент, техника, доставка и e-commerce, ивенты, образование. Среди клиентов — Бакай Банк, Глоббинг Казахстан, Yeko Kazakhstan, SAGI, Shanyraq Business Forum, BI GROUP, Geometry, Jintropine, Youtrade, InnMedia."),
-  ("Чем трекер отличается от маркетолога-исполнителя?", "Трекер не выполняет работу за команду: он помогает найти ключевое ограничение роста, сформулировать гипотезы, быстро и экономно их проверить и удерживать фокус на метриках. Исполнитель реализует выбранное решение. Руслан работает в обеих ролях: трекинг — в Revanite Tracking и IT-хабах, внедрение — в Revanite Studio, включая продажи, CRM и автоматизацию."),
-  ("Где преподаёт Руслан Хасанов?", "В Almaty Management University (AlmaU) — курсы по веб-аналитике, цифровому маркетингу, SMM и инструментам интернет-маркетинга; в Qamalladin University — руководит направлением «Диджитал»; в колледже ICB. Проводит воркшопы в Astana Hub, выступал с гостевой лекцией в Nazarbayev University."),
-  ("Как связаться с Русланом Хасановым?", "WhatsApp и телефон: +7 701 458 42 42, Telegram: @messer66. Также Instagram (@hasanov5) и LinkedIn."),
- ],
- "en": [
-  ("Who is Ruslan Khasanov?", T["en"]["summary"]),
-  ("What is Revanite?", "Revanite is a strategic growth studio founded by Ruslan Khasanov. It helps companies identify the constraints on growth across strategy, sales, marketing, operations and unit economics and build a system that delivers measurable results. Engagement formats: a business check-up ($99 instead of $200), Revanite Tracking — tracking and advisory for startups and business owners, and Revanite Studio — done-for-you sales, marketing and automation. The studio's principle: marketing is an investment, not an expense."),
-  ("Who does Ruslan Khasanov work with?", "Small and mid-sized businesses in Kazakhstan, Kyrgyzstan and the CIS, early-stage startups and accelerator teams. Industry experience includes banking and fintech, insurance, real estate, consumer electronics, delivery and e-commerce, events and education. Clients include Bakai Bank, Globbing Kazakhstan, Yeko Kazakhstan, SAGI, Shanyraq Business Forum, BI GROUP, Geometry, Jintropine, Youtrade and InnMedia."),
-  ("How is a startup tracker different from a marketing contractor?", "A tracker does not do the work for the team: a tracker helps find the key constraint on growth, frame hypotheses, test them quickly and economically, and keep the team focused on metrics. A contractor implements the chosen solution. Ruslan works in both roles: tracking through Revanite Tracking and tech hubs, implementation through Revanite Studio, including sales, CRM and automation."),
-  ("Where does Ruslan Khasanov teach?", "At Almaty Management University (AlmaU) — web analytics, digital marketing, SMM and online marketing tools; at Qamalladin University, where he leads the Digital program; and at ICB college. He runs workshops at Astana Hub and has given a guest lecture at Nazarbayev University."),
-  ("How can I contact Ruslan Khasanov?", "WhatsApp and phone: +7 701 458 42 42, Telegram: @messer66. Also Instagram (@hasanov5) and LinkedIn."),
- ],
-}
-
 EXPERIENCE = {
  "ru": [
-  ("Revanite", "Основатель студии стратегического роста"),
+  ("Revanite", "Основатель · Strategic Growth Partner"),
   ("IT-хабы Казахстана", "Трекер стартапов; линейный трекер акселератора AIpreneurs"),
   ("AlmaU, Qamalladin University, колледж ICB", "Преподаватель; руководитель направления «Диджитал» в Qamalladin University"),
   ("re:Kassa", "CMO (до 2026)"),
@@ -256,7 +679,7 @@ EXPERIENCE = {
   ("Samsung Kazakhstan", "Запуск онлайн-магазина"),
  ],
  "en": [
-  ("Revanite", "Founder of a strategic growth studio"),
+  ("Revanite", "Founder · Strategic Growth Partner"),
   ("Kazakhstan tech hubs", "Startup tracker; line tracker at the AIpreneurs accelerator"),
   ("AlmaU, Qamalladin University, ICB College", "Lecturer; head of the Digital program at Qamalladin University"),
   ("re:Kassa", "CMO (until 2026)"),
@@ -268,104 +691,6 @@ EXPERIENCE = {
  ],
 }
 
-FORMULA = {
- "ru": [("Инсайт", "понимание клиента, рынка и реальных мотивов покупки"),
-        ("Экономика", "юнит-экономика: CAC, LTV, маржинальность, окупаемость"),
-        ("Стратегия", "выбор сегментов, каналов и ценностного предложения"),
-        ("Гипотезы", "приоритизированный план проверок"),
-        ("Исполнение", "быстрый запуск с минимальными затратами"),
-        ("Аналитика", "сквозная — от первого касания до оплаты в CRM"),
-        ("Масштаб", "инвестиции в окупаемые решения, отказ от неэффективных")],
- "en": [("Insight", "understanding the customer, the market and the real reasons to buy"),
-        ("Economics", "unit economics: CAC, LTV, margin, payback"),
-        ("Strategy", "choice of segments, channels and value proposition"),
-        ("Hypotheses", "a prioritized testing plan"),
-        ("Execution", "fast launch at minimal cost"),
-        ("Analytics", "end-to-end, from first touch to payment in the CRM"),
-        ("Scale", "invest in what pays back, drop what does not")],
-}
-
-# Экспресс-диагностика: (надзаголовок на главной, заголовок на главной, текст, заголовок на странице услуг, пункты, кнопка)
-DIAG = {
- "ru": ("Первый шаг", f"Экспресс-диагностика бизнеса — {PRICE_HTML}",
-        "Анализирую ключевые данные компании — продажи, воронку, маркетинг, процессы и экономику. На 60-минутной сессии показываю главное ограничение роста, зоны потерь и приоритетные шаги. По итогам вы получаете краткий план действий. При продолжении работы стоимость диагностики засчитывается.",
-        f"Первый шаг: экспресс-диагностика бизнеса — {PRICE_HTML}",
-        ["Доступ к данным в режиме просмотра: продажи, CRM, рекламные кабинеты, отчётность",
-         "Сессия 60 минут: ключевое ограничение роста, зоны потерь, приоритеты",
-         "Краткий план действий по итогам сессии",
-         f"При продолжении работы {PRICE} засчитываются в стоимость проекта"],
-        "Записаться на диагностику"),
- "en": ("First step", f"Business check-up — {PRICE_HTML}",
-        "I analyze your key business data — sales, funnel, marketing, operations and unit economics. In a 60-minute session I show the main constraint on growth, where you are losing money and which steps come first. You receive a concise action plan afterwards. If we continue working together, the fee is credited.",
-        f"First step: business check-up — {PRICE_HTML}",
-        ["View-only access to your data: sales, CRM, ad accounts, reporting",
-         "60-minute session: the key constraint on growth, areas of loss, priorities",
-         "A concise action plan after the session",
-         f"If we continue, the {PRICE} is credited toward the project"],
-        "Book a check-up"),
-}
-
-SERVICES = {
- "ru": [
-  ("studio", "Revanite Studio", "Продажи, маркетинг и автоматизация под ключ",
-   "Для малого и среднего бизнеса, которому нужен измеримый рост продаж, а не охваты.",
-   ["Стратегия роста и медиаплан с расчётом окупаемости",
-    "Аудит воронки и отдела продаж: этапы сделки, конверсии, коммуникации с клиентами",
-    "Оцифровка и автоматизация: CRM (amoCRM, Bitrix24), интеграции, чат-боты",
-    "Performance-маркетинг: Google Ads, Meta Ads, TikTok Ads",
-    "Сквозная аналитика: GA4, Google Tag Manager, Яндекс Метрика, Meta Pixel и Conversions API, AppsFlyer — от рекламы до продажи в CRM",
-    "Дашборды в Looker Studio и отчётность план-факт"],
-   "проектная работа или ежемесячное сопровождение с еженедельной отчётностью."),
-  ("tracking", "Revanite Tracking", "Трекинг и стратегия",
-   "Для стартапов и собственников бизнеса, чей рост вышел на плато.",
-   ["Диагностика ключевых ограничений роста",
-    "Проверка продуктовых, коммерческих и маркетинговых гипотез",
-    "Go-to-market, построение воронки продаж, привлечение первых клиентов",
-    "Операционные процессы и работа с фаундером: фокус, приоритеты, делегирование"],
-   "трекшн-сессии раз в одну-две недели, трекшн-карта, контроль метрик между сессиями."),
-  ("mentoring", "Обучение и менторство", "Для маркетологов и команд", "",
-   ["Индивидуальная программа: digital-маркетинг, аналитика, AI-инструменты",
-    "Корпоративные воркшопы: go-to-market, лидогенерация, воронки продаж",
-    "Выступления и гостевые лекции"],
-   "онлайн или очно в Алматы."),
- ],
- "en": [
-  ("studio", "Revanite Studio", "Done-for-you sales, marketing and automation",
-   "For small and mid-sized businesses that need measurable sales growth, not reach.",
-   ["Growth strategy and media plan with payback modeling",
-    "Sales funnel and sales team audit: deal stages, conversion rates, customer communication",
-    "Digitization and automation: CRM (amoCRM, Bitrix24), integrations, chatbots",
-    "Performance marketing: Google Ads, Meta Ads, TikTok Ads",
-    "End-to-end analytics: GA4, Google Tag Manager, Yandex Metrica, Meta Pixel and Conversions API, AppsFlyer — from ad to sale in the CRM",
-    "Looker Studio dashboards and plan-vs-actual reporting"],
-   "project-based or ongoing monthly engagement with weekly reporting."),
-  ("tracking", "Revanite Tracking", "Tracking & strategy",
-   "For startups and business owners whose growth has plateaued.",
-   ["Diagnosis of the key constraints on growth",
-    "Testing product, commercial and marketing hypotheses",
-    "Go-to-market, sales funnel design, first customer acquisition",
-    "Operations and founder work: focus, priorities, delegation"],
-   "traction sessions every one to two weeks, a traction map, metric tracking between sessions."),
-  ("mentoring", "Teaching & mentoring", "For marketers and teams", "",
-   ["Individual program: digital marketing, analytics, AI tools",
-    "Corporate workshops: go-to-market, lead generation, sales funnels",
-    "Talks and guest lectures"],
-   "online or in person in Almaty."),
- ],
-}
-
-PROCESS = {
- "ru": ("Порядок работы", [
-   "Заявка в WhatsApp или Telegram: кратко о бизнесе и задаче",
-   "Экспресс-диагностика: анализ данных и определение зон потерь",
-   "Предложение: формат, объём работ и стоимость — Studio, Tracking или отдельный проект",
-   "Работа с еженедельной отчётностью по финансовым показателям, а не по кликам"]),
- "en": ("How we work", [
-   "Send a request on WhatsApp or Telegram with a short note about your business and the challenge",
-   "Business check-up: data analysis and identification of areas of loss",
-   "Proposal: format, scope and price — Studio, Tracking or a standalone project",
-   "Delivery with weekly reporting on financial metrics, not clicks"]),
-}
 TEACH = {
  "ru": [
   ("Almaty Management University (AlmaU)", "Преподаватель с 2022 года",
@@ -412,42 +737,6 @@ AI_COURSE = {
         "Marketing funnel: building and stress-testing it with AI"]),
 }
 
-META = {
- "ru": {
-  "": ("Руслан Хасанов — консультант по росту бизнеса | Алматы",
-       "Руслан Хасанов — консультант по росту бизнеса в Алматы: стратегия, продажи, маркетинг, CRM и автоматизация. Экс-CMO re:Kassa, трекер стартапов."),
-  "about": ("Обо мне — Руслан Хасанов",
-            "Биография Руслана Хасанова: CMO re:Kassa, Home Credit Bank, Halyk Insurance, Alfa Bank, Samsung Kazakhstan; трекинг стартапов, преподавание в AlmaU."),
-  "services": ("Услуги: диагностика бизнеса, продажи и маркетинг, трекинг — Руслан Хасанов",
-               "Экспресс-диагностика бизнеса за $99, Revanite Studio, Revanite Tracking и обучение: продажи, маркетинг, CRM, автоматизация и трекинг стартапов."),
-  "cases": ("Кейсы — Руслан Хасанов, Revanite",
-            "Кейсы Руслана Хасанова: ROMI 316% для SAGI, лид в 2,4 раза дешевле для Yeko, −45% к стоимости регистрации в Глоббинг, ROAS 234% для Shanyraq."),
-  "teaching": ("Преподавание и выступления — Руслан Хасанов",
-               "Руслан Хасанов преподаёт digital-маркетинг в AlmaU, руководит направлением «Диджитал» в Qamalladin University, проводит воркшопы в Astana Hub."),
-  "contact": ("Контакты — Руслан Хасанов, Revanite",
-              "Как связаться с Русланом Хасановым: Telegram @messer66, WhatsApp и телефон +7 701 458 42 42, Instagram, LinkedIn. Алматы, Казахстан."),
- },
- "en": {
-  "": ("Ruslan Khasanov — business growth consultant | Almaty",
-       "Ruslan Khasanov, business growth consultant in Almaty: strategy, sales, marketing, CRM and automation. Former CMO at re:Kassa, startup tracker."),
-  "about": ("About — Ruslan Khasanov",
-            "Biography of Ruslan Khasanov: CMO at re:Kassa, Home Credit Bank, Halyk Insurance, Alfa Bank, Samsung Kazakhstan; startup tracking, lecturing at AlmaU, Revanite."),
-  "services": ("Services: business check-up, sales and marketing, tracking — Ruslan Khasanov",
-               "A $99 business check-up, Revanite Studio, Revanite Tracking and training: sales, marketing, CRM, automation and startup tracking."),
-  "cases": ("Case studies — Ruslan Khasanov, Revanite",
-            "Ruslan Khasanov's case studies: 316% ROMI for SAGI, 2.4× cheaper leads for Yeko, 45% lower cost per sign-up at Globbing, 234% ROAS for Shanyraq."),
-  "teaching": ("Teaching and talks — Ruslan Khasanov",
-               "Ruslan Khasanov lectures in digital marketing at AlmaU, leads the Digital programme at Qamalladin University and runs workshops at Astana Hub."),
-  "contact": ("Contact — Ruslan Khasanov, Revanite",
-              "How to reach Ruslan Khasanov: Telegram @messer66, WhatsApp and phone +7 701 458 42 42, Instagram, LinkedIn. Almaty, Kazakhstan."),
- },
-}
-
-H1 = {
- "ru": {"about": "Руслан Хасанов — обо мне", "services": "Услуги", "cases": "Кейсы", "teaching": "Преподавание и выступления", "contact": "Контакты"},
- "en": {"about": "Ruslan Khasanov — about me", "services": "Services", "cases": "Case studies", "teaching": "Teaching and talks", "contact": "Contact"},
-}
-
 # ---------------------------------------------------------------- SCHEMA
 def person(lang):
     t = T[lang]
@@ -459,7 +748,7 @@ def person(lang):
         "familyName": "Хасанов" if lang == "ru" else "Khasanov",
         "jobTitle": t["jobTitle"],
         "description": t["summary"],
-        "url": url(lang, ""),
+        "url": url(lang, "about"),
         "address": {"@type": "PostalAddress", "addressLocality": "Almaty", "addressCountry": "KZ"},
         "worksFor": [{"@id": BASE + "/#org"}],
         "affiliation": [
@@ -469,19 +758,19 @@ def person(lang):
         "knowsAbout": KNOWS[lang],
         "knowsLanguage": ["ru", "en"],
         "sameAs": SAME_AS,
-        "telephone": PHONE,
     }
     if PHOTO:
         p["image"] = PHOTO_URL
     return p
 
 def org(lang):
+    t = T[lang]
     return {
         "@type": "ProfessionalService", "@id": BASE + "/#org",
         "name": "Revanite",
-        "alternateName": ["Revanite Strategic Growth Studio", "Revanite Studio", "Revanite Tracking"],
-        "slogan": "Маркетинг как вложение, а не расход." if lang == "ru" else "Marketing as an investment, not an expense.",
-        "description": T[lang]["org_desc"],
+        "alternateName": ["Revanite Strategic Growth Partner"],
+        "slogan": t["tagline"],
+        "description": t["org_desc"],
         "url": BASE + "/",
         "logo": BASE + "/assets/logo.svg",
         "founder": {"@id": BASE + "/#person"},
@@ -490,40 +779,45 @@ def org(lang):
         "telephone": PHONE,
         "contactPoint": {"@type": "ContactPoint", "telephone": PHONE, "contactType": "sales",
                          "availableLanguage": ["ru", "en"], "url": WA},
+        "knowsAbout": [DIRS[lang][s]["name"] + " — " + DIRS[lang][s]["label"] for s in DIR_SLUGS],
     }
 
 def website(lang):
     return {"@type": "WebSite", "@id": BASE + "/#website", "url": BASE + "/",
-            "name": T[lang]["name"], "inLanguage": ["ru", "en"], "publisher": {"@id": BASE + "/#person"}}
+            "name": "Revanite", "inLanguage": ["ru", "en"], "publisher": {"@id": BASE + "/#org"}}
 
 def breadcrumbs(lang, slug, title):
     return {"@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": 1, "name": T[lang]["home"], "item": url(lang, "")},
         {"@type": "ListItem", "position": 2, "name": title, "item": url(lang, slug)}]}
 
+def service(lang, s):
+    d = DIRS[lang][s]
+    return {"@type": "Service", "@id": url(lang, s) + "#service", "name": d["name"] + " — " + d["label"],
+            "description": d["short"], "url": url(lang, s), "provider": {"@id": BASE + "/#org"},
+            "areaServed": ["KZ", "KG", "CIS"]}
+
 def schema(lang, slug):
     title, desc = META[lang][slug]
-    page_type = {"": "WebPage", "about": "ProfilePage", "services": "WebPage", "cases": "CollectionPage", "teaching": "WebPage", "contact": "ContactPage"}[slug]
+    page_type = {"about": "ProfilePage", "cases": "CollectionPage", "contact": "ContactPage"}.get(slug, "WebPage")
     page = {"@type": page_type, "@id": url(lang, slug) + "#webpage", "url": url(lang, slug), "name": title,
             "description": desc, "inLanguage": lang, "isPartOf": {"@id": BASE + "/#website"},
-            "about": {"@id": BASE + "/#person"}, "dateModified": TODAY}
+            "about": {"@id": BASE + "/#person" if slug in ("about", "teaching") else BASE + "/#org"}, "dateModified": TODAY}
     if slug == "about":
         page["mainEntity"] = {"@id": BASE + "/#person"}
-    graph = [person(lang), org(lang), website(lang), page]
+    graph = [org(lang), person(lang), website(lang), page]
     if slug:
         graph.append(breadcrumbs(lang, slug, H1[lang][slug]))
     if slug == "":
         graph.append({"@type": "FAQPage", "@id": url(lang, "") + "#faq", "inLanguage": lang,
                       "mainEntity": [{"@type": "Question", "name": q,
                                       "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ[lang]]})
+    if slug in DIR_SLUGS:
+        graph.append(service(lang, slug))
     if slug == "services":
-        for key, name, sub, who, items, fmt in SERVICES[lang]:
-            graph.append({"@type": "Service", "@id": url(lang, "services") + "#" + key, "name": f"{name} — {sub}",
-                          "description": who + " " + "; ".join(items) + ".", "provider": {"@id": BASE + "/#org"},
-                          "areaServed": ["KZ", "CIS"]})
+        graph += [service(lang, s) for s in DIR_SLUGS]
     return json.dumps({"@context": "https://schema.org", "@graph": graph}, ensure_ascii=False, indent=1)
 
-# ---------------------------------------------------------------- HTML
 LOGO = ('<svg class="logo" viewBox="0 0 32 32" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" '
         'stroke-linecap="round" stroke-linejoin="round"><path d="M10 26V6h7.5a5 5 0 0 1 0 10H10"/><path d="M15.5 16 22 26"/>'
         '<path d="M4 29 28 3" stroke="#5B82C9" stroke-width="1.2"/></svg>')
@@ -553,7 +847,7 @@ p+p{margin-top:14px}
 .grad{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .lead{font-size:clamp(19px,2.3vw,23px);color:var(--muted);max-width:700px;margin-top:22px}
 .hero{padding:104px 0 56px}
-.hero h1{font-size:clamp(46px,8.4vw,92px);line-height:1;letter-spacing:-.035em;background:linear-gradient(180deg,#fff 30%,#AEB9CF);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.06em}
+.hero h1{font-size:clamp(38px,5.4vw,68px);line-height:1.04;letter-spacing:-.03em;background:linear-gradient(180deg,#fff 30%,#AEB9CF);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.06em}
 .hero-grid{display:grid;grid-template-columns:1fr auto;gap:48px;align-items:center}
 .portrait{width:240px;height:290px;border-radius:20px;border:1px solid transparent;background:linear-gradient(var(--surface2),var(--surface)) padding-box,var(--grad) border-box;object-fit:cover;display:flex;align-items:center;justify-content:center;font-size:60px;font-weight:700;letter-spacing:.04em;color:var(--accent);box-shadow:0 30px 80px -30px rgba(126,166,255,.45)}
 .role{font-size:clamp(16px,2vw,19px);font-weight:600;margin-top:18px}
@@ -591,7 +885,7 @@ p+p{margin-top:14px}
 s{opacity:.55;font-weight:500;margin-right:.1em}
 .note{color:var(--muted);font-size:15px;margin-top:18px}
 footer{border-top:1px solid var(--line);padding:84px 0 36px;background:radial-gradient(900px 400px at 10% 0,rgba(180,140,255,.10),transparent 60%),var(--surface)}
-.footer-title{font-size:clamp(30px,5vw,54px);line-height:1.08;margin-bottom:14px;max-width:820px}
+.footer-title{font-size:clamp(24px,3.2vw,36px);line-height:1.08;margin-bottom:14px;max-width:820px}
 .footer-sub{color:var(--muted);margin-bottom:32px}
 .copy{color:var(--muted);font-size:14px;margin-top:40px}
 .socials{list-style:none;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:12px}
@@ -650,10 +944,90 @@ details summary::-webkit-details-marker{display:none}
 .page{padding-bottom:24px !important}
 .crumbs{font-size:14px;color:var(--muted);margin-bottom:18px}
 .crumbs a{text-decoration:none}
+.system{width:330px;border-radius:20px;border:1px solid transparent;background:linear-gradient(var(--surface2),var(--surface)) padding-box,var(--grad) border-box;padding:24px 24px 18px;box-shadow:0 30px 80px -30px rgba(126,166,255,.45)}
+.system-title{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
+.system ol{list-style:none;counter-reset:sy}
+.system li{counter-increment:sy;position:relative;padding:12px 0 12px 42px;border-top:1px solid var(--line)}
+.system li:first-child{border-top:0}
+.system li::before{content:"0" counter(sy);position:absolute;left:0;top:13px;font-size:13px;font-weight:700;color:var(--accent)}
+.system b{display:block;font-weight:700}
+.system li span{color:var(--muted);font-size:14px}
+.system-edu{margin-top:6px;padding-top:12px;border-top:1px dashed var(--line);color:var(--muted);font-size:13px}
+.split{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:start}
+.panel{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:22px;padding:36px}
+.approach{border-color:rgba(126,166,255,.35)}
+.issues{list-style:none;margin-top:22px}
+.issues li{position:relative;padding:14px 0 14px 30px;border-top:1px solid var(--line)}
+.issues li:first-child{border-top:0}
+.issues li::before{content:"";position:absolute;left:2px;top:50%;width:14px;height:2px;background:#E2857F}
+.check{list-style:none}
+.check li{position:relative;padding:7px 0 7px 28px}
+.check li::before{content:"";position:absolute;left:2px;top:.95em;width:11px;height:6px;border-left:2px solid var(--accent);border-bottom:2px solid var(--accent);transform:rotate(-45deg)}
+.check.cols{columns:2;column-gap:40px}.check.cols li{break-inside:avoid}
+.dirs{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.dir{background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:18px;padding:30px;display:flex;flex-direction:column;gap:10px;transition:border-color .25s,transform .25s}
+.dir:hover{border-color:rgba(126,166,255,.45);transform:translateY(-3px)}
+.dir-top{display:flex;justify-content:space-between;align-items:center;min-height:24px}
+.step-n{color:var(--accent);font-weight:700;font-size:14px}
+.badge{font-size:11px;letter-spacing:.1em;text-transform:uppercase;font-weight:700;padding:4px 10px;border-radius:999px;background:var(--grad);color:#0A0C10}
+.dir h3{font-size:24px;margin:0}
+.dir p{color:var(--muted);font-size:15px}
+.dir .dir-label,.dir-label{color:var(--accent);font-weight:600;font-size:15px}
+.dir-value,.dir .dir-value{color:var(--text);border-left:2px solid var(--accent);padding-left:12px;font-size:15px}
+.dir a{margin-top:auto;padding-top:6px;color:var(--accent);text-decoration:none;font-weight:600;font-size:15px}
+.method{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+.step{position:relative;background:linear-gradient(180deg,var(--surface2),var(--surface));border:1px solid var(--line);border-radius:18px;padding:24px;display:flex;flex-direction:column;gap:8px}
+.step::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;border-radius:18px 18px 0 0;background:var(--grad)}
+.step b{font-size:19px}
+.step span:last-child{color:var(--muted);font-size:14.5px}
+.step:not(:last-child)::after{content:"";position:absolute;right:-17px;top:50%;width:9px;height:9px;border-top:2px solid var(--accent);border-right:2px solid var(--accent);transform:translateY(-50%) rotate(45deg)}
+.method-base{margin-top:18px;border:1px dashed rgba(180,140,255,.5);border-radius:14px;padding:16px 20px;color:var(--muted);font-size:15px}
+.method-base b{color:var(--accent2)}
+.auds{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.aud{border:1px solid var(--line);border-radius:16px;padding:22px;display:flex;flex-direction:column;gap:8px}
+.aud h3{font-size:17px;margin:0}
+.aud p{color:var(--muted);font-size:14.5px;flex:1}
+.aud a{color:var(--accent);text-decoration:none;font-size:14px;font-weight:600}
+.founder{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:start}
+.founder .portrait{width:200px;height:240px}
+.founder h3{font-size:24px;margin:0}
+.founder p{color:var(--muted)}
+.founder p+p{margin-top:12px}
+.founder .role{color:var(--accent);margin:6px 0 16px}
+.final{background:radial-gradient(700px 300px at 90% 0,rgba(126,166,255,.16),transparent 60%),linear-gradient(180deg,var(--surface2),var(--surface))}
+.final h2{font-size:clamp(30px,4.6vw,52px)}
+.edu-split{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:32px}
+.edu-card{display:flex;flex-direction:column;gap:8px;text-decoration:none;border-radius:18px;padding:26px;border:1px solid var(--line)}
+.edu-card b{font-size:19px}
+.edu-card span:last-child{color:var(--muted);font-size:15px}
+.edu-card .tag{color:var(--accent);font-size:12px;letter-spacing:.1em;text-transform:uppercase;font-weight:700}
+.edu-card.a,.panel.edu.a{border-color:transparent;background:linear-gradient(var(--surface2),var(--surface)) padding-box,var(--grad) border-box}
+.edu-card.b .tag,.panel.edu.b .eyebrow{color:var(--accent2)}
+.edu-card.b,.panel.edu.b{border-color:rgba(180,140,255,.35);background:var(--bg)}
+.panel.edu.b .check li::before{border-color:var(--accent2)}
+.panel h3{margin-bottom:10px}
+.mnav{display:none}
+.mnav summary{cursor:pointer;list-style:none;border:1px solid var(--line);border-radius:8px;padding:4px 12px;font-size:14px;font-weight:600}
+.mnav summary::-webkit-details-marker{display:none}
+.mnav[open] summary{border-color:var(--accent)}
+.mnav-list{position:absolute;left:0;right:0;top:64px;background:#0A0C10;border-bottom:1px solid var(--line);box-shadow:0 24px 40px rgba(0,0,0,.6);padding:8px 20px 16px;display:flex;flex-direction:column}
+.mnav-list a{padding:12px 0;border-top:1px solid var(--line);text-decoration:none;color:var(--muted);font-size:16px}
+.mnav-list a:first-child{border-top:0}
+.mnav-list a[aria-current]{color:var(--text)}
+.foot-nav{list-style:none;display:flex;flex-wrap:wrap;gap:8px 22px;margin-bottom:28px}
+.foot-nav a{color:var(--muted);text-decoration:none;font-size:15px}
+.foot-nav a:hover{color:var(--text)}
+@media (max-width:1000px){
+ .hero-grid{grid-template-columns:1fr}
+ .system{width:100%;max-width:460px}
+ .method{grid-template-columns:repeat(2,1fr)}
+ .step:nth-child(2)::after{display:none}
+}
 @media (max-width:760px){
  body{font-size:16px}
  .bar{gap:8px}.brand span{display:none}
- nav{gap:10px}nav a{font-size:13px}nav .nav-home{display:none}
+ nav{display:none}
+ .mnav{display:block;margin-left:auto}
  .hero{padding:52px 0 40px}
  .hero-grid{grid-template-columns:1fr;gap:28px}
  .portrait{width:112px;height:132px;font-size:30px;border-radius:16px;order:-1}
@@ -664,9 +1038,18 @@ details summary::-webkit-details-marker{display:none}
  .knowledge{grid-template-columns:1fr;gap:44px}
  .projects.two{grid-template-columns:1fr}
  .card,.project,.case{padding:22px}
+ .system{max-width:none}
+ .split,.founder,.edu-split{grid-template-columns:1fr;gap:24px}
+ .dirs{grid-template-columns:1fr}
+ .method{grid-template-columns:1fr;gap:28px}
+ .step:not(:last-child)::after,.step:nth-child(2)::after{display:block;right:auto;left:30px;top:auto;bottom:-20px;transform:rotate(135deg)}
+ .panel{padding:24px}
+ .check.cols{columns:1}
+ .founder .portrait{width:112px;height:132px}
 }
 """
 
+# ---------------------------------------------------------------- HTML
 def portrait(lang):
     alt = T[lang]["name"]
     if PHOTO:
@@ -684,143 +1067,193 @@ def social_list(lang):
         out.append(f'<li><a href="{href}"{ext}><b>{name}</b><span>{handle}</span></a></li>')
     return '<ul class="socials">' + "".join(out) + "</ul>"
 
-def body_home(lang):
-    t = T[lang]
-    ru = lang == "ru"
-    eyebrow = "Руслан Хасанов · Revanite · Алматы" if ru else "Ruslan Khasanov · Revanite · Almaty"
-    h1 = "Системный рост бизнеса" if ru else "Business growth as a system"
-    lead = ("Анализирую бизнес целиком — стратегию, продажи, маркетинг, процессы и экономику — и выстраиваю систему роста: "
-            "от воронки продаж и рекламы до CRM, сквозной аналитики и автоматизации. Опыт руководителя в банках, страховании и финтехе; "
-            "трекер стартапов в IT-хабах Казахстана."
-            if ru else
-            "I analyze the whole business — strategy, sales, marketing, operations and unit economics — and build a growth system: "
-            "from the sales funnel and advertising to CRM, end-to-end analytics and automation. Former executive in banking, insurance "
-            "and fintech; startup tracker at Kazakhstan's tech hubs.")
-    btn_diag = f"Диагностика бизнеса — {PRICE_HTML}" if ru else f"Business check-up — {PRICE_HTML}"
-    btn_tg = "Написать в Telegram" if ru else "Message on Telegram"
-    cta = "Обсудить проект" if ru else "Discuss a project"
-    stats = "".join(f"<li><b>{n}</b><span>{d}</span></li>" for n, d in STATS[lang])
-    open_case = "Открыть кейс" if ru else "Open case"
-    cases = "".join(
-        f'<article class="project"><span class="tag">{channels}</span><h3>{title}</h3><p>{result}</p>'
-        f'<a href="{path(lang,"cases")}#case-{n}">{open_case} →</a></article>'
-        for n, (title, channels, task, done, result) in enumerate(CASES[lang], 1))
-    track = "".join(
-        f'<article class="project"><b class="metric">{m}</b><span class="metric-label">{ml}</span>'
-        f'<span class="tag">{tag}</span><h3>{title}</h3><ul>{"".join(f"<li>{x}</li>" for x in points)}</ul></article>'
-        for m, ml, title, tag, points in TRACK[lang])
-    groups = "".join(f'<h2>{g}</h2><ul>{"".join(f"<li>{c}</li>" for c in items)}</ul>' for g, items in GROUPS[lang])
-    d_eyebrow, d_title, d_text, _, _, d_btn = DIAG[lang]
-    services = "".join(
-        f'<article class="card"><span class="tag">{name}</span><h3>{sub}</h3>' + (f"<p>{who}</p>" if who else "") +
-        f'<p class="card-links"><a href="{WA}" rel="noopener" target="_blank">{cta}</a>'
-        f'<a href="{path(lang,"services")}#{key}">{"Подробнее" if ru else "Details"} →</a></p></article>'
-        for key, name, sub, who, items, fmt in SERVICES[lang])
-    about = "".join(f'<p class="answer">{p}</p>' for p in t["about"])
-    chips = "".join(f"<li>{k}</li>" for k in KNOWS[lang])
-    formula = "".join(f"<li><span><b>{a}</b> — {b}</span></li>" for a, b in FORMULA[lang])
-    teach = "".join(
-        f'<li><span class="when">{role}</span><div><h3>{place}</h3>'
-        + (f'<p>{" · ".join(items)}</p>' if items else "") + "</div></li>"
-        for place, role, items in TEACH[lang])
-    rows = [f"<li><b>{a}</b><span>{b}</span></li>" for a, b in EXPERIENCE[lang]]
-    exp = ('<ul class="exp">' + "".join(rows[:4]) + "</ul>"
-           f'<details class="more-box"><summary>{"Показать ещё опыт" if ru else "Show more experience"}</summary>'
-           '<ul class="exp">' + "".join(rows[4:]) + "</ul></details>")
-    faq = "".join(f'<details class="qa"><summary>{q}</summary><p>{a}</p></details>' for q, a in FAQ[lang])
-    return f"""
-<section class="hero"><div class="hero-grid"><div>
-<p class="eyebrow">{eyebrow}</p>
-<h1>{h1}</h1>
-<p class="lead">{lead}</p>
-<div class="cta"><a class="btn" href="{WA}" rel="noopener" target="_blank">{btn_diag}</a><a class="btn ghost" href="{TG}" rel="me noopener" target="_blank">{btn_tg}</a></div>
-</div>{portrait(lang)}</div></section>
-<section style="padding:0 0 8px"><ul class="stats">{stats}</ul><p class="note">{STATS_NOTE[lang]}</p></section>
-<section>{head("Ключевые проекты" if ru else "Key projects", path(lang,"cases"), "Все кейсы" if ru else "All case studies")}<div class="projects two">{cases}</div></section>
-<section>{head("Трекинг стартапов" if ru else "Startup tracking", path(lang,"cases") + "#tracking", "Подробнее" if ru else "Details")}<div class="projects">{track}</div></section>
-<section class="trust">{groups}</section>
-<section id="diagnostics"><p class="eyebrow">{d_eyebrow}</p><h2>{d_title}</h2><p class="answer">{d_text}</p>
-<div class="cta"><a class="btn" href="{WA}" rel="noopener" target="_blank">{d_btn}</a></div></section>
-<section>{head("Форматы работы" if ru else "Engagement formats")}<div class="cards">{services}</div></section>
-<section><h2>{"Обо мне" if ru else "About me"}</h2>{about}
-<p class="card-links"><a href="{path(lang,"about")}">{"Подробная биография" if ru else "Full biography"} →</a><a href="{IG}" rel="me noopener" target="_blank">Instagram</a><a href="{LI}" rel="me noopener" target="_blank">LinkedIn</a></p></section>
-<section><div class="knowledge">
-<div><h2>{"Инструменты и компетенции" if ru else "Skills and tools"}</h2><ul class="chips">{chips}</ul></div>
-<div><h2>{"Как я работаю: Revanite Growth Formula" if ru else "How I work: Revanite Growth Formula"}</h2><ol class="steps">{formula}</ol></div>
-</div></section>
-<section>{head("Где я преподаю" if ru else "Where I teach", path(lang,"teaching"), "Подробнее" if ru else "Details")}<ul class="rows">{teach}</ul></section>
-<section>{head("Карьера" if ru else "Career", path(lang,"about"), "Обо мне" if ru else "About me")}{exp}</section>
-<section id="faq">{head("Частые вопросы" if ru else "FAQ")}{faq}</section>"""
-
-def body_contact(lang):
-    ru = lang == "ru"
-    lead = ("Напишите в Telegram или WhatsApp: коротко о бизнесе и задаче. Отвечу и предложу формат работы."
-            if ru else "Message me on Telegram or WhatsApp with a short note about your business and the challenge. I will reply with a suggested format.")
-    note = ("Алматы, Казахстан. Работаю с клиентами в Казахстане, СНГ и онлайн."
-            if ru else "Almaty, Kazakhstan. Working with clients across Kazakhstan, the CIS and online.")
-    return f"""
-<section class="page">{crumbs(lang,"contact")}<h1>{H1[lang]["contact"]}</h1><p class="lead">{lead}</p></section>
-<section>{social_list(lang)}<p class="note">{note}</p></section>"""
-
 def crumbs(lang, slug):
     return f'<p class="crumbs"><a href="{path(lang,"")}">{T[lang]["home"]}</a> / {H1[lang][slug]}</p>'
 
-def body_about(lang):
-    ru = lang == "ru"
+def checklist(items):
+    return '<ul class="check">' + "".join(f"<li>{i}</li>" for i in items) + "</ul>"
+
+def cta_row(lang, label=None, href=None, second=True):
     t = T[lang]
-    exp = "".join(f"<li><b>{a}</b><span>{b}</span></li>" for a, b in EXPERIENCE[lang])
-    bio = "".join(f"<p>{p}</p>" for p in t["about"])
-    if ru:
-        names = "Как пишется имя"
-        names_p = "Руслан Хасанов (полное имя — Хасанов Руслан Фархадович). Латиницей — Ruslan Khasanov; в LinkedIn используется написание Ruslan Khassanov."
-    else:
-        names = "Name spelling"
-        names_p = "Ruslan Khasanov (Russian: Руслан Хасанов; full name Хасанов Руслан Фархадович). LinkedIn uses the spelling Ruslan Khassanov."
-    kn = ", ".join(KNOWS[lang])
+    out = f'<div class="cta"><a class="btn" href="{href or WA}" rel="noopener" target="_blank">{label or t["discuss"]}</a>'
+    if second:
+        out += f'<a class="btn ghost" href="{TG}" rel="me noopener" target="_blank">Telegram</a>'
+    return out + "</div>"
+
+def case_article(lang, n, case):
+    title, tools, task, situation, done, result = case
+    h_task, h_sit, h_done, h_tools, h_res = CASES_PAGE[lang]["h"]
+    sit = f"<h3>{h_sit}</h3><p>{situation}</p>" if situation else ""
+    return (f'<article class="case" id="case-{n}"><h2>{title}</h2>'
+            f'<h3>{h_task}</h3><p>{task}</p>{sit}<h3>{h_done}</h3><ul>{"".join(f"<li>{d}</li>" for d in done)}</ul>'
+            f'<h3>{h_tools}</h3><p>{tools}</p><h3>{h_res}</h3><p class="result">{result}</p></article>')
+
+def track_article(lang, n, tr):
+    m, ml, title, tag, points = tr
+    return (f'<article class="case" id="track-{n}"><p class="metric-row"><b class="metric">{m}</b><span class="metric-label">{ml}</span></p>'
+            f'<h2>{title}</h2><span class="tag">{tag}</span><h3>{CASES_PAGE[lang]["changed"]}</h3>'
+            f'<ul>{"".join(f"<li>{x}</li>" for x in points)}</ul></article>')
+
+def case_card(lang, n):
+    title, tools, task, situation, done, result = CASES[lang][n - 1]
+    return (f'<article class="project"><span class="tag">{tools}</span><h3>{title}</h3><p>{result}</p>'
+            f'<a href="{path(lang,"cases")}#case-{n}">{"Открыть кейс" if lang == "ru" else "Open case"} →</a></article>')
+
+def method_diagram(lang, compact=False):
+    steps = "".join(f'<li class="step"><span class="step-n">0{i}</span><b>{name}</b><span>{text}</span></li>'
+                    for i, (name, text) in enumerate(METHOD[lang], 1))
+    en, et = METHOD_EDU[lang]
+    return f'<ol class="method">{steps}</ol><p class="method-base"><b>{en}</b> — {et}</p>'
+
+def diag_section(lang, sid="diagnostics"):
+    eyebrow, title, text, items, btn = DIAG[lang]
+    return (f'<section id="{sid}"><div class="panel"><p class="eyebrow">{eyebrow}</p><h2>{title}</h2><p class="answer">{text}</p>'
+            f'{checklist(items)}{cta_row(lang, btn, second=False)}</div></section>')
+
+def dir_card(lang, s, n):
+    d = DIRS[lang][s]
+    badge = f'<span class="badge">{d["badge"]}</span>' if d["badge"] else ""
+    return (f'<article class="dir"><div class="dir-top"><span class="step-n">0{n}</span>{badge}</div>'
+            f'<h3>{d["name"]}</h3><p class="dir-label">{d["label"]}</p><p>{d["short"]}</p>'
+            f'<p class="dir-value">{d["value"]}</p><a href="{path(lang, s)}">{T[lang]["details"]} →</a></article>')
+
+def founder_block(lang, full_link=True):
+    f = FOUNDER[lang]
+    ps = "".join(f'<p>{p}</p>' for p in f["short"])
+    chips = "".join(f"<li>{c}</li>" for c in f["chips"])
+    link = f'<p class="card-links"><a href="{path(lang,"about")}">{HOME[lang]["founder_more"]} →</a><a href="{LI}" rel="me noopener" target="_blank">LinkedIn</a></p>' if full_link else ""
+    return (f'<div class="founder">{portrait(lang)}<div><h3>{T[lang]["name"]}</h3><p class="role">{f["role"]}</p>{ps}'
+            f'<ul class="chips" style="margin-top:18px">{chips}</ul>{link}</div></div>')
+
+def body_home(lang):
+    h = HOME[lang]
+    t = T[lang]
+    system = "".join(f'<li><b>{a}</b><span>{b}</span></li>' for a, b in h["system_steps"])
+    problems = "".join(f"<li>{p}</li>" for p in h["problems"])
+    dirs = "".join(dir_card(lang, s, i) for i, s in enumerate(DIR_SLUGS, 1))
+    aud = "".join(f'<article class="aud"><h3>{a}</h3><p>{b}</p><a href="{path(lang, l.split("#")[0])}{"#" + l.split("#")[1] if "#" in l else ""}">'
+                  f'{DIRS[lang][l.split("#")[0]]["name"]} →</a></article>' for a, b, l in AUDIENCES[lang])
+    stats = "".join(f"<li><b>{n}</b><span>{d}</span></li>" for n, d in STATS[lang])
+    cases = "".join(case_card(lang, n) for n in range(1, len(CASES[lang]) + 1))
+    clients = " · ".join(CLIENTS[lang])
+    faq = "".join(f'<details class="qa"><summary>{q}</summary><p>{a}</p></details>' for q, a in FAQ[lang])
     return f"""
-<section class="page">{crumbs(lang,"about")}<h1>{H1[lang]["about"]}</h1><p class="lead">{t["role"]}</p></section>
-<section>{bio}</section>
-<section><h2>{"Опыт" if ru else "Experience"}</h2><ul class="exp">{exp}</ul></section>
-<section><h2>{"Компетенции" if ru else "Expertise"}</h2><p>{kn}</p></section>
-<section><h2>{names}</h2><p>{names_p}</p></section>"""
+<section class="hero"><div class="hero-grid"><div>
+<p class="eyebrow">{h["eyebrow"]}</p>
+<h1 lang="en">{h["h1"]}</h1>
+<p class="lead">{h["lead"]}</p>
+<div class="cta"><a class="btn" href="{WA}" rel="noopener" target="_blank">{t["discuss"]}</a><a class="btn ghost" href="#directions">{h["cta2"]}</a></div>
+</div><div class="system" aria-hidden="true"><p class="system-title">{h["system_title"]}</p><ol>{system}</ol><p class="system-edu">{h["system_edu"]}</p></div></div></section>
+<section id="problem"><div class="split"><div><h2>{h["problem_h2"]}</h2><p class="answer">{h["problem_lead"]}</p><ul class="issues">{problems}</ul></div>
+<div class="panel approach"><p class="eyebrow">Revanite</p><h3>{h["approach_h3"]}</h3><p>{h["approach"]}</p></div></div></section>
+<section id="directions">{head(h["dirs_h2"], path(lang,"services"), "Все направления" if lang == "ru" else "All services")}<p class="answer" style="margin:-8px 0 28px">{h["dirs_lead"]}</p><div class="dirs">{dirs}</div></section>
+<section id="method"><h2>{h["method_h2"]}</h2><p class="answer" style="margin-bottom:32px">{h["method_lead"]}</p>{method_diagram(lang)}</section>
+<section id="audience"><h2>{h["aud_h2"]}</h2><div class="auds">{aud}</div></section>
+<section id="cases">{head(h["cases_h2"], path(lang,"cases"), h["cases_all"])}<ul class="stats">{stats}</ul>
+<div class="projects two" style="margin-top:18px">{cases}</div><p class="note"><b>{h["clients"]}:</b> {clients}</p></section>
+<section id="founder"><h2>{h["founder_h2"]}</h2>{founder_block(lang)}</section>
+<section id="faq">{head(h["faq_h2"])}{faq}</section>
+<section id="contact-cta"><div class="panel final"><h2 lang="en">{h["final_h2"]}</h2><p class="answer">{h["final_text"]}</p>{cta_row(lang)}</div></section>"""
 
 def body_services(lang):
-    ru = lang == "ru"
-    _, _, _, d_title, d_items, d_btn = DIAG[lang]
+    t = T[lang]
+    lead, more = SERVICES_PAGE[lang]
     p_title, p_steps = PROCESS[lang]
-    lead = ("Работа начинается с экспресс-диагностики бизнеса. Далее — один из форматов: продажи, маркетинг и автоматизация под ключ, трекинг или обучение команды."
-            if ru else "Every engagement starts with a business check-up, followed by one of three formats: done-for-you sales, marketing and automation, tracking, or team training.")
-    out = [f'<section class="page">{crumbs(lang,"services")}<h1>{H1[lang]["services"]}</h1><p class="lead">{lead}</p></section>',
-           f'<section id="diagnostics"><h2>{d_title}</h2><div class="card" style="margin-top:20px"><ul>{"".join(f"<li>{i}</li>" for i in d_items)}</ul></div>'
-           f'<div class="cta"><a class="btn" href="{WA}" rel="noopener" target="_blank">{d_btn}</a></div></section>']
-    for key, name, sub, who, items, fmt in SERVICES[lang]:
-        li = "".join(f"<li>{i}</li>" for i in items)
-        out.append(f'<section id="{key}"><p class="eyebrow">{name}</p><h2>{sub}</h2>' + (f"<p>{who}</p>" if who else "") +
-                   f'<div class="card" style="margin-top:20px"><h3>{"Что входит" if ru else "What is included"}</h3><ul>{li}</ul>'
-                   f'<p style="margin-top:14px"><b>{"Формат" if ru else "Format"}:</b> {fmt}</p></div></section>')
-    out.append(f'<section id="process"><h2>{p_title}</h2><ol class="steps">{"".join(f"<li><span>{s}</span></li>" for s in p_steps)}</ol></section>')
+    out = [f'<section class="page">{crumbs(lang,"services")}<h1>{H1[lang]["services"]}</h1><p class="lead">{lead}</p></section>']
+    for i, s in enumerate(DIR_SLUGS, 1):
+        d = DIRS[lang][s]
+        badge = f' · {d["badge"]}' if d["badge"] else ""
+        out.append(f'<section id="{s}"><p class="eyebrow">0{i} · {d["name"]}{badge}</p><h2>{d["label"]}</h2><p class="answer">{d["short"]}</p>'
+                   f'<p class="dir-value" style="margin-top:14px">{d["value"]}</p><p class="card-links"><a href="{path(lang, s)}">{more} →</a></p></section>')
+    out.append(f'<section id="method"><h2>{HOME[lang]["method_h2"]}</h2>{method_diagram(lang)}</section>')
+    out.append(diag_section(lang))
+    out.append(f'<section id="process"><h2>{p_title}</h2><ol class="steps">{"".join(f"<li><span>{x}</span></li>" for x in p_steps)}</ol>{cta_row(lang)}</section>')
     return "".join(out)
 
-def body_cases(lang):
+def body_direction(lang, slug):
+    d = DIRS[lang][slug]
+    t = T[lang]
     ru = lang == "ru"
-    intro = ("Проекты для бизнеса и трекинг стартапов. По каждому кейсу — каналы и инструменты, задача, решение и результат."
-             if ru else "Client projects and startup tracking. Each case covers the channels and tools, the challenge, the solution and the result.")
-    ch_h, task_h, done_h, res_h = ("Каналы и инструменты", "Задача", "Решение", "Результат") if ru else ("Channels and tools", "Challenge", "Solution", "Result")
-    out = [f'<section class="page">{crumbs(lang,"cases")}<h1>{H1[lang]["cases"]}</h1><p class="lead">{intro}</p></section>',
-           f'<section><h2>{"Ключевые проекты" if ru else "Key projects"}</h2>']
-    for n, (title, channels, task, done, result) in enumerate(CASES[lang], 1):
-        li = "".join(f"<li>{d}</li>" for d in done)
-        out.append(f'<article class="case" id="case-{n}"><h2>{title}</h2>'
-                   f'<h3>{ch_h}</h3><p>{channels}</p><h3>{task_h}</h3><p>{task}</p><h3>{done_h}</h3><ul>{li}</ul>'
-                   f'<h3>{res_h}</h3><p class="result">{result}</p></article>')
-    out.append(f'</section><section id="tracking"><h2>{"Трекинг стартапов" if ru else "Startup tracking"}</h2>')
-    for n, (m, ml, title, tag, points) in enumerate(TRACK[lang], 1):
-        li = "".join(f"<li>{x}</li>" for x in points)
-        out.append(f'<article class="case" id="track-{n}"><p class="metric-row"><b class="metric">{m}</b><span class="metric-label">{ml}</span></p>'
-                   f'<h2>{title}</h2><span class="tag">{tag}</span>'
-                   f'<h3>{"Что изменилось" if ru else "What changed"}</h3><ul>{li}</ul></article>')
+    badge = f' · {d["badge"]}' if d["badge"] else ""
+    out = [f'<section class="page">{crumbs(lang, slug)}<p class="eyebrow">{d["name"]}{badge}</p><h1>{d["h1"]}</h1><p class="lead">{d["lead"]}</p>{cta_row(lang)}</section>']
+    blocks = d["blocks"]
+    if len(blocks) == 1:
+        out.append(f'<section><h2>{blocks[0][0]}</h2>{checklist(blocks[0][1])}</section>')
+    else:
+        cards = "".join(f'<article class="card"><h3>{h}</h3>{checklist(items)}</article>' for h, items in blocks)
+        out.append(f'<section><h2>{"Что входит" if ru else "What we do"}</h2><div class="cards">{cards}</div></section>')
+    if "for" in d:
+        out.append(f'<section><div class="split"><div><h2>{d["for_h2"]}</h2>{checklist(d["for"])}</div>'
+                   f'<div class="panel approach"><p class="eyebrow">{d["result_h2"]}</p><p class="answer">{d["result"]}</p></div></div></section>')
+    if "why" in d:
+        out.append(f'<section><h2>{d["why_h2"]}</h2><p class="answer">{d["why"]}</p></section>')
+    fmt = f'<p class="note"><b>{"Формат" if ru else "Format"}:</b> {d["format"]}</p>'
+    extra = f'<p class="note">{d["exp"]}</p>' if "exp" in d else ""
+    note = f'<p class="note">{d["note"]}</p>' if "note" in d else ""
+    out.append(f'<section style="padding-top:0">{fmt}{extra}{note}</section>')
+    if d.get("diag"):
+        out.append(diag_section(lang))
+    if d["cases"]:
+        cards = "".join(case_card(lang, n + 1) for n in d["cases"])
+        out.append(f'<section>{head("Кейсы направления" if ru else "Related case studies", path(lang,"cases"), HOME[lang]["cases_all"])}<div class="projects">{cards}</div></section>')
+    if slug == "business-tracking":
+        out.append(f'<section><h2>{CASES_PAGE[lang]["tracking"]}</h2>' + "".join(track_article(lang, n, tr) for n, tr in enumerate(TRACK[lang], 1)) + "</section>")
+    out.append(f'<section><div class="panel final"><h2 lang="en">{HOME[lang]["final_h2"]}</h2><p class="answer">{HOME[lang]["final_text"]}</p>{cta_row(lang)}</div></section>')
+    return "".join(out)
+
+def body_education(lang):
+    d = DIRS[lang]["education"]
+    e = EDU[lang]
+    ru = lang == "ru"
+    split = (f'<div class="edu-split"><a class="edu-card a" href="#specialists"><span class="tag">{e["a_tag"]}</span><b>{e["a_h2"]}</b><span>{e["a_intro"]}</span></a>'
+             f'<a class="edu-card b" href="#corporate"><span class="tag">{e["b_tag"]}</span><b>{e["b_h2"]}</b><span>{e["b_intro"]}</span></a></div>')
+    a_prog = "".join(f"<li>{p}</li>" for p in e["a_prog"])
+    b_prog = "".join(f"<li>{p}</li>" for p in e["b_prog"])
+    a_fmt = "".join(f"<li>{p}</li>" for p in e["a_fmt"])
+    return f"""
+<section class="page">{crumbs(lang,"education")}<p class="eyebrow">{d["name"]}</p><h1>{d["h1"]}</h1><p class="lead">{d["lead"]}</p>{split}</section>
+<section id="specialists"><div class="panel edu a"><p class="eyebrow">{e["a_tag"]}</p><h2>{e["a_h2"]}</h2><p class="answer">{e["a_intro"]}</p>
+<div class="split" style="margin-top:28px"><div><h3>{e["a_prog_h"]}</h3><ul class="check">{a_prog}</ul></div><div><h3>{e["a_fmt_h"]}</h3><ul class="check">{a_fmt}</ul>
+<p class="note">{e["a_focus"]}</p></div></div>{cta_row(lang, e["a_cta"], second=False)}</div></section>
+<section id="corporate"><div class="panel edu b"><p class="eyebrow">{e["b_tag"]}</p><h2>{e["b_h2"]}</h2><p class="answer">{e["b_intro"]}</p>
+<h3 style="margin-top:28px">{e["b_prog_h"]}</h3><ul class="check cols">{b_prog}</ul><p class="note">{e["b_fmt"]}</p>{cta_row(lang, e["b_cta"], second=False)}</div></section>
+<section style="padding-top:0"><p class="note">{e["terms"]}</p></section>
+<section><h2>{e["exp_h2"]}</h2><p class="answer">{e["exp"]}</p><p class="card-links"><a href="{path(lang,"teaching")}">{e["exp_link"]} →</a></p></section>"""
+
+def body_cases(lang):
+    c = CASES_PAGE[lang]
+    stats = "".join(f"<li><b>{n}</b><span>{d}</span></li>" for n, d in STATS[lang])
+    out = [f'<section class="page">{crumbs(lang,"cases")}<h1>{H1[lang]["cases"]}</h1><p class="lead">{c["intro"]}</p></section>',
+           f'<section style="padding-top:0"><ul class="stats">{stats}</ul></section>',
+           f'<section><h2>{c["projects"]}</h2>']
+    out += [case_article(lang, n, case) for n, case in enumerate(CASES[lang], 1)]
+    out.append(f'</section><section id="tracking"><h2>{c["tracking"]}</h2>')
+    out += [track_article(lang, n, tr) for n, tr in enumerate(TRACK[lang], 1)]
     out.append(f'<p class="note">{CASES_NOTE[lang]}</p></section>')
     return "".join(out)
+
+def body_about(lang):
+    f = FOUNDER[lang]
+    exp = "".join(f"<li><b>{a}</b><span>{b}</span></li>" for a, b in EXPERIENCE[lang])
+    bio = "".join(f"<p>{p}</p>" for p in f["bio"])
+    chips = "".join(f"<li>{k}</li>" for k in KNOWS[lang])
+    return f"""
+<section class="page">{crumbs(lang,"about")}<h1>{f["h1"]}</h1><p class="lead">{f["lead"]}</p></section>
+<section style="padding-top:0">{founder_block(lang, full_link=False)}</section>
+<section><div class="split"><div><h2>{f["role_h2"]}</h2>{checklist(f["roles"])}</div><div><h2>{f["bio_h2"]}</h2>{bio}</div></div></section>
+<section><h2>{f["exp_h2"]}</h2><ul class="exp">{exp}</ul></section>
+<section><h2>{f["skills_h2"]}</h2><ul class="chips">{chips}</ul></section>
+<section><h2>{f["names_h2"]}</h2><p>{f["names"]}</p></section>"""
+
+def body_contact(lang):
+    ru = lang == "ru"
+    lead = ("Расскажите о задаче в Telegram или WhatsApp: коротко о бизнесе и цели. Мы ответим и предложим направление и формат работы."
+            if ru else "Tell us about your challenge on Telegram or WhatsApp: a few lines about your business and goal. We will reply with a suggested practice and format.")
+    note = ("Алматы, Казахстан. Работаем с бизнесом в Казахстане, Кыргызстане, СНГ и онлайн."
+            if ru else "Almaty, Kazakhstan. Working with businesses in Kazakhstan, Kyrgyzstan, the CIS and online.")
+    return f"""
+<section class="page">{crumbs(lang,"contact")}<h1>{H1[lang]["contact"]}</h1><p class="lead">{lead}</p></section>
+<section>{social_list(lang)}<p class="note">{note}</p></section>"""
 
 def body_teaching(lang):
     ru = lang == "ru"
@@ -838,15 +1271,19 @@ def body_teaching(lang):
 <section><h2>{ctitle}</h2><p>{"Я написал эту программу для AlmaU: от основ LLM до сквозной аналитики и создания сайта с AI. Задания устроены так, что студент сначала делает работу сам, а потом проверяет её с помощью AI." if ru else "I wrote this programme for AlmaU, from LLM basics to end-to-end analytics and building a website with AI. Students do each assignment by hand first, then check it with AI."}</p>
 <div class="card" style="margin-top:20px"><ol style="padding-left:20px">{cli}</ol></div></section>"""
 
-BODIES = {"": body_home, "about": body_about, "services": body_services, "cases": body_cases, "teaching": body_teaching, "contact": body_contact}
+BODIES = {"": body_home, "services": body_services, "education": body_education, "cases": body_cases,
+          "about": body_about, "teaching": body_teaching, "contact": body_contact}
+for _s in ("marketing-management", "digital-growth", "business-tracking"):
+    BODIES[_s] = (lambda s: lambda lang: body_direction(lang, s))(_s)
 
 def render(lang, slug):
     t = T[lang]
     title, desc = META[lang][slug]
     other = "en" if lang == "ru" else "ru"
     cur = ' aria-current="page"'
+    active = "services" if slug in DIR_SLUGS[:3] else slug
     nav = "".join(
-        f'<a href="{path(lang,s)}"{cur if s == slug else ""}{"" if s else ' class="nav-home"'}>{t["nav"][s]}</a>'
+        f'<a href="{path(lang,s)}"{cur if s == active else ""}{"" if s else ' class="nav-home"'}>{t["nav"][s]}</a>'
         for s in NAV)
     return f"""<!doctype html>
 <html lang="{lang}">
@@ -855,21 +1292,21 @@ def render(lang, slug):
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<meta name="author" content="{t["name"]}">
+<meta name="author" content="Revanite">
 <meta name="robots" content="index,follow,max-image-preview:large">
 <link rel="canonical" href="{url(lang,slug)}">
 <link rel="alternate" hreflang="ru" href="{url("ru",slug)}">
 <link rel="alternate" hreflang="en" href="{url("en",slug)}">
 <link rel="alternate" hreflang="x-default" href="{url("ru",slug)}">
 <link rel="alternate" type="text/plain" title="llms.txt" href="/llms.txt">
-<meta property="og:type" content="{"profile" if slug in ("", "about") else "website"}">
+<meta property="og:type" content="{"profile" if slug == "about" else "website"}">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{desc}">
 <meta property="og:url" content="{url(lang,slug)}">
 <meta property="og:locale" content="{"ru_RU" if lang=="ru" else "en_US"}">
-<meta property="og:site_name" content="{t["name"]}">
+<meta property="og:site_name" content="Revanite">
 <meta property="og:image" content="{BASE}/og-image.jpg">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0A0C10">
 <link rel="icon" href="/assets/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -883,14 +1320,15 @@ def render(lang, slug):
 <body>
 <header><div class="wrap bar">
 <a class="brand" href="{path(lang,"")}">{LOGO}<span>Revanite</span></a>
-<nav aria-label="{"Основное меню" if lang=="ru" else "Main menu"}">{nav}</nav><a class="lang" href="{path(other,slug)}" hreflang="{other}" lang="{other}" title="{t["switch"][1]}">{t["switch"][0]}</a>
+<nav aria-label="{"Основное меню" if lang=="ru" else "Main menu"}">{nav}</nav><details class="mnav"><summary>{"Меню" if lang=="ru" else "Menu"}</summary><div class="mnav-list">{nav}</div></details><a class="lang" href="{path(other,slug)}" hreflang="{other}" lang="{other}" title="{t["switch"][1]}">{t["switch"][0]}</a>
 </div></header>
 <main class="wrap">{BODIES[slug](lang)}</main>
 <footer id="contact"><div class="wrap">
-<h2 class="footer-title">{"Маркетинг как вложение, а не расход." if lang=="ru" else "Marketing as an investment, not an expense."}</h2>
-<p class="footer-sub">{"Алматы · Работаю с бизнесом в Казахстане, Кыргызстане и СНГ" if lang=="ru" else "Almaty · Working with businesses in Kazakhstan, Kyrgyzstan and the CIS"}</p>
+<h2 class="footer-title">{t["footer_title"]}</h2>
+<p class="footer-sub">{t["footer_sub"]}</p>
+<ul class="foot-nav">{"".join(f'<li><a href="{path(lang, s)}">{DIRS[lang][s]["name"]}</a></li>' for s in DIR_SLUGS)}<li><a href="{path(lang,"cases")}">{t["nav"]["cases"]}</a></li><li><a href="{path(lang,"about")}">{t["nav"]["about"]}</a></li></ul>
 {social_list(lang)}
-<p class="copy">© {datetime.date.today().year} {t["footer"]}</p>
+<p class="copy">© {datetime.date.today().year} {t["copy"]}</p>
 </div></footer>
 </body>
 </html>
@@ -900,26 +1338,26 @@ def render(lang, slug):
 def llms_txt():
     ru, en = T["ru"], T["en"]
     lines = [
-        "# Руслан Хасанов (Ruslan Khasanov)",
+        "# Revanite — Strategic Growth Partner",
         "",
-        f"> {ru['summary']}",
+        f"> {ru['org_desc']}",
         "",
-        f"> {en['summary']}",
+        f"> {en['org_desc']}",
         "",
         "## Ключевые факты / Key facts",
-        "- Имя: Руслан Хасанов (Хасанов Руслан Фархадович); латиницей Ruslan Khasanov, в LinkedIn — Ruslan Khassanov",
-        "- Город: Алматы, Казахстан / Almaty, Kazakhstan",
-        "- Роль: консультант по росту бизнеса, трекер стартапов, преподаватель digital-маркетинга, основатель Revanite; экс-CMO re:Kassa",
-        "- Позиционирование: системный рост бизнеса — диагностика стратегии, продаж, маркетинга, процессов и экономики; внедрение от воронки продаж и рекламы до CRM, сквозной аналитики и автоматизации",
-        "- Revanite — студия стратегического роста: экспресс-диагностика бизнеса ($99 вместо $200, засчитывается при продолжении работы), Revanite Tracking (трекинг и консалтинг), Revanite Studio (продажи, маркетинг и автоматизация под ключ). Принцип: маркетинг как вложение, а не расход",
-        "- Метод: Revanite Growth Formula — Инсайт → Экономика → Стратегия → Гипотезы → Исполнение → Аналитика → Масштаб",
-        "- Трекер стартапов: Astana Hub, Almaty Hub, Terricon Valley, NURIS, IT Park; акселератор AIpreneurs",
-        "- Преподавание: Almaty Management University (AlmaU), Qamalladin University (руководитель направления «Диджитал»), колледж ICB; воркшопы Astana Hub; гостевая лекция Nazarbayev University",
-        "- Опыт: Home Credit Bank (руководитель digital-маркетинга), Halyk Insurance (директор по продукту), Alfa Bank (тимлид маркетинга, сегмент малого бизнеса), Samsung Kazakhstan (запуск онлайн-магазина), BI GROUP (менеджер маркетинговых проектов), re:Kassa (CMO, до 2026)",
+        "- Revanite — стратегический партнёр малого и среднего бизнеса в маркетинге, digital-развитии и привлечении клиентов; Алматы, Казахстан",
+        "- Ключевая идея: не просто выполнять маркетинговые задачи, а думать вместе с бизнесом, определять приоритеты и управлять развитием",
+        "- Методология: Strategy → Management → Execution → Tracking & Growth; Education дополняет систему",
+        "- Marketing Management: внешнее управление маркетингом — стратегия, план, бюджеты, постановка задач специалистам и подрядчикам, контроль, аналитика, качество лидов",
+        "- Digital Growth: Meta Ads, Google Ads, сайты и лендинги (Tilda, AI-инструменты), GA4, Google Tag Manager, интеграция с CRM, отчёты и дашборды",
+        "- Business Tracking: трекинг для предпринимателей — цели и показатели, ограничения, гипотезы, приоритеты, регулярный контроль прогресса",
+        "- Education: обучение начинающих и действующих маркетологов и таргетологов; корпоративное обучение команд",
+        "- Экспресс-диагностика бизнеса: $99 вместо $200, засчитывается при продолжении работы",
+        f"- Основатель: {ru['summary']}",
+        "- Опыт основателя: re:Kassa (CMO, до 2026), Home Credit Bank (руководитель digital-маркетинга), Halyk Insurance (директор по продукту), Alfa Bank (руководитель маркетинга сегмента малого бизнеса), BI GROUP (менеджер маркетинговых проектов), Samsung Kazakhstan (запуск онлайн-магазина)",
         "- Клиенты: " + ", ".join(CLIENTS["ru"]),
-        "- Кейсы: SAGI — ROMI 316%; Yeko Kazakhstan — доля квалифицированных лидов с 30% до 70%, стоимость лида ниже в 2,4 раза; Глоббинг Казахстан — +60% новых регистраций, стоимость регистрации ниже на 45%; Shanyraq Business Forum — 1 600+ заявок и обращений за первый запуск, ROAS 234%; карта рассрочки Тумар (Бакай Банк) — стабильный ежемесячный поток новых клиентов и активация выданных карт; BI GROUP и Geometry — стоимость привлечения клиента рассчитана с нуля, реклама оптимизируется по ней; Jintropine — сквозная аналитика Meta Ads + amoCRM",
-        "- Трекинг: Youtrade — рост выручки в 1,6 раза, перестройка операционных процессов, выход фаундера из операционного управления; InnMedia — выход на рынок Казахстана, первые 3 контракта; онлайн-школа — смена приоритетных рынков с США на Узбекистан и Турцию, выявлен партнёрский канал, обеспечивавший около 30% выручки",
-        "- Компетенции: " + ", ".join(KNOWS["ru"]),
+        "- Кейсы: SAGI — ROMI 316%; Yeko Kazakhstan — доля квалифицированных лидов с 30% до 70%, стоимость лида ниже в 2,4 раза; Глоббинг Казахстан — +60% новых регистраций, стоимость регистрации ниже на 45%; Shanyraq Business Forum — 1 600+ заявок и обращений за первый запуск, ROAS 234%; карта рассрочки Тумар (Бакай Банк) — стабильный ежемесячный поток новых клиентов и программа активации карт; BI GROUP и Geometry — расчёт CAC с нуля и оптимизация рекламы по нему; Jintropine — сквозная аналитика Meta Ads и amoCRM",
+        "- Трекинг: Youtrade — рост выручки в 1,6 раза, перестройка операционных процессов; InnMedia — выход на рынок Казахстана, первые 3 контракта; онлайн-школа — смена приоритетных рынков, партнёрский канал около 30% выручки",
         "",
         "## Страницы / Pages",
     ]
